@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Google_Drive__search_files",
+      "WebSearch",
+      "WebFetch(domain:carta.menu)",
+      "WebFetch(domain:mejores.heladerias.com.es)",
+      "Bash(Get-ChildItem -Recurse \"C:\\\\Users\\\\jaime\\\\OneDrive\\\\Desktop\\\\Personal Projects\\\\heladeria900italiana\")",
+      "Bash(Select-Object FullName, Length)",
+      "Read(//mnt/c/Users/jaime/OneDrive/Desktop/Personal Projects/**)",
+      "PowerShell(New-Item *)",
+      "Bash(gh repo *)"
+    ]
+  }
+}
