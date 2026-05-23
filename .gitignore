@@ -1,0 +1,15 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+
+# Assets pendientes (no subir fotos grandes sin optimizar)
+assets/images/*.jpg
+assets/images/*.png
+assets/images/*.jpeg
+assets/images/*.webp
+assets/favicon/*.png
+assets/favicon/*.ico
