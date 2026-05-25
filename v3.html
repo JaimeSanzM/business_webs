@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heladería 900 Italiana – Fuengirola · Dal 1990</title>
+<meta name="description" content="Heladería artesanal italiana en Fuengirola desde 1990. Gelato auténtico en primera línea de playa.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --parch:#F7F0E2; --parch-dk:#EFE5D0; --crimson:#8B1A1A; --gold:#C9A84C;
+  --brown:#2D1810; --muted:#8A7060; --white:#FFFDF8;
+  --font:'Lato',sans-serif; --serif:'Playfair Display',serif;
+  --r:.5rem; --ease:cubic-bezier(.25,.46,.45,.94);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);background:var(--parch);color:var(--brown);overflow-x:hidden;line-height:1.6}
+
+/* ORNAMENTS */
+.orn{color:var(--gold);letter-spacing:.1em;font-size:.85rem;display:block;text-align:center;margin:.75rem 0}
+.hr-orn{display:flex;align-items:center;gap:1rem;margin:2.5rem 0}
+.hr-orn::before,.hr-orn::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.3)}
+.hr-orn span{color:var(--gold);font-size:.8rem;white-space:nowrap}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:500;padding:.85rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:all .3s}
+nav.scrolled{background:rgba(247,240,226,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2)}
+.logo{font-family:var(--serif);font-size:1.55rem;color:var(--brown);text-decoration:none;font-style:italic}
+.logo span{color:var(--crimson)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;transition:color .2s}
+.nav-links a:hover{color:var(--brown)}
+.nav-cta{background:var(--crimson)!important;color:var(--parch)!important;padding:.5rem 1.25rem;border-radius:.25rem;letter-spacing:.08em!important}
+.nav-cta:hover{background:var(--brown)!important}
+.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
+.hamburger span{display:block;width:22px;height:2px;background:var(--brown);border-radius:1px;transition:all .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--parch);z-index:400;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+.mob-menu.open{display:flex}
+.mob-menu a{font-family:var(--serif);font-size:2.5rem;color:var(--brown);text-decoration:none;font-style:italic}
+.mob-menu a:hover{color:var(--crimson)}
+@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* HERO */
+#hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden}
+.hero-photo{position:absolute;inset:0;background:url('assets/images/local.png') center/cover no-repeat}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,24,16,.82) 0%,rgba(45,24,16,.65) 60%,rgba(45,24,16,.9) 100%)}
+.hero-inner{position:relative;z-index:1;text-align:center;padding:8rem 2rem 4rem;max-width:860px;margin:0 auto}
+.hero-stamp{display:inline-block;border:2px solid var(--gold);padding:.5rem 1.5rem;border-radius:.25rem;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem}
+.hero-h1{font-family:var(--serif);font-size:clamp(3rem,8vw,6rem);font-weight:900;color:var(--parch);line-height:.95;margin-bottom:1rem;letter-spacing:-.01em}
+.hero-h1 em{color:var(--gold);font-style:italic}
+.hero-hr{width:80px;height:2px;background:var(--gold);margin:1.5rem auto;opacity:.6}
+.hero-sub{font-size:1rem;font-weight:300;color:rgba(247,240,226,.7);max-width:480px;margin:0 auto 2.5rem;line-height:1.8;letter-spacing:.02em}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;border:none;font-family:var(--font);letter-spacing:.06em;text-transform:uppercase}
+.btn-gold{background:var(--gold);color:var(--brown);border-radius:.25rem}
+.btn-gold:hover{background:#b8942e;transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--parch);border:1.5px solid rgba(247,240,226,.4);border-radius:.25rem}
+.btn-outline:hover{background:var(--parch);color:var(--brown)}
+.hero-year{font-family:var(--serif);font-size:clamp(4rem,10vw,8rem);font-weight:900;color:rgba(201,168,76,.12);position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:-.02em;pointer-events:none;user-select:none}
+
+/* NOSOTROS */
+#nosotros{background:var(--white);padding:5.5rem 2.5rem}
+.nos-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
+.nos-photos{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+.nos-main{grid-column:1/-1;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;box-shadow:0 12px 40px rgba(45,24,16,.15)}
+.nos-main img,.nos-sm img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.08)}
+.nos-sm{border-radius:var(--r);overflow:hidden;aspect-ratio:1;box-shadow:0 6px 20px rgba(45,24,16,.12)}
+.nos-text .stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.5rem;margin-bottom:1.25rem;display:inline-block}
+.nos-text h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--brown);line-height:1.15;margin-bottom:1rem}
+.nos-text h2 em{color:var(--crimson)}
+.nos-text p{color:var(--muted);line-height:1.85;font-size:.92rem;margin-bottom:.85rem}
+.nos-desde{font-family:var(--serif);font-size:3.5rem;font-weight:900;color:var(--parch-dk);line-height:1;margin-bottom:.25rem}
+.nos-desde-lbl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:900px){.nos-wrap,.nos-photos{grid-template-columns:1fr}}
+
+/* GALERIA */
+#galeria{background:var(--brown);padding:5rem 2.5rem}
+.gal-head{text-align:center;margin-bottom:3rem}
+.gal-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.gal-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--parch);font-style:italic}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;max-width:1100px;margin:0 auto}
+.gal-item{border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;position:relative}
+.gal-item.wide{grid-column:span 2;aspect-ratio:16/9}
+.gal-item img{width:100%;height:100%;object-fit:cover;filter:sepia(.15);transition:filter .4s,transform .4s}
+.gal-item:hover img{filter:sepia(0);transform:scale(1.04)}
+@media(max-width:900px){.gal-grid{grid-template-columns:1fr 1fr}.gal-item.wide{grid-column:span 2}}
+@media(max-width:600px){.gal-grid{grid-template-columns:1fr}.gal-item.wide{grid-column:1}}
+
+/* CARTA */
+#carta{background:var(--parch);padding:5.5rem 2.5rem}
+.menu-board{max-width:960px;margin:0 auto}
+.menu-board-header{text-align:center;margin-bottom:3rem;position:relative}
+.menu-board-header::after{content:'';display:block;width:100px;height:2px;background:var(--gold);margin:1rem auto 0;opacity:.5}
+.menu-title{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--brown);line-height:1;letter-spacing:-.01em}
+.menu-subtitle{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
+.menu-section{margin-bottom:3rem}
+.menu-section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--crimson);text-align:center;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid rgba(201,168,76,.25);font-style:italic}
+.menu-items{display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem .5rem;border-bottom:1px dotted rgba(45,24,16,.12)}
+.menu-item:hover{background:rgba(201,168,76,.05)}
+.mi-name{font-size:.9rem;color:var(--brown)}
+.mi-dots{flex:1;border-bottom:1px dotted rgba(45,24,16,.2);margin:0 .5rem;min-width:20px}
+.mi-price{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--crimson);white-space:nowrap}
+.sabores-box{background:var(--white);border:1px solid rgba(201,168,76,.25);border-radius:var(--r);padding:1.5rem;text-align:center}
+.sabores-box h4{font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:1rem;font-style:italic}
+.sabores-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
+.stag{background:var(--parch-dk);color:var(--brown);border-radius:.25rem;font-size:.75rem;padding:.3rem .75rem;border:1px solid rgba(201,168,76,.2)}
+@media(max-width:700px){.menu-items{grid-template-columns:1fr}}
+
+/* HORARIO */
+#horario{background:var(--parch-dk);padding:5rem 2.5rem}
+.hor-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start}
+.hor-h{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--brown);margin:.5rem 0 1.5rem;line-height:1.15}
+.hor-table{display:flex;flex-direction:column;gap:.4rem}
+.hor-row{display:flex;justify-content:space-between;padding:.75rem 1rem;border-radius:var(--r);font-size:.875rem;background:var(--white);border:1px solid rgba(201,168,76,.15)}
+.hor-row.hoy{background:var(--crimson);border-color:var(--crimson)}
+.hor-row.hoy .hd,.hor-row.hoy .ht{color:var(--parch)}
+.hd{font-weight:700;color:var(--brown)}
+.ht{color:var(--muted);font-size:.8rem}
+.res-box{background:var(--brown);border-radius:var(--r);padding:2.5rem;color:var(--parch);position:relative;overflow:hidden}
+.res-box::before{content:'1990';position:absolute;font-family:var(--serif);font-size:7rem;font-weight:900;color:rgba(201,168,76,.06);bottom:-1rem;right:-1rem;line-height:1;pointer-events:none}
+.res-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.res-box h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin-bottom:.75rem;line-height:1.2;font-style:italic}
+.res-box p{color:rgba(247,240,226,.6);font-size:.88rem;line-height:1.75;margin-bottom:1.5rem}
+.tel-v{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);text-decoration:none;margin-bottom:1.5rem}
+.cbtns{display:flex;gap:.65rem;flex-wrap:wrap}
+.cbtn{display:flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:.25rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:opacity .2s;border:none;font-family:var(--font);cursor:pointer;letter-spacing:.04em}
+.cbtn:hover{opacity:.85}
+.cbtn-wa{background:#25D366;color:#fff}
+.cbtn-tel{background:rgba(255,255,255,.1);color:var(--parch);border:1px solid rgba(247,240,226,.2)}
+.cbtn-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366);color:#fff}
+@media(max-width:900px){.hor-layout{grid-template-columns:1fr}}
+
+/* SERVICIOS */
+#servicios{background:var(--parch);padding:5rem 2.5rem}
+.serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:2.5rem auto 0}
+.serv-card{background:var(--white);border-radius:var(--r);padding:2rem;border:1px solid rgba(201,168,76,.2)}
+.serv-icon{font-size:2rem;margin-bottom:1rem;display:block}
+.serv-card h3{font-family:var(--serif);font-size:1.2rem;color:var(--brown);margin-bottom:.5rem;font-style:italic}
+.serv-card p{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
+.serv-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--crimson);color:var(--parch);padding:.6rem 1.3rem;border-radius:.25rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:background .2s;letter-spacing:.06em;text-transform:uppercase}
+.serv-btn:hover{background:var(--brown)}
+.del-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1.25rem}
+.dz{background:var(--parch-dk);border-radius:var(--r);padding:.85rem;text-align:center;border:1px solid rgba(201,168,76,.15)}
+.dz-km{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--crimson)}
+.dz-t{font-size:.72rem;color:var(--muted);margin-top:.15rem;font-weight:700}
+.dz-a{font-size:.68rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
+@media(max-width:900px){.serv-grid{grid-template-columns:1fr}.del-zones{grid-template-columns:1fr}}
+
+/* MAPA */
+#mapa{background:var(--brown);padding:5rem 2.5rem;text-align:center}
+.mapa-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.mapa-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--parch);font-style:italic;margin-bottom:.5rem}
+.mapa-sub{color:rgba(247,240,226,.45);font-size:.85rem;margin-bottom:2.5rem;letter-spacing:.04em}
+.mapa-frame{border-radius:var(--r);overflow:hidden;max-width:960px;margin:0 auto;border:2px solid rgba(201,168,76,.2)}
+.mapa-link{display:inline-block;margin-top:1.5rem;color:var(--gold);font-size:.82rem;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+.mapa-link:hover{opacity:.8}
+
+/* FAQ */
+#faq{background:var(--parch-dk);padding:5rem 2.5rem}
+.faq-wrap{max-width:740px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(201,168,76,.25);padding:.65rem 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:var(--serif);font-size:.95rem;color:var(--brown);padding:.5rem 0;user-select:none}
+.faq-arr{color:var(--gold);transition:transform .25s;flex-shrink:0;margin-left:.5rem}
+.faq-item.open .faq-arr{transform:rotate(180deg)}
+.faq-a{display:none;padding:.65rem 0 .25rem;font-size:.86rem;color:var(--muted);line-height:1.8}
+.faq-item.open .faq-a{display:block}
+
+/* FOOTER */
+footer{background:var(--brown);color:var(--parch);padding:4rem 2.5rem 2rem;border-top:2px solid rgba(201,168,76,.2)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto 2.5rem}
+.f-logo{font-family:var(--serif);font-size:1.5rem;font-style:italic;margin-bottom:.5rem}
+.f-logo span{color:var(--gold)}
+.f-tag{font-size:.8rem;color:rgba(247,240,226,.35);line-height:1.65;max-width:240px}
+.f-col h4{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.5rem}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.f-col ul a{font-size:.82rem;color:rgba(247,240,226,.45);text-decoration:none;transition:color .2s}
+.f-col ul a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(247,240,226,.06);padding-top:1.5rem;text-align:center;font-size:.72rem;color:rgba(247,240,226,.2);max-width:1100px;margin:0 auto;letter-spacing:.04em}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr}}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:300;width:54px;height:54px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:26px;height:26px;fill:#fff}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
+
+/* SECTION HEADERS */
+.sec-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;text-align:center}
+.sec-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--brown);text-align:center;margin-bottom:2.5rem;font-style:italic}
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="wa-float" target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<div class="mob-menu" id="mob-menu">
+  <a href="#nosotros" onclick="closeMob()">Nosotros</a>
+  <a href="#carta" onclick="closeMob()">La Carta</a>
+  <a href="#horario" onclick="closeMob()">Horario</a>
+  <a href="#servicios" onclick="closeMob()">Pedidos</a>
+  <a href="#mapa" onclick="closeMob()">Mapa</a>
+</div>
+
+<nav id="nav">
+  <a href="#hero" class="logo">900 <span>Italiana</span></a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#carta">La Carta</a></li>
+    <li><a href="#horario">Horario</a></li>
+    <li><a href="#servicios">Pedidos</a></li>
+    <li><a href="#mapa">Mapa</a></li>
+    <li><a href="tel:+34952468457" class="nav-cta">952 46 84 57</a></li>
+  </ul>
+  <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+
+<section id="hero">
+  <div class="hero-photo"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-inner reveal">
+    <div class="hero-stamp">✦ Fuengirola · Costa del Sol · España ✦</div>
+    <h1 class="hero-h1">Heladería<br><em>900 Italiana</em></h1>
+    <div class="hero-hr"></div>
+    <p class="hero-sub">Gelato artesanal elaborado cada día siguiendo la tradición italiana. Primera línea del Paseo Marítimo de Fuengirola, desde 1990.</p>
+    <div class="hero-btns">
+      <a href="#carta" class="btn btn-gold">Ver la carta</a>
+      <a href="#mapa" class="btn btn-outline">Cómo llegar</a>
+    </div>
+  </div>
+  <div class="hero-year">1990</div>
+</section>
+
+<section id="nosotros">
+  <div class="nos-wrap">
+    <div class="nos-photos reveal">
+      <div class="nos-main"><img src="assets/images/local.png" alt="Heladería 900 Italiana — fachada Paseo Marítimo Fuengirola" loading="lazy"></div>
+      <div class="nos-sm"><img src="assets/images/gelato.png" alt="Crepe con helado artesanal" loading="lazy"></div>
+      <div class="nos-sm"><img src="assets/images/desde1990.jpg" alt="Heladería 900 Italiana — Desde 1990" loading="lazy"></div>
+    </div>
+    <div class="nos-text reveal">
+      <div class="stamp">✦ Nuestra historia</div>
+      <div class="nos-desde">1990</div>
+      <div class="nos-desde-lbl">Año de fundación</div>
+      <div class="hr-orn" style="margin:1.25rem 0"><span>✦ ✦ ✦</span></div>
+      <h2>Más de 35 años haciendo <em>helado de verdad</em></h2>
+      <p>Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.</p>
+      <p>Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.</p>
+      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(201,168,76,.2);display:flex;flex-wrap:wrap;gap:.5rem">
+        <span style="font-size:.78rem;color:var(--muted)">🤍 Sin gluten disponible</span> &nbsp;·&nbsp;
+        <span style="font-size:.78rem;color:var(--muted)">🥛 Sin lactosa disponible</span> &nbsp;·&nbsp;
+        <span style="font-size:.78rem;color:var(--muted)">🛵 Delivery a domicilio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="galeria">
+  <div class="gal-head reveal">
+    <div class="gal-stamp">✦ Galería</div>
+    <h2 class="gal-h2">El sabor en imágenes</h2>
+  </div>
+  <div class="gal-grid reveal">
+    <div class="gal-item wide"><img src="assets/images/local.png" alt="Fachada heladería" loading="lazy"></div>
+    <div class="gal-item"><img src="assets/images/desde1990.jpg" alt="Desde 1990" loading="lazy"></div>
+    <div class="gal-item"><img src="assets/images/gelato.png" alt="Helado artesanal" loading="lazy"></div>
+    <div class="gal-item wide"><img src="assets/images/lifestyle.png" alt="Disfrutando de un helado — Heladería 900 Italiana" loading="lazy"></div>
+    <div class="gal-item"><img src="assets/images/sundae.png" alt="Copa especial de la casa" loading="lazy"></div>
+    <div class="gal-item"><img src="assets/images/terraza.jpg" alt="Terraza con vistas al Mediterráneo" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="carta">
+  <div class="menu-board">
+    <div class="menu-board-header reveal">
+      <div class="menu-subtitle">✦ Menú ✦</div>
+      <h2 class="menu-title">La Carta</h2>
+    </div>
+    <div class="hr-orn reveal"><span>✦ Cucuruchos ✦</span></div>
+    <div class="menu-section reveal">
+      <div class="menu-items">
+        <div class="menu-item"><span class="mi-name">Pequeño · 1 bola</span><span class="mi-dots"></span><span class="mi-price">3,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Pequeño · 2 bolas</span><span class="mi-dots"></span><span class="mi-price">4,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Grande · 1 bola</span><span class="mi-dots"></span><span class="mi-price">4,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Grande · 2 bolas</span><span class="mi-dots"></span><span class="mi-price">5,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Cucurucho de chocolate</span><span class="mi-dots"></span><span class="mi-price">10,70 €</span></div>
+      </div>
+    </div>
+    <div class="hr-orn reveal"><span>✦ Tarrinas ✦</span></div>
+    <div class="menu-section reveal">
+      <div class="menu-items">
+        <div class="menu-item"><span class="mi-name">Tarrina pequeña</span><span class="mi-dots"></span><span class="mi-price">3,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Tarrina mediana</span><span class="mi-dots"></span><span class="mi-price">4,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Tarrina grande</span><span class="mi-dots"></span><span class="mi-price">5,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">½ Litro (solo llevar)</span><span class="mi-dots"></span><span class="mi-price">9,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">1 Litro (solo llevar)</span><span class="mi-dots"></span><span class="mi-price">17,00 €</span></div>
+      </div>
+    </div>
+    <div class="hr-orn reveal"><span>✦ Granizados · Copas · Batidos ✦</span></div>
+    <div class="menu-section reveal">
+      <div class="menu-items">
+        <div class="menu-item"><span class="mi-name">Granizado pequeño</span><span class="mi-dots"></span><span class="mi-price">3,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Granizado grande</span><span class="mi-dots"></span><span class="mi-price">4,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Tulipa 2 bolas</span><span class="mi-dots"></span><span class="mi-price">4,70 €</span></div>
+        <div class="menu-item"><span class="mi-name">Tulipa 3 bolas</span><span class="mi-dots"></span><span class="mi-price">6,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Batido mediano</span><span class="mi-dots"></span><span class="mi-price">4,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Batido grande</span><span class="mi-dots"></span><span class="mi-price">5,50 €</span></div>
+        <div class="menu-item"><span class="mi-name">Horchata pequeña</span><span class="mi-dots"></span><span class="mi-price">3,00 €</span></div>
+        <div class="menu-item"><span class="mi-name">Horchata grande</span><span class="mi-dots"></span><span class="mi-price">4,20 €</span></div>
+      </div>
+    </div>
+    <div class="hr-orn reveal"><span>✦ Sabores ✦</span></div>
+    <div class="sabores-box reveal">
+      <h4>Más de 20 sabores artesanales</h4>
+      <div class="sabores-tags">
+        <span class="stag">Pistacho</span><span class="stag">Stracciatella</span><span class="stag">Chocolate</span>
+        <span class="stag">Nata</span><span class="stag">Café</span><span class="stag">Avellana</span>
+        <span class="stag">Menta Choco</span><span class="stag">Napolitana</span><span class="stag">Yogurt</span>
+        <span class="stag">Fresa</span><span class="stag">Mango</span><span class="stag">Limón</span>
+        <span class="stag">Banana Split</span><span class="stag">Gianduja</span><span class="stag">Turrón</span>
+        <span class="stag">Málaga</span><span class="stag">Happy Hippo</span>
+        <span class="stag" style="background:var(--crimson);color:var(--parch);border-color:var(--crimson)">★ Cremino Pistacho</span>
+        <span class="stag" style="background:var(--crimson);color:var(--parch);border-color:var(--crimson)">★ Chocolate Dubai</span>
+      </div>
+      <p style="font-size:.75rem;color:var(--muted);margin-top:1rem">Sin lactosa disponible · Consultar en local</p>
+    </div>
+  </div>
+</section>
+
+<section id="horario">
+  <div class="hor-layout">
+    <div>
+      <div class="sec-stamp reveal">✦ Horario</div>
+      <h2 class="hor-h reveal">¿Cuándo visitarnos?</h2>
+      <div class="hor-table" id="hor-rows"></div>
+    </div>
+    <div class="res-box reveal">
+      <div class="res-stamp">✦ Reservas & Contacto</div>
+      <h3>Celebra con nosotros</h3>
+      <p>Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.</p>
+      <a href="tel:+34952468457" class="tel-v">+34 952 46 84 57</a>
+      <div class="cbtns">
+        <a href="https://wa.me/34952468457" class="cbtn cbtn-wa" target="_blank">💬 WhatsApp</a>
+        <a href="tel:+34952468457" class="cbtn cbtn-tel">📞 Llamar</a>
+        <a href="https://instagram.com/heladeria900italiana" class="cbtn cbtn-ig" target="_blank">📸 Instagram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="sec-stamp reveal">✦ Pedidos</div>
+  <h2 class="sec-h2 reveal">Takeaway & Delivery</h2>
+  <div class="serv-grid">
+    <div class="serv-card reveal">
+      <span class="serv-icon">🏪</span>
+      <h3>Takeaway · Recogida en local</h3>
+      <p>Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas. Las tarrinas de ½L y 1L son perfectas para la playa.</p>
+      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20para%20recoger" class="serv-btn" target="_blank">Pedir por WhatsApp</a>
+    </div>
+    <div class="serv-card reveal reveal-d1">
+      <span class="serv-icon">🛵</span>
+      <h3>Delivery · A domicilio</h3>
+      <p>Llevamos el helado hasta tu puerta en Fuengirola y alrededores.</p>
+      <div class="del-zones">
+        <div class="dz"><div class="dz-km">≤ 2 km</div><div class="dz-t">~20 min</div><div class="dz-a">Centro · Playa</div></div>
+        <div class="dz"><div class="dz-km">2–5 km</div><div class="dz-t">~35 min</div><div class="dz-a">Boliches · Carvajal</div></div>
+        <div class="dz"><div class="dz-km">5–10 km</div><div class="dz-t">~50 min</div><div class="dz-a">Mijas · Benalmádena</div></div>
+      </div>
+      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20a%20domicilio" class="serv-btn" target="_blank">Pedir a domicilio</a>
+    </div>
+  </div>
+</section>
+
+<section id="mapa">
+  <div class="mapa-stamp reveal">✦ Encuéntranos</div>
+  <h2 class="mapa-h2 reveal">¡Estamos aquí!</h2>
+  <p class="mapa-sub reveal">Paseo Marítimo Rey de España · Fuengirola, Málaga</p>
+  <div class="mapa-frame reveal">
+    <iframe src="https://maps.google.com/maps?q=36.5311123,-4.6248252&hl=es&z=17&output=embed" loading="lazy" style="width:100%;height:440px;border:0" title="Heladería 900 Italiana Fuengirola" allowfullscreen></iframe>
+  </div>
+  <a href="https://maps.google.com/?q=36.5311123,-4.6248252" target="_blank" class="mapa-link">✦ Abrir en Google Maps ✦</a>
+</section>
+
+<section id="faq">
+  <div class="sec-stamp reveal">✦ FAQ</div>
+  <h2 class="sec-h2 reveal">Preguntas frecuentes</h2>
+  <div class="faq-wrap" id="faq-list"></div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-logo">900 <span>Italiana</span></div>
+      <p class="f-tag">Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.</p>
+    </div>
+    <div class="f-col"><h4>✦ Navegación</h4><ul>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#carta">La Carta</a></li>
+      <li><a href="#horario">Horario</a></li>
+      <li><a href="#servicios">Pedidos</a></li>
+      <li><a href="#mapa">Mapa</a></li>
+    </ul></div>
+    <div class="f-col"><h4>✦ Contacto</h4><ul>
+      <li><a href="tel:+34952468457">+34 952 46 84 57</a></li>
+      <li><a href="https://wa.me/34952468457" target="_blank">WhatsApp</a></li>
+      <li><a href="https://instagram.com/heladeria900italiana" target="_blank">@heladeria900italiana</a></li>
+      <li><a href="https://maps.google.com/?q=36.5311123,-4.6248252" target="_blank">Google Maps →</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">© 2025 · Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990</div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+function toggleMob(){document.getElementById('mob-menu').classList.toggle('open');document.getElementById('ham').classList.toggle('open')}
+function closeMob(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('ham').classList.remove('open')}
+
+const DAYS=[
+  {d:'Lunes',t:'11:00 – 23:00',n:1},{d:'Martes',t:'11:00 – 23:00',n:2},
+  {d:'Miércoles',t:'11:00 – 23:00',n:3},{d:'Jueves',t:'11:00 – 23:00',n:4},
+  {d:'Viernes',t:'11:00 – 23:30',n:5},{d:'Sábado',t:'11:00 – 23:30',n:6},
+  {d:'Domingo',t:'11:00 – 23:00',n:0}
+];
+const hoy=new Date().getDay();
+document.getElementById('hor-rows').innerHTML=DAYS.map(d=>`
+  <div class="hor-row${d.n===hoy?' hoy':''}">
+    <span class="hd">${d.d}${d.n===hoy?' · Hoy':''}</span>
+    <span class="ht">${d.t}</span>
+  </div>`).join('');
+
+const FAQS=[
+  {q:'¿Cuál es la mejor heladería de Fuengirola?',a:'Heladería 900 Italiana es considerada por muchos la mejor de Fuengirola por sus helados artesanales elaborados cada día y su privilegiada ubicación en primera línea del paseo marítimo.'},
+  {q:'¿Los helados son artesanales?',a:'Sí. Fabricamos todo en local cada día siguiendo recetas de la tradición italiana, sin aditivos artificiales. Desde 1990.'},
+  {q:'¿Tenéis sabores sin lactosa?',a:'Sí, contamos con una selección de sabores sin lactosa. Pregunta en el local para conocer la disponibilidad del día.'},
+  {q:'¿Hacéis delivery a domicilio?',a:'Sí. Zona 1 (≤2km) ~20 min, Zona 2 (2-5km) ~35 min, Zona 3 (5-10km) ~50 min. Contacta por WhatsApp para confirmar.'},
+  {q:'¿Puedo pedir tarrinas para llevar?',a:'Sí. Las tarrinas de ½L y 1L son ideales para la playa. Pide por WhatsApp y las tenemos listas cuando llegues.'},
+  {q:'¿Dónde estáis exactamente?',a:'Paseo Marítimo Rey de España, primera línea de playa. Terraza con vistas directas al Mediterráneo.'},
+];
+document.getElementById('faq-list').innerHTML=FAQS.map(f=>`
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">${f.q}<span class="faq-arr">▼</span></div>
+    <div class="faq-a">${f.a}</div>
+  </div>`).join('');
+
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

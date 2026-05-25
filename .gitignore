@@ -6,10 +6,6 @@ Thumbs.db
 .vscode/
 *.swp
 
-# Assets pendientes (no subir fotos grandes sin optimizar)
-assets/images/*.jpg
-assets/images/*.png
-assets/images/*.jpeg
-assets/images/*.webp
+# Favicon pendiente
 assets/favicon/*.png
 assets/favicon/*.ico
