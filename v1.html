@@ -6,7 +6,7 @@
 <title>Heladería 900 Italiana – Fuengirola</title>
 <meta name="description" content="La mejor heladería artesanal de Fuengirola. +20 sabores italianos, takeaway, terraza frente al mar. Best ice cream Fuengirola. Bestes Eis Fuengirola.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"IceCreamShop","name":"Heladería 900 Italiana","description":"Artisan Italian ice cream in Fuengirola. 20+ handmade flavours, sea views, takeaway.","url":"https://heladeria900italiana.com","telephone":"+34-XXX-XXX-XXX","address":{"@type":"PostalAddress","streetAddress":"Paseo Marítimo Rey de España","addressLocality":"Fuengirola","addressRegion":"Málaga","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":36.5311123,"longitude":-4.6248252},"openingHours":["Mo-Su 11:00-23:30"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.1","reviewCount":"50"},"servesCuisine":"Italian Ice Cream","priceRange":"€€","availableLanguage":["Spanish","English","German"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"IceCreamShop","name":"Heladería 900 Italiana","description":"Artisan Italian ice cream in Fuengirola. 20+ handmade flavours, sea views, takeaway.","url":"https://heladeria900italiana.com","telephone":"+34-952-46-84-57","address":{"@type":"PostalAddress","streetAddress":"Paseo Marítimo Rey de España","addressLocality":"Fuengirola","addressRegion":"Málaga","addressCountry":"ES"},"geo":{"@type":"GeoCoordinates","latitude":36.5311123,"longitude":-4.6248252},"openingHours":["Mo-Su 11:00-23:30"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.3","reviewCount":"50"},"servesCuisine":"Italian Ice Cream","priceRange":"€€","availableLanguage":["Spanish","English","German"]}</script>
 <style>
 :root{
   --ink:#1A0A00; --cream:#FBF7F2; --gelato:#F5EDE0; --caramel:#C07B2A;
@@ -83,11 +83,11 @@ nav.scrolled{background:rgba(251,247,242,.97);backdrop-filter:blur(16px);box-sha
 .btn-outline:hover{background:var(--choco);color:var(--cream)}
 .btn-whatsapp{background:#25D366;color:#fff}
 .btn-whatsapp:hover{background:#1da851}
-.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:4rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:3rem;justify-content:center;margin-top:3.25rem;flex-wrap:wrap}
 .hero-stat{text-align:center}
 .hero-stat-num{font-family:var(--font-display);font-size:3rem;font-weight:600;color:var(--caramel);line-height:1}
 .hero-stat-label{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:.3rem}
-.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--muted);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+.hero-scroll{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(58,31,13,.68);font-family:var(--font-body);font-size:.66rem;font-weight:600;line-height:1;letter-spacing:.14em;text-transform:uppercase;animation:bob 2s ease-in-out infinite;pointer-events:none}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
 .hero-scroll::after{content:'';display:block;width:1px;height:32px;background:linear-gradient(var(--muted),transparent)}
 
@@ -226,6 +226,8 @@ section{padding:5rem 2.5rem}
 
 /* ── FAQ ── */
 #faq{background:var(--gelato)}
+#faq .eyebrow{font-size:.82rem;margin-bottom:.75rem}
+#faq .section-title{font-size:clamp(2.6rem,5.5vw,4rem);font-weight:700;line-height:1}
 .faq-list{max-width:740px;margin:2rem auto 0;display:flex;flex-direction:column;gap:.75rem}
 .faq-item{background:var(--white);border-radius:var(--r);border:1px solid rgba(26,10,0,.06);overflow:hidden}
 .faq-q{padding:1.1rem 1.4rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;color:var(--choco);font-size:.9rem;user-select:none}
@@ -300,6 +302,10 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
   section{padding:4rem 1.5rem}
   .carta-panel.active{grid-template-columns:1fr}
 }
+@media(max-height:820px){
+  .hero-stats{margin-top:2.25rem}
+  .hero-scroll{display:none}
+}
 @media(max-width:600px){
   .novedades-grid,.reviews-scroller{grid-template-columns:1fr}
   .hero-stats{gap:1.5rem}
@@ -308,6 +314,33 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
   .builder-size-btns{grid-template-columns:repeat(2,1fr)}
   .status-badge{top:70px;right:1rem}
 }
+
+/* ── DELIVERY ── */
+#delivery{background:var(--gelato)}
+.delivery-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+.zone-card{background:var(--white);border-radius:var(--r);padding:1.5rem;text-align:center;border:1px solid rgba(26,10,0,.06);transition:transform .2s var(--ease),box-shadow .2s}
+.zone-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(26,10,0,.08)}
+.zone-name{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--caramel);margin-bottom:.4rem}
+.zone-km{font-family:var(--font-display);font-size:2rem;font-weight:600;color:var(--choco);line-height:1;margin-bottom:.2rem}
+.zone-time{font-size:1rem;font-weight:600;color:var(--caramel);margin-bottom:.5rem}
+.zone-area{font-size:.76rem;color:var(--muted);line-height:1.55}
+@media(max-width:960px){.delivery-zones{grid-template-columns:1fr}}
+
+/* ── NOSOTROS ── */
+#nosotros{background:var(--cream)}
+.nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.nosotros-photos{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.nosotros-photo-main{grid-column:1/-1;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;box-shadow:0 8px 32px rgba(26,10,0,.12)}
+.nosotros-photo-main img,.nosotros-photo-sm img{width:100%;height:100%;object-fit:cover;display:block}
+.nosotros-photo-sm{border-radius:var(--r);overflow:hidden;aspect-ratio:1;box-shadow:0 4px 16px rgba(26,10,0,.1)}
+.nosotros-year{font-family:var(--font-body);font-size:clamp(3.6rem,7vw,5rem);font-weight:700;color:var(--caramel);line-height:1;margin-bottom:.55rem;letter-spacing:-.04em}
+.n-pill{display:inline-flex;background:rgba(192,123,42,.08);color:var(--caramel);border:1px solid rgba(192,123,42,.18);border-radius:2rem;font-size:.73rem;font-weight:500;padding:.28rem .85rem;margin:.2rem .2rem 0 0}
+/* ── MAPA ── */
+#mapa{background:var(--choco);padding:4rem 2.5rem;text-align:center}
+#mapa .section-title{color:var(--cream)}
+#mapa .eyebrow{color:var(--caramel-lt)}
+.mapa-frame{border-radius:var(--r);overflow:hidden;margin-top:2rem;max-width:960px;margin-left:auto;margin-right:auto;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+@media(max-width:960px){.nosotros-grid,.nosotros-photos{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -317,7 +350,7 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
 <div class="cursor cursor-ring" id="cursor-ring"></div>
 
 <!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/34XXXXXXXXX?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20helado" class="wa-float" target="_blank" aria-label="WhatsApp">
+<a href="https://wa.me/34952468457?text=Hola%2C%20me%20gustar%C3%ADa%20hacer%20un%20pedido%20de%20helado" class="wa-float" target="_blank" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
@@ -340,10 +373,11 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="#novedades" onclick="closeMobile()" data-i18n="nav_new">Novedades</a>
-  <a href="#builder" onclick="closeMobile()" data-i18n="nav_builder">Tu helado</a>
   <a href="#carta" onclick="closeMobile()" data-i18n="nav_menu">Carta</a>
+  <a href="#builder" onclick="closeMobile()" data-i18n="nav_builder">Tu helado</a>
   <a href="#horario" onclick="closeMobile()" data-i18n="nav_hours">Horario</a>
   <a href="#takeaway" onclick="closeMobile()">Takeaway</a>
+  <a href="#delivery" onclick="closeMobile()" data-i18n="nav_delivery">Domicilio</a>
   <a href="#contacto" onclick="closeMobile()" data-i18n="nav_contact">Contacto</a>
   <div class="mobile-lang">
     <button class="lang-btn" onclick="setLang('es');closeMobile()">🇪🇸 ES</button>
@@ -357,10 +391,11 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
   <a href="#hero" class="nav-logo">900 <em>Italiana</em></a>
   <ul class="nav-links">
     <li><a href="#novedades" data-i18n="nav_new">Novedades</a></li>
-    <li><a href="#builder" data-i18n="nav_builder">Tu helado</a></li>
     <li><a href="#carta" data-i18n="nav_menu">Carta</a></li>
+    <li><a href="#builder" data-i18n="nav_builder">Tu helado</a></li>
     <li><a href="#horario" data-i18n="nav_hours">Horario</a></li>
     <li><a href="#takeaway">Takeaway</a></li>
+    <li><a href="#delivery" data-i18n="nav_delivery">Domicilio</a></li>
     <li><a href="#contacto" class="nav-reserve" data-i18n="nav_contact">Contacto</a></li>
   </ul>
   <button class="hamburger" id="hamburger" onclick="toggleMobile()">
@@ -385,7 +420,7 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
     </div>
     <div class="hero-stats">
       <div class="hero-stat reveal reveal-delay-1"><div class="hero-stat-num">+20</div><div class="hero-stat-label" data-i18n="stat1">Sabores artesanales</div></div>
-      <div class="hero-stat reveal reveal-delay-2"><div class="hero-stat-num">4.1★</div><div class="hero-stat-label" data-i18n="stat2">Google Reviews</div></div>
+      <div class="hero-stat reveal reveal-delay-2"><div class="hero-stat-num">4.3★</div><div class="hero-stat-label" data-i18n="stat2">Google Reviews</div></div>
       <div class="hero-stat reveal reveal-delay-3"><div class="hero-stat-num">∞</div><div class="hero-stat-label" data-i18n="stat3">Vistas al mar</div></div>
     </div>
   </div>
@@ -397,6 +432,46 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
   <div class="ticker-track" id="ticker-track"></div>
 </div>
 
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="nosotros-grid reveal">
+    <div class="nosotros-photos">
+      <div class="nosotros-photo-main">
+        <img src="assets/images/local.png" alt="Heladería 900 Italiana — fachada y terraza en el Paseo Marítimo de Fuengirola" loading="lazy">
+      </div>
+      <div class="nosotros-photo-sm">
+        <img src="assets/images/gelato.png" alt="Helado artesanal italiano en crêpe con chocolate" loading="lazy">
+      </div>
+      <div class="nosotros-photo-sm">
+        <img src="assets/images/desde1990.jpg" alt="Heladería 900 Italiana — Desde 1990" loading="lazy">
+      </div>
+      <div class="nosotros-photo-sm">
+        <img src="assets/images/sundae.png" alt="Copa de helado artesanal — Heladería 900 Italiana" loading="lazy">
+      </div>
+      <div class="nosotros-photo-sm">
+        <img src="assets/images/terraza.jpg" alt="Terraza con vistas al mar Mediterráneo — Fuengirola" loading="lazy">
+      </div>
+      <div class="nosotros-photo-main">
+        <img src="assets/images/lifestyle.png" alt="Disfrutando de un helado en la terraza — Heladería 900 Italiana" loading="lazy">
+      </div>
+    </div>
+    <div>
+      <div class="eyebrow" data-i18n="about_tag">Nuestra historia</div>
+      <div class="nosotros-year">1990</div>
+      <h2 class="section-title" style="font-size:clamp(1.8rem,3vw,2.6rem)" data-i18n="about_title">Más de 35 años haciendo <em>helado de verdad</em></h2>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.8;margin-top:1rem;margin-bottom:.9rem" data-i18n="about_p1">Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales.</p>
+      <p style="color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:1.25rem" data-i18n="about_p2">Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.</p>
+      <div>
+        <span class="n-pill">🤍 Sin gluten</span>
+        <span class="n-pill">🥛 Sin lactosa</span>
+        <span class="n-pill">🇮🇹 Recetas italianas</span>
+        <span class="n-pill">🏖️ Terraza frente al mar</span>
+        <span class="n-pill">🛵 Delivery a domicilio</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- NOVEDADES -->
 <section id="novedades">
   <div class="section-header reveal">
@@ -405,6 +480,18 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
     <p class="section-sub" data-i18n="new_sub">Creaciones nuevas elaboradas con los mejores ingredientes de la temporada.</p>
   </div>
   <div class="novedades-grid" id="novedades-grid"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CARTA -->
+<section id="carta">
+  <div class="section-header reveal">
+    <div class="eyebrow" data-i18n="menu_tag">Nuestra carta</div>
+    <h2 class="section-title" data-i18n="menu_title">Todo lo que ofrecemos</h2>
+  </div>
+  <div class="carta-tabs" id="carta-tabs"></div>
+  <div id="carta-panels"></div>
 </section>
 
 <div class="divider"></div>
@@ -440,18 +527,6 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
 
 <div class="divider" style="background:rgba(255,255,255,.06);margin:0"></div>
 
-<!-- CARTA -->
-<section id="carta">
-  <div class="section-header reveal">
-    <div class="eyebrow" data-i18n="menu_tag">Nuestra carta</div>
-    <h2 class="section-title" data-i18n="menu_title">Todo lo que ofrecemos</h2>
-  </div>
-  <div class="carta-tabs" id="carta-tabs"></div>
-  <div id="carta-panels"></div>
-</section>
-
-<div class="divider"></div>
-
 <!-- HORARIO & RESERVA -->
 <section id="horario">
   <div class="horario-grid">
@@ -466,10 +541,10 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
         <div class="eyebrow" style="color:var(--caramel-lt)" data-i18n="res_tag">Reservas & contacto</div>
         <h3 data-i18n="res_title">Celebra con nosotros</h3>
         <p data-i18n="res_desc">Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.</p>
-        <span class="phone-big">+34 XXX XXX XXX</span>
+        <span class="phone-big">+34 952 46 84 57</span>
         <div class="reserve-icons">
-          <a href="https://wa.me/34XXXXXXXXX" class="reserve-icon-btn btn-wa" target="_blank">💬 WhatsApp</a>
-          <a href="tel:+34XXXXXXXXX" class="reserve-icon-btn btn-call">📞 <span data-i18n="btn_call">Llamar</span></a>
+          <a href="https://wa.me/34952468457" class="reserve-icon-btn btn-wa" target="_blank">💬 WhatsApp</a>
+          <a href="tel:+34952468457" class="reserve-icon-btn btn-call">📞 <span data-i18n="btn_call">Llamar</span></a>
           <a href="https://instagram.com/heladeria900italiana" class="reserve-icon-btn btn-ig" target="_blank">📸 Instagram</a>
         </div>
       </div>
@@ -552,6 +627,68 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
 
 <div class="divider"></div>
 
+<!-- DELIVERY -->
+<section id="delivery">
+  <div class="takeaway-layout">
+    <div>
+      <div class="eyebrow" data-i18n="del_tag">Delivery · Envío a domicilio</div>
+      <h2 class="section-title reveal" data-i18n="del_title">Te lo llevamos a casa</h2>
+      <p class="section-sub reveal" data-i18n="del_sub">Helado artesanal directamente en tu puerta. Disponible en Fuengirola y alrededores.</p>
+      <div class="delivery-zones reveal">
+        <div class="zone-card">
+          <div class="zone-name" data-i18n="del_zone1_name">Zona 1</div>
+          <div class="zone-km">≤ 2 km</div>
+          <div class="zone-time" data-i18n="del_zone1_time">~20 min</div>
+          <div class="zone-area" data-i18n="del_zone1_area">Fuengirola centro · Paseo Marítimo · Zona playa</div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-name" data-i18n="del_zone2_name">Zona 2</div>
+          <div class="zone-km">2 – 5 km</div>
+          <div class="zone-time" data-i18n="del_zone2_time">~35 min</div>
+          <div class="zone-area" data-i18n="del_zone2_area">Los Boliches · Carvajal · Torreblanca</div>
+        </div>
+        <div class="zone-card">
+          <div class="zone-name" data-i18n="del_zone3_name">Zona 3</div>
+          <div class="zone-km">5 – 10 km</div>
+          <div class="zone-time" data-i18n="del_zone3_time">~50 min</div>
+          <div class="zone-area" data-i18n="del_zone3_area">Mijas Costa · Benalmádena · Consultar disponibilidad</div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem;padding:1rem 1.25rem;background:var(--white);border-radius:.75rem;font-size:.82rem;color:var(--muted);line-height:1.6;border:1px solid rgba(26,10,0,.06)">
+        <strong style="color:var(--choco)" data-i18n="del_note_strong">🛵 Pago en efectivo al entregar.</strong> <span data-i18n="del_note">Tiempo estimado según tráfico. Condiciones y zona mínima confirmadas al tramitar el pedido.</span>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="order-card">
+        <h3 data-i18n="del_form_title">Pedir a domicilio</h3>
+        <div class="field"><label data-i18n="f_name">Tu nombre</label><input type="text" id="d-name" placeholder="Ej: María García"></div>
+        <div class="field-row">
+          <div class="field"><label data-i18n="f_phone">Teléfono</label><input type="tel" id="d-phone" placeholder="+34 6XX XXX XXX"></div>
+          <div class="field"><label data-i18n="del_f_time">Hora entrega</label><input type="time" id="d-time"></div>
+        </div>
+        <div class="field"><label data-i18n="del_f_addr">Dirección completa</label><input type="text" id="d-addr" data-i18n-ph="del_f_addr_ph" placeholder="Calle, número, piso, localidad"></div>
+        <div class="field">
+          <label data-i18n="f_size">Tamaño</label>
+          <select id="d-size">
+            <option value="" data-i18n="f_pick">Selecciona...</option>
+            <option data-i18n="sz1">Tarrina pequeña – 3,50 €</option>
+            <option data-i18n="sz2">Tarrina mediana – 4,50 €</option>
+            <option data-i18n="sz3">Tarrina grande – 5,50 €</option>
+            <option>½ Litro – 9,50 €</option>
+            <option>1 Litro – 17,00 €</option>
+          </select>
+        </div>
+        <div class="field"><label data-i18n="f_flavors">Sabores (hasta 3)</label><input type="text" id="d-flavors" placeholder="pistacho, stracciatella, turrón"></div>
+        <div class="field"><label data-i18n="f_notes">Notas / alergias</label><textarea id="d-notes" placeholder="Peticiones especiales..."></textarea></div>
+        <button class="submit-btn" onclick="submitDelivery()" data-i18n="del_f_submit">Solicitar entrega a domicilio</button>
+        <p class="field-note" data-i18n="del_f_note">Te llamamos para confirmar · Pago al entregar</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- FAQ -->
 <section id="faq">
   <div style="max-width:740px;margin:0 auto">
@@ -576,7 +713,7 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
         <div class="contact-info-item"><div class="contact-icon">📍</div><div><h4 data-i18n="ci_addr">Dirección</h4><p>Paseo Marítimo Rey de España, Fuengirola, Málaga</p></div></div>
         <div class="contact-info-item"><div class="contact-icon">🕐</div><div><h4 data-i18n="ci_hours">Horario</h4><p data-i18n="ci_hours_val">Abierto todos los días — ver horario completo arriba</p></div></div>
         <div class="contact-info-item"><div class="contact-icon">📱</div><div><h4>Instagram</h4><p><a href="https://instagram.com/heladeria900italiana" target="_blank">@heladeria900italiana</a></p></div></div>
-        <div class="contact-info-item"><div class="contact-icon">🗺️</div><div><h4>Google Maps</h4><p><a href="https://maps.google.com/?q=Heladeria+900+Italiana+Fuengirola" target="_blank" data-i18n="ci_maps">Ver en Google Maps →</a></p></div></div>
+        <div class="contact-info-item"><div class="contact-icon">🗺️</div><div><h4>Google Maps</h4><p><a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" data-i18n="ci_maps">Ver en Google Maps →</a></p></div></div>
       </div>
     </div>
     <div class="reveal">
@@ -600,6 +737,17 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
   </div>
 </section>
 
+<!-- MAPA -->
+<section id="mapa">
+  <div class="eyebrow" data-i18n="mapa_tag">Encuéntranos</div>
+  <h2 class="section-title reveal" data-i18n="mapa_title">¡Estamos aquí!</h2>
+  <p style="color:rgba(251,247,242,.5);font-size:.9rem;margin-top:.5rem" data-i18n="mapa_sub">Paseo Marítimo Rey de España · Fuengirola, Málaga</p>
+  <div class="mapa-frame reveal">
+    <iframe src="https://maps.google.com/maps?q=36.5311123,-4.6248252&hl=es&z=17&output=embed" loading="lazy" style="width:100%;height:420px;border:0" title="Heladería 900 Italiana Fuengirola" allowfullscreen></iframe>
+  </div>
+  <p style="margin-top:1.25rem"><a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="color:var(--caramel-lt);font-size:.85rem" data-i18n="mapa_link">Abrir en Google Maps →</a></p>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-grid">
@@ -621,10 +769,10 @@ footer{background:var(--choco);color:var(--cream);padding:3.5rem 2.5rem 2rem}
     <div class="footer-col">
       <h4 data-i18n="foot_contact">Contacto</h4>
       <ul>
-        <li><a href="tel:+34XXXXXXXXX">+34 XXX XXX XXX</a></li>
+        <li><a href="tel:+34952468457">+34 952 46 84 57</a></li>
         <li><a href="https://instagram.com/heladeria900italiana" target="_blank">@heladeria900italiana</a></li>
-        <li><a href="https://maps.google.com/?q=Heladeria+900+Italiana+Fuengirola" target="_blank" data-i18n="ci_maps">Google Maps →</a></li>
-        <li><a href="https://wa.me/34XXXXXXXXX" target="_blank">WhatsApp</a></li>
+        <li><a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" data-i18n="ci_maps">Google Maps →</a></li>
+        <li><a href="https://wa.me/34952468457" target="_blank">WhatsApp</a></li>
       </ul>
     </div>
   </div>
@@ -774,9 +922,9 @@ const FAQ_DATA = {
 };
 
 const I18N = {
-  es:{langbar_text:'Fuengirola · Paseo Marítimo · <span>Primera línea de playa</span>',nav_new:'Novedades',nav_builder:'Tu helado',nav_menu:'Carta',nav_hours:'Horario',nav_contact:'Contacto',hero_eyebrow:'Heladería artesanal · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'auténtico italiano',hero_sub:'Elaborado cada día con recetas de la tradición italiana. Más de 20 sabores artesanales, cremosidad incomparable y las mejores vistas del paseo marítimo de Fuengirola.',hero_cta1:'🍦 Crea tu helado',hero_cta2:'Pedir para llevar',stat1:'Sabores artesanales',stat2:'Google Reviews',stat3:'Vistas al mar',scroll_label:'Descubre',new_tag:'Novedades de temporada',new_title:'Sabores que no puedes perderte',new_sub:'Creaciones nuevas elaboradas con los mejores ingredientes de la temporada.',build_tag:'Configura tu pedido',build_title:'Crea tu helado perfecto',build_sub:'Elige tus sabores y tamaño. Lo tenemos listo cuando llegues.',preview_title:'Tu tarrina',preview_empty:'Elige hasta 3 sabores →',size_label:'Tamaño',build_cta:'Reservar este pedido →',menu_tag:'Nuestra carta',menu_title:'Todo lo que ofrecemos',hours_tag:'Horario',hours_title:'¿Cuándo visitarnos?',hours_sub:'Abiertos todos los días del año, con horario ampliado en verano.',res_tag:'Reservas & contacto',res_title:'Celebra con nosotros',res_desc:'Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.',btn_call:'Llamar',rev_tag:'Google Reviews',rev_title:'Lo que dicen nuestros clientes',rev_sub:'Opiniones reales — de británicos, alemanes, españoles y más.',playa_title:'¿En la playa? Pasa a buscarnos',playa_sub:'Estamos a metros de la arena. Pide tu tarrina para llevar y disfrútala con los pies en el agua.',playa_cta:'Pedir para llevar 🍦',tk_tag:'Takeaway · Recogida en local',tk_title:'Tu helado listo cuando llegues',tk_sub:'Sin colas. Sin esperar. Solo el mejor gelato artesanal preparado para ti.',s1h:'Rellena el formulario',s1p:'Elige sabores, tamaño y hora de recogida.',s2h:'Confirmamos por teléfono',s2p:'Te llamamos para confirmar disponibilidad.',s3h:'Recoge y disfruta',s3p:'Pasa a la hora acordada y llévate tu helado. Pago en local.',tk_note_strong:'⚠️ Solo recogida en local.',tk_note:'No realizamos envíos a domicilio. Las tarrinas de ½L y 1L son ideales para llevar a la playa.',form_title:'Solicitar pedido',f_name:'Tu nombre',f_phone:'Teléfono',f_time:'Hora recogida',f_size:'Tamaño',f_pick:'Selecciona...',f_flavors:'Sabores (hasta 3)',f_notes:'Notas / alergias',f_submit:'Enviar solicitud de pedido',f_note:'Te contactamos para confirmar · Pago en local',sz1:'Tarrina pequeña – 3,50 €',sz2:'Tarrina mediana – 4,50 €',sz3:'Tarrina grande – 5,50 €',faq_tag:'FAQ',faq_title:'Preguntas frecuentes',ct_tag:'Encuéntranos',ct_title:'Visítanos en Fuengirola',ct_sub:'Primera línea de playa, terraza con vistas al Mediterráneo.',ci_addr:'Dirección',ci_hours:'Horario',ci_hours_val:'Abierto todos los días — ver horario completo arriba',ci_maps:'Ver en Google Maps →',cf_title:'¿Alguna pregunta?',cf_subject:'Asunto',cf_o1:'Consulta general',cf_o2:'Reserva para grupo',cf_o3:'Evento / cumpleaños',cf_o4:'Otro',cf_msg:'Mensaje',cf_send:'Enviar mensaje',foot_tagline:'Heladería artesanal en el Paseo Marítimo de Fuengirola.',foot_nav:'Navegación',foot_contact:'Contacto',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Cerrar',open_now:'Abierto ahora',closed_now:'Cerrado ahora',today_label:'Hoy',order_ok_title:'¡Pedido recibido!',order_ok_body:'Hemos recibido tu solicitud. Te llamamos para confirmar. Pago en local.',contact_ok_title:'¡Mensaje enviado!',contact_ok_body:'Gracias, te responderemos pronto.',err_title:'Faltan datos',err_body:'Por favor, rellena todos los campos obligatorios.'},
-  en:{langbar_text:'Fuengirola · Seafront Promenade · <span>Beach front</span>',nav_new:'New',nav_builder:'Build yours',nav_menu:'Menu',nav_hours:'Hours',nav_contact:'Contact',hero_eyebrow:'Artisan Ice Cream · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'authentic Italian',hero_sub:'Made fresh every day following Italian tradition. Over 20 artisan flavours, unmatched creaminess and the best sea views on the Fuengirola promenade.',hero_cta1:'🍦 Build your gelato',hero_cta2:'Order takeaway',stat1:'Artisan flavours',stat2:'Google Reviews',stat3:'Sea views',scroll_label:'Discover',new_tag:'Seasonal specials',new_title:"Flavours you can't miss",new_sub:'New creations made with the finest seasonal ingredients.',build_tag:'Configure your order',build_title:'Create your perfect gelato',build_sub:'Pick your flavours and size. Ready when you arrive.',preview_title:'Your tub',preview_empty:'Choose up to 3 flavours →',size_label:'Size',build_cta:'Reserve this order →',menu_tag:'Our menu',menu_title:'Everything we offer',hours_tag:'Opening Hours',hours_title:'When to visit us?',hours_sub:'Open every day of the year, with extended hours in summer.',res_tag:'Bookings & contact',res_title:'Celebrate with us',res_desc:'Birthdays, groups, special events. Call us or message us and we\'ll sort it out.',btn_call:'Call us',rev_tag:'Google Reviews',rev_title:'What our customers say',rev_sub:'Real reviews — from British, German, Spanish visitors and more.',playa_title:'On the beach? Come find us',playa_sub:"We're just metres from the sand. Order your tub to go and enjoy it with your feet in the water.",playa_cta:'Order takeaway 🍦',tk_tag:'Takeaway · In-store collection',tk_title:'Your gelato ready when you arrive',tk_sub:'No queues. No waiting. Just the best artisan gelato prepared for you.',s1h:'Fill in the form',s1p:'Choose flavours, size and collection time.',s2h:'We confirm by phone',s2p:'We call you to confirm availability.',s3h:'Collect and enjoy',s3p:'Come at the agreed time. Payment in store.',tk_note_strong:'⚠️ In-store collection only.',tk_note:'We do not offer home delivery. The ½L and 1L tubs are ideal for the beach.',form_title:'Request an order',f_name:'Your name',f_phone:'Phone',f_time:'Collection time',f_size:'Size',f_pick:'Select...',f_flavors:'Flavours (up to 3)',f_notes:'Notes / allergies',f_submit:'Send order request',f_note:'We\'ll contact you to confirm · Payment in store',sz1:'Small tub – 3.50 €',sz2:'Medium tub – 4.50 €',sz3:'Large tub – 5.50 €',faq_tag:'FAQ',faq_title:'Frequently asked questions',ct_tag:'Find us',ct_title:'Visit us in Fuengirola',ct_sub:'Right on the beachfront, terrace with Mediterranean views.',ci_addr:'Address',ci_hours:'Opening hours',ci_hours_val:'Open every day — see full hours above',ci_maps:'View on Google Maps →',cf_title:'Got a question?',cf_subject:'Subject',cf_o1:'General enquiry',cf_o2:'Group booking',cf_o3:'Event / birthday',cf_o4:'Other',cf_msg:'Message',cf_send:'Send message',foot_tagline:'Artisan gelateria on the Fuengirola seafront promenade.',foot_nav:'Navigation',foot_contact:'Contact',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Close',open_now:'Open now',closed_now:'Closed now',today_label:'Today',order_ok_title:'Order received!',order_ok_body:"We've received your request. We'll call to confirm. Payment in store.",contact_ok_title:'Message sent!',contact_ok_body:"Thanks, we'll get back to you soon.",err_title:'Missing details',err_body:'Please fill in all required fields.'},
-  de:{langbar_text:'Fuengirola · Strandpromenade · <span>Direkt am Strand</span>',nav_new:'Neuheiten',nav_builder:'Dein Eis',nav_menu:'Speisekarte',nav_hours:'Öffnungszeiten',nav_contact:'Kontakt',hero_eyebrow:'Handgemachtes Eis · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'authentisch italienisch',hero_sub:'Täglich frisch nach italienischer Tradition. Über 20 handgemachte Sorten, unvergleichliche Cremigkeit und der schönste Meerblick der Promenade.',hero_cta1:'🍦 Dein Eis gestalten',hero_cta2:'Zum Mitnehmen bestellen',stat1:'Handgemachte Sorten',stat2:'Google Bewertungen',stat3:'Meerblick',scroll_label:'Entdecken',new_tag:'Saisonale Spezialitäten',new_title:'Sorten, die Sie nicht verpassen sollten',new_sub:'Neue Kreationen aus den besten Saisonzutaten.',build_tag:'Bestellung konfigurieren',build_title:'Ihr perfektes Gelato kreieren',build_sub:'Wählen Sie Sorten und Größe. Fertig wenn Sie ankommen.',preview_title:'Ihr Becher',preview_empty:'Bis zu 3 Sorten wählen →',size_label:'Größe',build_cta:'Diese Bestellung reservieren →',menu_tag:'Unsere Speisekarte',menu_title:'Unser gesamtes Angebot',hours_tag:'Öffnungszeiten',hours_title:'Wann uns besuchen?',hours_sub:'Täglich geöffnet, mit verlängerten Zeiten im Sommer.',res_tag:'Reservierungen & Kontakt',res_title:'Feiern Sie mit uns',res_desc:'Geburtstage, Gruppen, besondere Anlässe. Rufen Sie uns an oder schreiben Sie uns.',btn_call:'Anrufen',rev_tag:'Google Bewertungen',rev_title:'Was unsere Gäste sagen',rev_sub:'Echte Bewertungen — von britischen, deutschen, spanischen Gästen und mehr.',playa_title:'Am Strand? Kommen Sie vorbei',playa_sub:'Wir sind nur Meter vom Sand entfernt. Bestellen Sie Ihren Becher zum Mitnehmen.',playa_cta:'Zum Mitnehmen bestellen 🍦',tk_tag:'Mitnahme · Abholung im Laden',tk_title:'Ihr Gelato fertig wenn Sie ankommen',tk_sub:'Keine Warteschlangen. Nur das beste handgemachte Gelato für Sie.',s1h:'Formular ausfüllen',s1p:'Sorten, Größe und Abholzeit wählen.',s2h:'Wir bestätigen per Telefon',s2p:'Wir rufen zur Bestätigung an.',s3h:'Abholen und genießen',s3p:'Kommen Sie zur vereinbarten Zeit. Zahlung vor Ort.',tk_note_strong:'⚠️ Nur Abholung im Laden.',tk_note:'Keine Heimlieferung. Die ½L- und 1L-Becher sind ideal für den Strand.',form_title:'Bestellung anfragen',f_name:'Ihr Name',f_phone:'Telefon',f_time:'Abholzeit',f_size:'Größe',f_pick:'Bitte wählen...',f_flavors:'Eissorten (bis zu 3)',f_notes:'Hinweise / Allergien',f_submit:'Bestellung absenden',f_note:'Wir melden uns zur Bestätigung · Zahlung vor Ort',sz1:'Kleiner Becher – 3,50 €',sz2:'Mittlerer Becher – 4,50 €',sz3:'Großer Becher – 5,50 €',faq_tag:'FAQ',faq_title:'Häufig gestellte Fragen',ct_tag:'Finden Sie uns',ct_title:'Besuchen Sie uns in Fuengirola',ct_sub:'Direkt am Strand, Terrasse mit Meerblick.',ci_addr:'Adresse',ci_hours:'Öffnungszeiten',ci_hours_val:'Täglich geöffnet — vollständige Zeiten oben',ci_maps:'Auf Google Maps →',cf_title:'Haben Sie eine Frage?',cf_subject:'Betreff',cf_o1:'Allgemeine Anfrage',cf_o2:'Gruppenreservierung',cf_o3:'Event / Geburtstag',cf_o4:'Sonstiges',cf_msg:'Nachricht',cf_send:'Nachricht senden',foot_tagline:'Handgemachte Gelateria an der Strandpromenade Fuengirola.',foot_nav:'Navigation',foot_contact:'Kontakt',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Schließen',open_now:'Jetzt geöffnet',closed_now:'Jetzt geschlossen',today_label:'Heute',order_ok_title:'Bestellung erhalten!',order_ok_body:'Ihre Anfrage ist eingegangen. Wir rufen zur Bestätigung an. Zahlung vor Ort.',contact_ok_title:'Nachricht gesendet!',contact_ok_body:'Vielen Dank, wir melden uns bald.',err_title:'Fehlende Angaben',err_body:'Bitte alle Pflichtfelder ausfüllen.'}
+  es:{langbar_text:'Fuengirola · Paseo Marítimo · <span>Primera línea de playa</span>',nav_new:'Novedades',nav_builder:'Tu helado',nav_menu:'Carta',nav_hours:'Horario',nav_contact:'Contacto',hero_eyebrow:'Heladería artesanal · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'auténtico italiano',hero_sub:'Elaborado cada día con recetas de la tradición italiana. Más de 20 sabores artesanales, cremosidad incomparable y las mejores vistas del paseo marítimo de Fuengirola.',hero_cta1:'🍦 Crea tu helado',hero_cta2:'Pedir para llevar',stat1:'Sabores artesanales',stat2:'Google Reviews',stat3:'Vistas al mar',scroll_label:'Descubre',new_tag:'Novedades de temporada',new_title:'Sabores que no puedes perderte',new_sub:'Creaciones nuevas elaboradas con los mejores ingredientes de la temporada.',build_tag:'Configura tu pedido',build_title:'Crea tu helado perfecto',build_sub:'Elige tus sabores y tamaño. Lo tenemos listo cuando llegues.',preview_title:'Tu tarrina',preview_empty:'Elige hasta 3 sabores →',size_label:'Tamaño',build_cta:'Reservar este pedido →',menu_tag:'Nuestra carta',menu_title:'Todo lo que ofrecemos',hours_tag:'Horario',hours_title:'¿Cuándo visitarnos?',hours_sub:'Abiertos todos los días del año, con horario ampliado en verano.',res_tag:'Reservas & contacto',res_title:'Celebra con nosotros',res_desc:'Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.',btn_call:'Llamar',rev_tag:'Google Reviews',rev_title:'Lo que dicen nuestros clientes',rev_sub:'Opiniones reales — de británicos, alemanes, españoles y más.',playa_title:'¿En la playa? Pasa a buscarnos',playa_sub:'Estamos a metros de la arena. Pide tu tarrina para llevar y disfrútala con los pies en el agua.',playa_cta:'Pedir para llevar 🍦',tk_tag:'Takeaway · Recogida en local',tk_title:'Tu helado listo cuando llegues',tk_sub:'Sin colas. Sin esperar. Solo el mejor gelato artesanal preparado para ti.',s1h:'Rellena el formulario',s1p:'Elige sabores, tamaño y hora de recogida.',s2h:'Confirmamos por teléfono',s2p:'Te llamamos para confirmar disponibilidad.',s3h:'Recoge y disfruta',s3p:'Pasa a la hora acordada y llévate tu helado. Pago en local.',tk_note_strong:'⚠️ Solo recogida en local.',tk_note:'No realizamos envíos a domicilio. Las tarrinas de ½L y 1L son ideales para llevar a la playa.',form_title:'Solicitar pedido',f_name:'Tu nombre',f_phone:'Teléfono',f_time:'Hora recogida',f_size:'Tamaño',f_pick:'Selecciona...',f_flavors:'Sabores (hasta 3)',f_notes:'Notas / alergias',f_submit:'Enviar solicitud de pedido',f_note:'Te contactamos para confirmar · Pago en local',sz1:'Tarrina pequeña – 3,50 €',sz2:'Tarrina mediana – 4,50 €',sz3:'Tarrina grande – 5,50 €',faq_tag:'FAQ',faq_title:'Preguntas frecuentes',ct_tag:'Encuéntranos',ct_title:'Visítanos en Fuengirola',ct_sub:'Primera línea de playa, terraza con vistas al Mediterráneo.',ci_addr:'Dirección',ci_hours:'Horario',ci_hours_val:'Abierto todos los días — ver horario completo arriba',ci_maps:'Ver en Google Maps →',cf_title:'¿Alguna pregunta?',cf_subject:'Asunto',cf_o1:'Consulta general',cf_o2:'Reserva para grupo',cf_o3:'Evento / cumpleaños',cf_o4:'Otro',cf_msg:'Mensaje',cf_send:'Enviar mensaje',foot_tagline:'Heladería artesanal en el Paseo Marítimo de Fuengirola.',foot_nav:'Navegación',foot_contact:'Contacto',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Cerrar',open_now:'Abierto ahora',closed_now:'Cerrado ahora',today_label:'Hoy',order_ok_title:'¡Pedido recibido!',order_ok_body:'Hemos recibido tu solicitud. Te llamamos para confirmar. Pago en local.',contact_ok_title:'¡Mensaje enviado!',contact_ok_body:'Gracias, te responderemos pronto.',err_title:'Faltan datos',err_body:'Por favor, rellena todos los campos obligatorios.',about_tag:'Nuestra historia',about_title:'Más de 35 años haciendo <em>helado de verdad</em>',about_p1:'Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales.',about_p2:'Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.',mapa_tag:'Encuéntranos',mapa_title:'¡Estamos aquí!',mapa_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',mapa_link:'Abrir en Google Maps →',nav_delivery:'Domicilio',del_tag:'Delivery · Envío a domicilio',del_title:'Te lo llevamos a casa',del_sub:'Helado artesanal directamente en tu puerta. Disponible en Fuengirola y alrededores.',del_zone1_name:'Zona 1',del_zone1_time:'~20 min',del_zone1_area:'Fuengirola centro · Paseo Marítimo · Zona playa',del_zone2_name:'Zona 2',del_zone2_time:'~35 min',del_zone2_area:'Los Boliches · Carvajal · Torreblanca',del_zone3_name:'Zona 3',del_zone3_time:'~50 min',del_zone3_area:'Mijas Costa · Benalmádena · Consultar disponibilidad',del_note_strong:'🛵 Pago en efectivo al entregar.',del_note:'Tiempo estimado según tráfico. Condiciones y zona mínima confirmadas al tramitar el pedido.',del_form_title:'Pedir a domicilio',del_f_addr:'Dirección completa',del_f_addr_ph:'Calle, número, piso, localidad',del_f_time:'Hora entrega',del_f_submit:'Solicitar entrega a domicilio',del_f_note:'Te llamamos para confirmar · Pago al entregar',del_ok_title:'¡Pedido a domicilio recibido!',del_ok_body:'Hemos recibido tu solicitud. Te llamamos para confirmar tiempo y condiciones.'},
+  en:{langbar_text:'Fuengirola · Seafront Promenade · <span>Beach front</span>',nav_new:'New',nav_builder:'Build yours',nav_menu:'Menu',nav_hours:'Hours',nav_contact:'Contact',hero_eyebrow:'Artisan Ice Cream · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'authentic Italian',hero_sub:'Made fresh every day following Italian tradition. Over 20 artisan flavours, unmatched creaminess and the best sea views on the Fuengirola promenade.',hero_cta1:'🍦 Build your gelato',hero_cta2:'Order takeaway',stat1:'Artisan flavours',stat2:'Google Reviews',stat3:'Sea views',scroll_label:'Discover',new_tag:'Seasonal specials',new_title:"Flavours you can't miss",new_sub:'New creations made with the finest seasonal ingredients.',build_tag:'Configure your order',build_title:'Create your perfect gelato',build_sub:'Pick your flavours and size. Ready when you arrive.',preview_title:'Your tub',preview_empty:'Choose up to 3 flavours →',size_label:'Size',build_cta:'Reserve this order →',menu_tag:'Our menu',menu_title:'Everything we offer',hours_tag:'Opening Hours',hours_title:'When to visit us?',hours_sub:'Open every day of the year, with extended hours in summer.',res_tag:'Bookings & contact',res_title:'Celebrate with us',res_desc:'Birthdays, groups, special events. Call us or message us and we\'ll sort it out.',btn_call:'Call us',rev_tag:'Google Reviews',rev_title:'What our customers say',rev_sub:'Real reviews — from British, German, Spanish visitors and more.',playa_title:'On the beach? Come find us',playa_sub:"We're just metres from the sand. Order your tub to go and enjoy it with your feet in the water.",playa_cta:'Order takeaway 🍦',tk_tag:'Takeaway · In-store collection',tk_title:'Your gelato ready when you arrive',tk_sub:'No queues. No waiting. Just the best artisan gelato prepared for you.',s1h:'Fill in the form',s1p:'Choose flavours, size and collection time.',s2h:'We confirm by phone',s2p:'We call you to confirm availability.',s3h:'Collect and enjoy',s3p:'Come at the agreed time. Payment in store.',tk_note_strong:'⚠️ In-store collection only.',tk_note:'We do not offer home delivery. The ½L and 1L tubs are ideal for the beach.',form_title:'Request an order',f_name:'Your name',f_phone:'Phone',f_time:'Collection time',f_size:'Size',f_pick:'Select...',f_flavors:'Flavours (up to 3)',f_notes:'Notes / allergies',f_submit:'Send order request',f_note:'We\'ll contact you to confirm · Payment in store',sz1:'Small tub – 3.50 €',sz2:'Medium tub – 4.50 €',sz3:'Large tub – 5.50 €',faq_tag:'FAQ',faq_title:'Frequently asked questions',ct_tag:'Find us',ct_title:'Visit us in Fuengirola',ct_sub:'Right on the beachfront, terrace with Mediterranean views.',ci_addr:'Address',ci_hours:'Opening hours',ci_hours_val:'Open every day — see full hours above',ci_maps:'View on Google Maps →',cf_title:'Got a question?',cf_subject:'Subject',cf_o1:'General enquiry',cf_o2:'Group booking',cf_o3:'Event / birthday',cf_o4:'Other',cf_msg:'Message',cf_send:'Send message',foot_tagline:'Artisan gelateria on the Fuengirola seafront promenade.',foot_nav:'Navigation',foot_contact:'Contact',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Close',open_now:'Open now',closed_now:'Closed now',today_label:'Today',order_ok_title:'Order received!',order_ok_body:"We've received your request. We'll call to confirm. Payment in store.",contact_ok_title:'Message sent!',contact_ok_body:"Thanks, we'll get back to you soon.",err_title:'Missing details',err_body:'Please fill in all required fields.',about_tag:'Our story',about_title:'Over 35 years making <em>real ice cream</em>',about_p1:'Since 1990, we handcraft our gelato every day following authentic Italian recipes. No shortcuts, no artificial additives.',about_p2:'Seafront on the Paseo Marítimo Rey de España, with a terrace and direct Mediterranean views.',mapa_tag:'Find us',mapa_title:'We are here!',mapa_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',mapa_link:'Open in Google Maps →',nav_delivery:'Delivery',del_tag:'Delivery · Home delivery',del_title:'We bring it to you',del_sub:'Artisan gelato delivered straight to your door. Available in Fuengirola and surrounding areas.',del_zone1_name:'Zone 1',del_zone1_time:'~20 min',del_zone1_area:'Fuengirola town centre · Seafront · Beach area',del_zone2_name:'Zone 2',del_zone2_time:'~35 min',del_zone2_area:'Los Boliches · Carvajal · Torreblanca',del_zone3_name:'Zone 3',del_zone3_time:'~50 min',del_zone3_area:'Mijas Costa · Benalmádena · Check availability',del_note_strong:'🛵 Cash on delivery.',del_note:'Estimated times depend on traffic. Zones and conditions confirmed when ordering.',del_form_title:'Order home delivery',del_f_addr:'Full address',del_f_addr_ph:'Street, number, floor, town',del_f_time:'Delivery time',del_f_submit:'Request home delivery',del_f_note:"We'll call to confirm · Payment on delivery",del_ok_title:'Delivery order received!',del_ok_body:"We've received your request. We'll call to confirm timing and conditions."},
+  de:{langbar_text:'Fuengirola · Strandpromenade · <span>Direkt am Strand</span>',nav_new:'Neuheiten',nav_builder:'Dein Eis',nav_menu:'Speisekarte',nav_hours:'Öffnungszeiten',nav_contact:'Kontakt',hero_eyebrow:'Handgemachtes Eis · Fuengirola',hero_h1a:'Il gelato',hero_h1b:'authentisch italienisch',hero_sub:'Täglich frisch nach italienischer Tradition. Über 20 handgemachte Sorten, unvergleichliche Cremigkeit und der schönste Meerblick der Promenade.',hero_cta1:'🍦 Dein Eis gestalten',hero_cta2:'Zum Mitnehmen bestellen',stat1:'Handgemachte Sorten',stat2:'Google Bewertungen',stat3:'Meerblick',scroll_label:'Entdecken',new_tag:'Saisonale Spezialitäten',new_title:'Sorten, die Sie nicht verpassen sollten',new_sub:'Neue Kreationen aus den besten Saisonzutaten.',build_tag:'Bestellung konfigurieren',build_title:'Ihr perfektes Gelato kreieren',build_sub:'Wählen Sie Sorten und Größe. Fertig wenn Sie ankommen.',preview_title:'Ihr Becher',preview_empty:'Bis zu 3 Sorten wählen →',size_label:'Größe',build_cta:'Diese Bestellung reservieren →',menu_tag:'Unsere Speisekarte',menu_title:'Unser gesamtes Angebot',hours_tag:'Öffnungszeiten',hours_title:'Wann uns besuchen?',hours_sub:'Täglich geöffnet, mit verlängerten Zeiten im Sommer.',res_tag:'Reservierungen & Kontakt',res_title:'Feiern Sie mit uns',res_desc:'Geburtstage, Gruppen, besondere Anlässe. Rufen Sie uns an oder schreiben Sie uns.',btn_call:'Anrufen',rev_tag:'Google Bewertungen',rev_title:'Was unsere Gäste sagen',rev_sub:'Echte Bewertungen — von britischen, deutschen, spanischen Gästen und mehr.',playa_title:'Am Strand? Kommen Sie vorbei',playa_sub:'Wir sind nur Meter vom Sand entfernt. Bestellen Sie Ihren Becher zum Mitnehmen.',playa_cta:'Zum Mitnehmen bestellen 🍦',tk_tag:'Mitnahme · Abholung im Laden',tk_title:'Ihr Gelato fertig wenn Sie ankommen',tk_sub:'Keine Warteschlangen. Nur das beste handgemachte Gelato für Sie.',s1h:'Formular ausfüllen',s1p:'Sorten, Größe und Abholzeit wählen.',s2h:'Wir bestätigen per Telefon',s2p:'Wir rufen zur Bestätigung an.',s3h:'Abholen und genießen',s3p:'Kommen Sie zur vereinbarten Zeit. Zahlung vor Ort.',tk_note_strong:'⚠️ Nur Abholung im Laden.',tk_note:'Keine Heimlieferung. Die ½L- und 1L-Becher sind ideal für den Strand.',form_title:'Bestellung anfragen',f_name:'Ihr Name',f_phone:'Telefon',f_time:'Abholzeit',f_size:'Größe',f_pick:'Bitte wählen...',f_flavors:'Eissorten (bis zu 3)',f_notes:'Hinweise / Allergien',f_submit:'Bestellung absenden',f_note:'Wir melden uns zur Bestätigung · Zahlung vor Ort',sz1:'Kleiner Becher – 3,50 €',sz2:'Mittlerer Becher – 4,50 €',sz3:'Großer Becher – 5,50 €',faq_tag:'FAQ',faq_title:'Häufig gestellte Fragen',ct_tag:'Finden Sie uns',ct_title:'Besuchen Sie uns in Fuengirola',ct_sub:'Direkt am Strand, Terrasse mit Meerblick.',ci_addr:'Adresse',ci_hours:'Öffnungszeiten',ci_hours_val:'Täglich geöffnet — vollständige Zeiten oben',ci_maps:'Auf Google Maps →',cf_title:'Haben Sie eine Frage?',cf_subject:'Betreff',cf_o1:'Allgemeine Anfrage',cf_o2:'Gruppenreservierung',cf_o3:'Event / Geburtstag',cf_o4:'Sonstiges',cf_msg:'Nachricht',cf_send:'Nachricht senden',foot_tagline:'Handgemachte Gelateria an der Strandpromenade Fuengirola.',foot_nav:'Navigation',foot_contact:'Kontakt',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga',modal_close:'Schließen',open_now:'Jetzt geöffnet',closed_now:'Jetzt geschlossen',today_label:'Heute',order_ok_title:'Bestellung erhalten!',order_ok_body:'Ihre Anfrage ist eingegangen. Wir rufen zur Bestätigung an. Zahlung vor Ort.',contact_ok_title:'Nachricht gesendet!',contact_ok_body:'Vielen Dank, wir melden uns bald.',err_title:'Fehlende Angaben',err_body:'Bitte alle Pflichtfelder ausfüllen.',about_tag:'Unsere Geschichte',about_title:'Über 35 Jahre echtes <em>Handeis</em>',about_p1:'Seit 1990 stellen wir unser Gelato täglich nach originalen italienischen Rezepten her. Keine Abkürzungen, keine künstlichen Zutaten.',about_p2:'Direkt an der Strandpromenade Paseo Marítimo Rey de España, mit Terrasse und direktem Meerblick.',mapa_tag:'Finden Sie uns',mapa_title:'Wir sind hier!',mapa_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',mapa_link:'In Google Maps öffnen →',nav_delivery:'Lieferung',del_tag:'Delivery · Heimlieferung',del_title:'Wir liefern zu Ihnen',del_sub:'Handgemachtes Gelato direkt an Ihre Tür. Verfügbar in Fuengirola und Umgebung.',del_zone1_name:'Zone 1',del_zone1_time:'~20 min',del_zone1_area:'Fuengirola Zentrum · Strandpromenade · Strandbereich',del_zone2_name:'Zone 2',del_zone2_time:'~35 min',del_zone2_area:'Los Boliches · Carvajal · Torreblanca',del_zone3_name:'Zone 3',del_zone3_time:'~50 min',del_zone3_area:'Mijas Costa · Benalmádena · Verfügbarkeit anfragen',del_note_strong:'🛵 Barzahlung bei Lieferung.',del_note:'Geschätzte Zeiten je nach Verkehr. Zonen und Bedingungen beim Bestellen bestätigen.',del_form_title:'Heimlieferung bestellen',del_f_addr:'Vollständige Adresse',del_f_addr_ph:'Straße, Hausnummer, Etage, Ort',del_f_time:'Lieferzeit',del_f_submit:'Heimlieferung anfragen',del_f_note:'Wir rufen zur Bestätigung an · Barzahlung',del_ok_title:'Lieferauftrag erhalten!',del_ok_body:'Ihre Anfrage ist eingegangen. Wir rufen an, um Zeit und Bedingungen zu bestätigen.'}
 };
 
 // ── STATE ─────────────────────────────────────────────────────────────────────
@@ -935,6 +1083,12 @@ function submitOrder(){
   if(!document.getElementById('o-name').value.trim()||!document.getElementById('o-phone').value.trim()||!document.getElementById('o-size').value||!document.getElementById('o-flavors').value.trim())
     return showModal('⚠️',t.err_title,t.err_body);
   showModal('🍦',t.order_ok_title,t.order_ok_body);
+}
+function submitDelivery(){
+  const t=I18N[lang];
+  if(!document.getElementById('d-name').value.trim()||!document.getElementById('d-phone').value.trim()||!document.getElementById('d-addr').value.trim()||!document.getElementById('d-size').value||!document.getElementById('d-flavors').value.trim())
+    return showModal('⚠️',t.err_title,t.err_body);
+  showModal('🛵',t.del_ok_title,t.del_ok_body);
 }
 function submitContact(){
   const t=I18N[lang];

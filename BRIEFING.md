@@ -20,7 +20,7 @@
 - Elaboran helados artesanales cada día siguiendo recetas italianas
 - Más de 20 sabores disponibles, rotan según temporada
 - Tienen terraza con vistas al Mediterráneo
-- Nota media en Google: 4.1★ (~50 reseñas analizadas)
+- Nota media en Google: 4.3★ (~50 reseñas analizadas)
 - Clientela mixta: españoles locales + turistas británicos, alemanes, nórdicos
 - Competencia directa en Fuengirola: Heladería Caramelo, Northern Lights Heladería, Gioelia
 
@@ -29,7 +29,7 @@
 ## 🌐 La web
 
 ### Stack
-- **100% HTML/CSS/JS vanilla** — un solo archivo `index.html`
+- **100% HTML/CSS/JS vanilla** — un solo archivo `v1.html`
 - Sin frameworks, sin dependencias externas salvo Google Fonts
 - Google Fonts: `Cormorant Garamond` (display) + `Outfit` (body)
 
@@ -181,7 +181,7 @@ Las preguntas están redactadas exactamente como la gente pregunta a ChatGPT, Pe
 
 ```
 heladeria900italiana/
-├── index.html          ← web completa (todo en un archivo)
+├── v1.html             ← web completa (todo en un archivo)
 ├── BRIEFING.md         ← este archivo
 ├── README.md           ← descripción técnica del repo
 └── assets/

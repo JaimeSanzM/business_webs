@@ -9,7 +9,8 @@
       "Bash(Select-Object FullName, Length)",
       "Read(//mnt/c/Users/jaime/OneDrive/Desktop/Personal Projects/**)",
       "PowerShell(New-Item *)",
-      "Bash(gh repo *)"
+      "Bash(gh repo *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\jaime\\\\Downloads\" | Where-Object { $_.Extension -in '.jpg','.jpeg','.png','.webp','.gif' } | Sort-Object LastWriteTime -Descending | Select-Object -First 15 | Select-Object Name, LastWriteTime, Length)"
     ]
   }
 }

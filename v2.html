@@ -54,13 +54,13 @@ nav.scrolled{background:rgba(250,250,248,.96);backdrop-filter:blur(16px);box-sha
 .btn-fill:hover{background:#d44520}
 .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}
 .btn-ghost:hover{background:#fff;color:var(--dark)}
-.hero-stats{display:flex;gap:3.5rem;justify-content:center;margin-top:4.5rem;flex-wrap:wrap}
+.hero-stats{display:flex;gap:3.5rem;justify-content:center;margin-top:3rem;flex-wrap:wrap}
 .hstat{text-align:center;color:#fff}
 .hstat-n{font-size:2.8rem;font-weight:800;color:var(--yellow);line-height:1;letter-spacing:-.02em}
-.hstat-l{font-size:.68rem;font-weight:500;text-transform:uppercase;letter-spacing:.1em;opacity:.6;margin-top:.2rem}
-.hero-arrow{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.35rem;color:rgba(255,255,255,.4);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;animation:bob 2s ease-in-out infinite}
+.hstat-l{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.82);margin-top:.2rem}
+.hero-arrow{position:absolute;bottom:1.2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.35rem;color:rgba(255,255,255,.72);font-family:var(--font);font-size:.62rem;font-weight:700;line-height:1;letter-spacing:.14em;text-transform:uppercase;animation:bob 2s ease-in-out infinite;pointer-events:none}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-.hero-arrow::after{content:'';display:block;width:1px;height:28px;background:rgba(255,255,255,.25)}
+.hero-arrow::after{content:'';display:block;width:1px;height:28px;background:rgba(255,255,255,.36)}
 
 /* NOSOTROS */
 #nosotros{background:var(--white);padding:5rem 2.5rem}
@@ -74,10 +74,18 @@ nav.scrolled{background:rgba(250,250,248,.96);backdrop-filter:blur(16px);box-sha
 .nos-text h2{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:800;color:var(--dark);line-height:1.1;margin-bottom:1rem;letter-spacing:-.02em}
 .nos-text h2 em{font-family:var(--italic);color:var(--coral);font-weight:400;letter-spacing:0}
 .nos-text p{color:var(--muted);line-height:1.8;font-size:.93rem;margin-bottom:.85rem}
-.nos-year{font-size:4.5rem;font-weight:800;color:var(--light);line-height:1;margin-bottom:.5rem;letter-spacing:-.04em}
+.nos-year{font-size:4.5rem;font-weight:800;color:var(--coral);line-height:1;margin-bottom:.5rem;letter-spacing:-.04em}
 .pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.25rem}
 .pill{background:var(--light);color:var(--dark);border-radius:2rem;font-size:.75rem;font-weight:500;padding:.35rem .9rem;border:1px solid rgba(0,0,0,.06)}
 @media(max-width:900px){.nos-wrap,.nos-photos{grid-template-columns:1fr}}
+@media(max-height:820px){
+  .hero-inner{padding-top:6.5rem;padding-bottom:2.5rem}
+  .hero-tag{margin-bottom:1.25rem}
+  .hero-h1{margin-bottom:1rem}
+  .hero-sub{margin-bottom:1.5rem}
+  .hero-stats{margin-top:2.25rem}
+  .hero-arrow{display:none}
+}
 
 /* GALERIA */
 #galeria{background:var(--dark);padding:4.5rem 2.5rem}
@@ -188,6 +196,10 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
 .reveal.visible{opacity:1;transform:none}
 .reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}.reveal-d3{transition-delay:.3s}
+/* LANG */
+.lang-btns{display:flex;gap:.35rem;align-items:center}
+.lang-btn{background:none;border:1px solid rgba(0,0,0,.15);border-radius:2rem;font-size:.68rem;font-weight:600;padding:.28rem .6rem;cursor:pointer;font-family:var(--font);color:var(--muted);transition:all .2s}
+.lang-btn:hover,.lang-btn.active{background:var(--dark);color:#fff;border-color:var(--dark)}
 </style>
 </head>
 <body>
@@ -197,22 +209,28 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
 </a>
 
 <div class="mob-menu" id="mob-menu">
-  <a href="#nosotros" onclick="closeMob()">Nosotros</a>
-  <a href="#carta" onclick="closeMob()">Carta</a>
-  <a href="#horario" onclick="closeMob()">Horario</a>
-  <a href="#servicios" onclick="closeMob()">Pedidos</a>
-  <a href="#mapa" onclick="closeMob()">Mapa</a>
+  <a href="#nosotros" onclick="closeMob()" data-i18n="nav_about">Nosotros</a>
+  <a href="#carta" onclick="closeMob()" data-i18n="nav_menu">Carta</a>
+  <a href="#horario" onclick="closeMob()" data-i18n="nav_hours">Horario</a>
+  <a href="#servicios" onclick="closeMob()" data-i18n="nav_orders">Pedidos</a>
+  <a href="#mapa" onclick="closeMob()" data-i18n="nav_map">Mapa</a>
+  <div class="lang-btns" style="justify-content:center;margin-top:.5rem">
+    <button class="lang-btn active" onclick="setLang('es');closeMob()">🇪🇸 ES</button>
+    <button class="lang-btn" onclick="setLang('en');closeMob()">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('de');closeMob()">🇩🇪 DE</button>
+  </div>
 </div>
 
 <nav id="nav">
   <a href="#hero" class="logo">900 <span>Italiana</span></a>
   <ul class="nav-links">
-    <li><a href="#nosotros">Nosotros</a></li>
-    <li><a href="#carta">Carta</a></li>
-    <li><a href="#horario">Horario</a></li>
-    <li><a href="#servicios">Pedidos</a></li>
-    <li><a href="#mapa">Mapa</a></li>
+    <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+    <li><a href="#carta" data-i18n="nav_menu">Carta</a></li>
+    <li><a href="#horario" data-i18n="nav_hours">Horario</a></li>
+    <li><a href="#servicios" data-i18n="nav_orders">Pedidos</a></li>
+    <li><a href="#mapa" data-i18n="nav_map">Mapa</a></li>
     <li><a href="tel:+34952468457" class="nav-cta">📞 952 46 84 57</a></li>
+    <li><div class="lang-btns"><button class="lang-btn active" onclick="setLang('es')">🇪🇸 ES</button><button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button><button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button></div></li>
   </ul>
   <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
 </nav>
@@ -221,20 +239,20 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
   <div class="hero-photo"></div>
   <div class="hero-overlay"></div>
   <div class="hero-inner reveal">
-    <div class="hero-tag">🍦 Heladería Artesanal · Fuengirola · Desde 1990</div>
-    <h1 class="hero-h1">Il gelato<br><em>auténtico italiano</em></h1>
-    <p class="hero-sub">Elaborado cada día en el Paseo Marítimo. Más de 20 sabores, terraza frente al mar y delivery.</p>
+    <div class="hero-tag" data-i18n="hero_tag">🍦 Heladería Artesanal · Fuengirola · Desde 1990</div>
+    <h1 class="hero-h1">Il gelato<br><em data-i18n="hero_em">auténtico italiano</em></h1>
+    <p class="hero-sub" data-i18n="hero_sub">Elaborado cada día en el Paseo Marítimo. Más de 20 sabores, terraza frente al mar y delivery.</p>
     <div class="hero-btns">
-      <a href="#carta" class="btn btn-fill">🍦 Ver la carta</a>
-      <a href="#servicios" class="btn btn-ghost">Pedir ahora</a>
+      <a href="#carta" class="btn btn-fill" data-i18n="hero_cta1">🍦 Ver la carta</a>
+      <a href="#servicios" class="btn btn-ghost" data-i18n="hero_cta2">Pedir ahora</a>
     </div>
     <div class="hero-stats">
-      <div class="hstat reveal reveal-d1"><div class="hstat-n">+20</div><div class="hstat-l">Sabores artesanales</div></div>
-      <div class="hstat reveal reveal-d2"><div class="hstat-n">1990</div><div class="hstat-l">Año de apertura</div></div>
-      <div class="hstat reveal reveal-d3"><div class="hstat-n">4.1★</div><div class="hstat-l">Google Reviews</div></div>
+      <div class="hstat reveal reveal-d1"><div class="hstat-n">+20</div><div class="hstat-l" data-i18n="stat1">Sabores artesanales</div></div>
+      <div class="hstat reveal reveal-d2"><div class="hstat-n">1990</div><div class="hstat-l" data-i18n="stat2">Año de apertura</div></div>
+      <div class="hstat reveal reveal-d3"><div class="hstat-n">4.3★</div><div class="hstat-l" data-i18n="stat3">Google Reviews</div></div>
     </div>
   </div>
-  <div class="hero-arrow"><span>Descubre</span></div>
+  <div class="hero-arrow"><span data-i18n="scroll_label">Descubre</span></div>
 </section>
 
 <section id="nosotros">
@@ -245,11 +263,11 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
       <div class="nos-sm"><img src="assets/images/desde1990.jpg" alt="Heladería 900 — Desde 1990" loading="lazy"></div>
     </div>
     <div class="nos-text reveal">
-      <div class="tag">Nuestra historia</div>
+      <div class="tag" data-i18n="about_tag">Nuestra historia</div>
       <div class="nos-year">1990</div>
-      <h2>Más de 35 años haciendo <em>helado de verdad</em></h2>
-      <p>Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.</p>
-      <p>Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.</p>
+      <h2 data-i18n="about_h2">Más de 35 años haciendo <em>helado de verdad</em></h2>
+      <p data-i18n="about_p1">Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.</p>
+      <p data-i18n="about_p2">Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.</p>
       <div class="pills">
         <span class="pill">🤍 Sin gluten</span>
         <span class="pill">🥛 Sin lactosa</span>
@@ -263,8 +281,8 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
 
 <section id="galeria">
   <div class="gal-head reveal">
-    <div class="tag">Galería</div>
-    <h2>El sabor en imágenes</h2>
+    <div class="tag" data-i18n="gal_tag">Galería</div>
+    <h2 data-i18n="gal_h2">El sabor en imágenes</h2>
   </div>
   <div class="gal-grid reveal">
     <div class="gal-item wide"><img src="assets/images/local.png" alt="Fachada heladería" loading="lazy"></div>
@@ -278,72 +296,24 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
 
 <section id="carta">
   <div class="sec-head reveal">
-    <div class="tag">Nuestra carta</div>
-    <h2>Todo lo que ofrecemos</h2>
+    <div class="tag" data-i18n="menu_tag">Nuestra carta</div>
+    <h2 data-i18n="menu_h2">Todo lo que ofrecemos</h2>
   </div>
-  <div class="carta-grid">
-    <div class="cc reveal"><h3>🍦 Cucuruchos</h3>
-      <div class="cr"><span>Pequeño · 1 bola</span><span class="cr-p">3,50 €</span></div>
-      <div class="cr"><span>Pequeño · 2 bolas</span><span class="cr-p">4,50 €</span></div>
-      <div class="cr"><span>Grande · 1 bola</span><span class="cr-p">4,00 €</span></div>
-      <div class="cr"><span>Grande · 2 bolas</span><span class="cr-p">5,00 €</span></div>
-      <div class="cr"><span>Cucurucho de chocolate</span><span class="cr-p">10,70 €</span></div>
-    </div>
-    <div class="cc reveal reveal-d1"><h3>🥡 Tarrinas</h3>
-      <div class="cr"><span>Tarrina pequeña</span><span class="cr-p">3,50 €</span></div>
-      <div class="cr"><span>Tarrina mediana</span><span class="cr-p">4,50 €</span></div>
-      <div class="cr"><span>Tarrina grande</span><span class="cr-p">5,50 €</span></div>
-      <div class="cr"><span>½ Litro (solo llevar)</span><span class="cr-p">9,50 €</span></div>
-      <div class="cr"><span>1 Litro (solo llevar)</span><span class="cr-p">17,00 €</span></div>
-    </div>
-    <div class="cc reveal"><h3>🧊 Granizados</h3>
-      <div class="cr"><span>Pequeño</span><span class="cr-p">3,00 €</span></div>
-      <div class="cr"><span>Mediano</span><span class="cr-p">3,50 €</span></div>
-      <div class="cr"><span>Grande</span><span class="cr-p">4,00 €</span></div>
-      <div class="cr"><span>1 Litro</span><span class="cr-p">7,50 €</span></div>
-    </div>
-    <div class="cc reveal reveal-d1"><h3>🌷 Copas & Tulipas</h3>
-      <div class="cr"><span>Tulipa 2 bolas</span><span class="cr-p">4,70 €</span></div>
-      <div class="cr"><span>Tulipa 3 bolas</span><span class="cr-p">6,00 €</span></div>
-      <div class="cr"><span>Copa variada</span><span class="cr-p">desde 5,50 €</span></div>
-      <div class="cr"><span>Banana Split</span><span class="cr-p">consultar</span></div>
-    </div>
-    <div class="cc reveal"><h3>🥤 Batidos & Horchata</h3>
-      <div class="cr"><span>Batido mediano</span><span class="cr-p">4,50 €</span></div>
-      <div class="cr"><span>Batido grande</span><span class="cr-p">5,50 €</span></div>
-      <div class="cr"><span>Batido 1L (solo llevar)</span><span class="cr-p">10,00 €</span></div>
-      <div class="cr"><span>Horchata pequeña</span><span class="cr-p">3,00 €</span></div>
-      <div class="cr"><span>Horchata grande</span><span class="cr-p">4,20 €</span></div>
-    </div>
-    <div class="cc reveal reveal-d1"><h3>🍓 Sabores destacados</h3>
-      <div style="margin-bottom:.75rem">
-        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">Clásicos</div>
-        <div class="sabores-list"><span class="sabor">Pistacho</span><span class="sabor">Stracciatella</span><span class="sabor">Nata</span><span class="sabor">Café</span><span class="sabor">Avellana</span><span class="sabor">Chocolate</span></div>
-      </div>
-      <div style="margin-bottom:.75rem">
-        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">Frutas</div>
-        <div class="sabores-list"><span class="sabor">Fresa</span><span class="sabor">Mango</span><span class="sabor">Limón</span><span class="sabor">Banana Split</span></div>
-      </div>
-      <div>
-        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">Novedades</div>
-        <div class="sabores-list"><span class="sabor">Cremino Pistacho</span><span class="sabor">Chocolate Dubai</span><span class="sabor">Fresa & Albahaca</span></div>
-      </div>
-    </div>
-  </div>
+  <div class="carta-grid" id="carta-grid"></div>
 </section>
 
 <section id="horario">
   <div class="hor-layout">
     <div>
-      <div class="tag" style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)">Horario</div>
-      <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:var(--dark);margin:.4rem 0 .5rem;letter-spacing:-.02em" class="reveal">¿Cuándo visitarnos?</h2>
-      <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.5rem" class="reveal">Abiertos todos los días del año.</p>
+      <div class="tag" style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--coral)" data-i18n="hours_tag">Horario</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:var(--dark);margin:.4rem 0 .5rem;letter-spacing:-.02em" class="reveal" data-i18n="hours_h2">¿Cuándo visitarnos?</h2>
+      <p style="color:var(--muted);font-size:.88rem;margin-bottom:1.5rem" class="reveal" data-i18n="hours_sub">Abiertos todos los días del año.</p>
       <div class="hor-table" id="hor-rows"></div>
     </div>
     <div class="res-card reveal">
-      <div class="tag">Reservas & Contacto</div>
-      <h3>Celebra con nosotros</h3>
-      <p>Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos por WhatsApp.</p>
+      <div class="tag" data-i18n="res_tag">Reservas & Contacto</div>
+      <h3 data-i18n="res_h3">Celebra con nosotros</h3>
+      <p data-i18n="res_desc">Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos por WhatsApp.</p>
       <a href="tel:+34952468457" class="tel-big">+34 952 46 84 57</a>
       <div class="cbtns">
         <a href="https://wa.me/34952468457" class="cbtn cbtn-wa" target="_blank">💬 WhatsApp</a>
@@ -356,44 +326,44 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
 
 <section id="servicios">
   <div class="sec-head reveal">
-    <div class="tag">Pedidos</div>
-    <h2>Takeaway & Delivery</h2>
+    <div class="tag" data-i18n="orders_tag">Pedidos</div>
+    <h2 data-i18n="orders_h2">Takeaway & Delivery</h2>
   </div>
   <div class="serv-grid">
     <div class="serv-card reveal">
       <div class="serv-icon si-tk">🏪</div>
-      <h3>Takeaway · Recogida en local</h3>
-      <p>Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas, sin colas. Las tarrinas de ½L y 1L son perfectas para la playa.</p>
-      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20para%20recoger" class="serv-btn" target="_blank">Pedir por WhatsApp →</a>
+      <h3 data-i18n="tk_h3">Takeaway · Recogida en local</h3>
+      <p data-i18n="tk_desc">Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas, sin colas. Las tarrinas de ½L y 1L son perfectas para la playa.</p>
+      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20para%20recoger" class="serv-btn" target="_blank" data-i18n="tk_cta">Pedir por WhatsApp →</a>
     </div>
     <div class="serv-card reveal reveal-d1">
       <div class="serv-icon si-dl">🛵</div>
-      <h3>Delivery · A domicilio</h3>
-      <p>Llevamos el helado hasta tu puerta en Fuengirola y alrededores.</p>
+      <h3 data-i18n="del_h3">Delivery · A domicilio</h3>
+      <p data-i18n="del_desc">Llevamos el helado hasta tu puerta en Fuengirola y alrededores.</p>
       <div class="del-zones">
-        <div class="dz"><div class="dz-km">≤ 2 km</div><div class="dz-t">~20 min</div><div class="dz-a">Centro · Playa</div></div>
-        <div class="dz"><div class="dz-km">2–5 km</div><div class="dz-t">~35 min</div><div class="dz-a">Boliches · Carvajal</div></div>
-        <div class="dz"><div class="dz-km">5–10 km</div><div class="dz-t">~50 min</div><div class="dz-a">Mijas · Benalmádena</div></div>
+        <div class="dz"><div class="dz-km">≤ 2 km</div><div class="dz-t">~20 min</div><div class="dz-a" data-i18n="zone1_a">Centro · Playa</div></div>
+        <div class="dz"><div class="dz-km">2–5 km</div><div class="dz-t">~35 min</div><div class="dz-a" data-i18n="zone2_a">Boliches · Carvajal</div></div>
+        <div class="dz"><div class="dz-km">5–10 km</div><div class="dz-t">~50 min</div><div class="dz-a" data-i18n="zone3_a">Mijas · Benalmádena</div></div>
       </div>
-      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20a%20domicilio" class="serv-btn" target="_blank">Pedir a domicilio →</a>
+      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20a%20domicilio" class="serv-btn" target="_blank" data-i18n="del_cta">Pedir a domicilio →</a>
     </div>
   </div>
 </section>
 
 <section id="mapa">
-  <div class="mapa-tag reveal">Encuéntranos</div>
-  <h2 class="mapa-h2 reveal">¡Estamos aquí!</h2>
-  <p class="mapa-sub reveal">Paseo Marítimo Rey de España · Fuengirola, Málaga</p>
+  <div class="mapa-tag reveal" data-i18n="map_tag">Encuéntranos</div>
+  <h2 class="mapa-h2 reveal" data-i18n="map_h2">¡Estamos aquí!</h2>
+  <p class="mapa-sub reveal" data-i18n="map_sub">Paseo Marítimo Rey de España · Fuengirola, Málaga</p>
   <div class="mapa-frame reveal">
     <iframe src="https://maps.google.com/maps?q=36.5311123,-4.6248252&hl=es&z=17&output=embed" loading="lazy" style="width:100%;height:440px;border:0" title="Heladería 900 Italiana Fuengirola" allowfullscreen></iframe>
   </div>
-  <a href="https://maps.google.com/?q=36.5311123,-4.6248252" target="_blank" class="mapa-link">Abrir en Google Maps →</a>
+  <a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="mapa-link" data-i18n="map_link">Abrir en Google Maps →</a>
 </section>
 
 <section id="faq">
   <div class="sec-head reveal">
-    <div class="tag">FAQ</div>
-    <h2>Preguntas frecuentes</h2>
+    <div class="tag" data-i18n="faq_tag">FAQ</div>
+    <h2 data-i18n="faq_h2">Preguntas frecuentes</h2>
   </div>
   <div class="faq-wrap" id="faq-list"></div>
 </section>
@@ -402,23 +372,23 @@ footer{background:var(--forest);color:#fff;padding:3.5rem 2.5rem 2rem}
   <div class="footer-grid">
     <div>
       <div class="f-logo">900 <span>Italiana</span></div>
-      <p class="f-tag">Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.</p>
+      <p class="f-tag" data-i18n="foot_tag">Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.</p>
     </div>
-    <div class="f-col"><h4>Navegación</h4><ul>
+    <div class="f-col"><h4 data-i18n="foot_nav">Navegación</h4><ul>
       <li><a href="#nosotros">Nosotros</a></li>
       <li><a href="#carta">Carta</a></li>
       <li><a href="#horario">Horario</a></li>
       <li><a href="#servicios">Pedidos</a></li>
       <li><a href="#mapa">Mapa</a></li>
     </ul></div>
-    <div class="f-col"><h4>Contacto</h4><ul>
+    <div class="f-col"><h4 data-i18n="foot_contact">Contacto</h4><ul>
       <li><a href="tel:+34952468457">+34 952 46 84 57</a></li>
       <li><a href="https://wa.me/34952468457" target="_blank">WhatsApp</a></li>
       <li><a href="https://instagram.com/heladeria900italiana" target="_blank">@heladeria900italiana</a></li>
-      <li><a href="https://maps.google.com/?q=36.5311123,-4.6248252" target="_blank">Google Maps →</a></li>
+      <li><a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Maps →</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">© 2025 Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990</div>
+  <div class="footer-bottom" data-i18n="foot_copy">© 2025 Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990</div>
 </footer>
 
 <script>
@@ -427,34 +397,152 @@ function toggleMob(){document.getElementById('mob-menu').classList.toggle('open'
 function closeMob(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('ham').classList.remove('open')}
 
 const DAYS=[
-  {d:'Lunes',t:'11:00 – 23:00',n:1},{d:'Martes',t:'11:00 – 23:00',n:2},
-  {d:'Miércoles',t:'11:00 – 23:00',n:3},{d:'Jueves',t:'11:00 – 23:00',n:4},
-  {d:'Viernes',t:'11:00 – 23:30',n:5},{d:'Sábado',t:'11:00 – 23:30',n:6},
-  {d:'Domingo',t:'11:00 – 23:00',n:0}
+  {es:'Lunes',en:'Monday',de:'Montag',t:'11:00 – 23:00',n:1},
+  {es:'Martes',en:'Tuesday',de:'Dienstag',t:'11:00 – 23:00',n:2},
+  {es:'Miércoles',en:'Wednesday',de:'Mittwoch',t:'11:00 – 23:00',n:3},
+  {es:'Jueves',en:'Thursday',de:'Donnerstag',t:'11:00 – 23:00',n:4},
+  {es:'Viernes',en:'Friday',de:'Freitag',t:'11:00 – 23:30',n:5},
+  {es:'Sábado',en:'Saturday',de:'Samstag',t:'11:00 – 23:30',n:6},
+  {es:'Domingo',en:'Sunday',de:'Sonntag',t:'11:00 – 23:00',n:0},
 ];
-const hoy=new Date().getDay();
-document.getElementById('hor-rows').innerHTML=DAYS.map(d=>`
-  <div class="hor-row${d.n===hoy?' hoy':''}">
-    <span class="hd">${d.d}${d.n===hoy?' · Hoy':''}</span>
-    <span class="ht">${d.t}</span>
-  </div>`).join('');
 
-const FAQS=[
-  {q:'¿Cuál es la mejor heladería de Fuengirola?',a:'Heladería 900 Italiana es considerada por muchos clientes habituales la mejor de Fuengirola por sus helados artesanales elaborados cada día y su ubicación en primera línea del paseo marítimo.'},
-  {q:'¿Los helados son artesanales?',a:'Sí. Fabricamos todo en local cada día siguiendo recetas de la tradición italiana, sin aditivos artificiales.'},
-  {q:'¿Tenéis sabores sin lactosa?',a:'Sí, contamos con una selección de sabores sin lactosa. Pregunta en el local para conocer la disponibilidad del día.'},
-  {q:'¿Hacéis delivery a domicilio?',a:'Sí. Zona 1 (≤2km) ~20 min, Zona 2 (2-5km) ~35 min, Zona 3 (5-10km) ~50 min. Contacta por WhatsApp para confirmar disponibilidad y condiciones.'},
-  {q:'¿Puedo pedir tarrinas para llevar?',a:'Sí. Las tarrinas de ½L y 1L son ideales para la playa. Pide por WhatsApp y las tenemos listas cuando llegues.'},
-  {q:'¿Dónde estáis exactamente?',a:'Paseo Marítimo Rey de España, primera línea de playa. Tenemos terraza con vistas directas al Mediterráneo.'},
-];
-document.getElementById('faq-list').innerHTML=FAQS.map(f=>`
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">${f.q}<span class="faq-arr">▼</span></div>
-    <div class="faq-a">${f.a}</div>
-  </div>`).join('');
+const FAQS={
+  es:[
+    {q:'¿Cuál es la mejor heladería de Fuengirola?',a:'Heladería 900 Italiana es considerada por muchos clientes habituales la mejor de Fuengirola por sus helados artesanales elaborados cada día y su ubicación en primera línea del paseo marítimo.'},
+    {q:'¿Los helados son artesanales?',a:'Sí. Fabricamos todo en local cada día siguiendo recetas de la tradición italiana, sin aditivos artificiales.'},
+    {q:'¿Tenéis sabores sin lactosa?',a:'Sí, contamos con una selección de sabores sin lactosa. Pregunta en el local para conocer la disponibilidad del día.'},
+    {q:'¿Hacéis delivery a domicilio?',a:'Sí. Zona 1 (≤2km) ~20 min, Zona 2 (2-5km) ~35 min, Zona 3 (5-10km) ~50 min. Contacta por WhatsApp para confirmar disponibilidad y condiciones.'},
+    {q:'¿Puedo pedir tarrinas para llevar?',a:'Sí. Las tarrinas de ½L y 1L son ideales para la playa. Pide por WhatsApp y las tenemos listas cuando llegues.'},
+    {q:'¿Dónde estáis exactamente?',a:'Paseo Marítimo Rey de España, primera línea de playa. Tenemos terraza con vistas directas al Mediterráneo.'},
+  ],
+  en:[
+    {q:'What is the best ice cream shop in Fuengirola?',a:'Heladería 900 Italiana is widely considered the best gelateria in Fuengirola — handmade gelato prepared fresh every day and a prime seafront location.'},
+    {q:'Is the ice cream handmade?',a:'Yes. We make everything in-house every day following authentic Italian recipes, with no artificial additives.'},
+    {q:'Do you have lactose-free options?',a:"Yes, we have a selection of lactose-free flavours. Ask in store for today's availability."},
+    {q:'Do you offer home delivery?',a:'Yes. Zone 1 (≤2km) ~20 min, Zone 2 (2-5km) ~35 min, Zone 3 (5-10km) ~50 min. Contact us on WhatsApp to confirm availability.'},
+    {q:'Can I pre-order tubs to take away?',a:'Yes! The ½L and 1L tubs are perfect for the beach. Order on WhatsApp and we have them ready when you arrive.'},
+    {q:'Where exactly are you?',a:"On the Paseo Marítimo Rey de España, right on the beachfront. We have a terrace with direct Mediterranean sea views."},
+  ],
+  de:[
+    {q:'Was ist die beste Eisdiele in Fuengirola?',a:'Heladería 900 Italiana gilt bei vielen Stammgästen als die beste Gelateria in Fuengirola — täglich frisch zubereitetes Handeis direkt an der Strandpromenade.'},
+    {q:'Ist das Eis handgemacht?',a:'Ja. Wir stellen alles täglich im Haus nach original italienischen Rezepten her — ohne künstliche Zusätze.'},
+    {q:'Gibt es laktosefreie Optionen?',a:'Ja, wir haben laktosefreie Sorten. Fragen Sie bitte im Laden nach der tagesaktuellen Verfügbarkeit.'},
+    {q:'Bieten Sie Heimlieferung an?',a:'Ja. Zone 1 (≤2km) ~20 Min., Zone 2 (2-5km) ~35 Min., Zone 3 (5-10km) ~50 Min. Kontaktieren Sie uns per WhatsApp zur Bestätigung.'},
+    {q:'Kann ich Eisbecher vorbestellen?',a:'Ja! Die ½L- und 1L-Becher sind ideal für den Strand. Bestellen Sie per WhatsApp und wir bereiten Ihren Becher vor.'},
+    {q:'Wo genau befinden Sie sich?',a:'Am Paseo Marítimo Rey de España, direkt am Strand. Wir haben eine Terrasse mit direktem Meerblick.'},
+  ]
+};
 
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+const CARTA={
+  es:{
+    cats:['🍦 Cucuruchos','🥡 Tarrinas','🧊 Granizados','🌷 Copas & Tulipas','🥤 Batidos & Horchata'],
+    items:[
+      [['Pequeño · 1 bola','3,50 €'],['Pequeño · 2 bolas','4,50 €'],['Grande · 1 bola','4,00 €'],['Grande · 2 bolas','5,00 €'],['Cucurucho de chocolate','10,70 €']],
+      [['Tarrina pequeña','3,50 €'],['Tarrina mediana','4,50 €'],['Tarrina grande','5,50 €'],['½ Litro (solo llevar)','9,50 €'],['1 Litro (solo llevar)','17,00 €']],
+      [['Granizado pequeño','3,00 €'],['Granizado mediano','3,50 €'],['Granizado grande','4,00 €'],['Granizado 1 Litro','7,50 €']],
+      [['Tulipa 2 bolas','4,70 €'],['Tulipa 3 bolas','6,00 €'],['Copa variada','desde 5,50 €'],['Banana Split','consultar'],['Porción de nata','4,50 €']],
+      [['Batido mediano','4,50 €'],['Batido grande','5,50 €'],['Batido 1L (solo llevar)','10,00 €'],['Horchata pequeña','3,00 €'],['Horchata grande','4,20 €']],
+    ],
+    sabores:{clasicos:'Clásicos',frutas:'Frutas',novedades:'Novedades'}
+  },
+  en:{
+    cats:['🍦 Cones','🥡 Tubs','🧊 Granitas','🌷 Cups & Waffle Cups','🥤 Shakes & Horchata'],
+    items:[
+      [['Small · 1 scoop','3.50 €'],['Small · 2 scoops','4.50 €'],['Large · 1 scoop','4.00 €'],['Large · 2 scoops','5.00 €'],['Chocolate cone','10.70 €']],
+      [['Small tub','3.50 €'],['Medium tub','4.50 €'],['Large tub','5.50 €'],['½ Litre (takeaway)','9.50 €'],['1 Litre (takeaway)','17.00 €']],
+      [['Small granita','3.00 €'],['Medium granita','3.50 €'],['Large granita','4.00 €'],['1 Litre granita','7.50 €']],
+      [['Waffle cup 2 scoops','4.70 €'],['Waffle cup 3 scoops','6.00 €'],['Assorted cup','from 5.50 €'],['Banana Split','ask us'],['Whipped cream portion','4.50 €']],
+      [['Medium shake','4.50 €'],['Large shake','5.50 €'],['1 Litre shake (takeaway)','10.00 €'],['Small horchata','3.00 €'],['Large horchata','4.20 €']],
+    ],
+    sabores:{clasicos:'Classics',frutas:'Fruits',novedades:'New'}
+  },
+  de:{
+    cats:['🍦 Waffeln','🥡 Becher','🧊 Granitas','🌷 Becher & Tulpen','🥤 Shakes & Horchata'],
+    items:[
+      [['Klein · 1 Kugel','3,50 €'],['Klein · 2 Kugeln','4,50 €'],['Groß · 1 Kugel','4,00 €'],['Groß · 2 Kugeln','5,00 €'],['Schokowaffel','10,70 €']],
+      [['Kleiner Becher','3,50 €'],['Mittlerer Becher','4,50 €'],['Großer Becher','5,50 €'],['½ Liter (Mitnahme)','9,50 €'],['1 Liter (Mitnahme)','17,00 €']],
+      [['Kleine Granita','3,00 €'],['Mittlere Granita','3,50 €'],['Große Granita','4,00 €'],['1 Liter Granita','7,50 €']],
+      [['Tulpe 2 Kugeln','4,70 €'],['Tulpe 3 Kugeln','6,00 €'],['Gemischter Becher','ab 5,50 €'],['Banana Split','anfragen'],['Sahne-Portion','4,50 €']],
+      [['Shake mittel','4,50 €'],['Shake groß','5,50 €'],['1 Liter Shake (Mitnahme)','10,00 €'],['Kleine Horchata','3,00 €'],['Große Horchata','4,20 €']],
+    ],
+    sabores:{clasicos:'Klassiker',frutas:'Früchte',novedades:'Neuheiten'}
+  }
+};
+
+const I18N={
+  es:{nav_about:'Nosotros',nav_menu:'Carta',nav_hours:'Horario',nav_orders:'Pedidos',nav_map:'Mapa',hero_tag:'🍦 Heladería Artesanal · Fuengirola · Desde 1990',hero_em:'auténtico italiano',hero_sub:'Elaborado cada día en el Paseo Marítimo. Más de 20 sabores, terraza frente al mar y delivery.',hero_cta1:'🍦 Ver la carta',hero_cta2:'Pedir ahora',stat1:'Sabores artesanales',stat2:'Año de apertura',stat3:'Google Reviews',scroll_label:'Descubre',about_tag:'Nuestra historia',about_h2:'Más de 35 años haciendo <em>helado de verdad</em>',about_p1:'Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.',about_p2:'Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.',gal_tag:'Galería',gal_h2:'El sabor en imágenes',menu_tag:'Nuestra carta',menu_h2:'Todo lo que ofrecemos',hours_tag:'Horario',hours_h2:'¿Cuándo visitarnos?',hours_sub:'Abiertos todos los días del año.',today:'Hoy',res_tag:'Reservas & Contacto',res_h3:'Celebra con nosotros',res_desc:'Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos por WhatsApp.',orders_tag:'Pedidos',orders_h2:'Takeaway & Delivery',tk_h3:'Takeaway · Recogida en local',tk_desc:'Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas, sin colas. Las tarrinas de ½L y 1L son perfectas para la playa.',tk_cta:'Pedir por WhatsApp →',del_h3:'Delivery · A domicilio',del_desc:'Llevamos el helado hasta tu puerta en Fuengirola y alrededores.',zone1_a:'Centro · Playa',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Pedir a domicilio →',map_tag:'Encuéntranos',map_h2:'¡Estamos aquí!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'Abrir en Google Maps →',faq_tag:'FAQ',faq_h2:'Preguntas frecuentes',foot_tag:'Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.',foot_nav:'Navegación',foot_contact:'Contacto',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990'},
+  en:{nav_about:'About',nav_menu:'Menu',nav_hours:'Hours',nav_orders:'Orders',nav_map:'Map',hero_tag:'🍦 Artisan Ice Cream · Fuengirola · Since 1990',hero_em:'authentic Italian',hero_sub:'Made fresh every day on the seafront. Over 20 artisan flavours, terrace with sea views and delivery.',hero_cta1:'🍦 See the menu',hero_cta2:'Order now',stat1:'Artisan flavours',stat2:'Year opened',stat3:'Google Reviews',scroll_label:'Discover',about_tag:'Our story',about_h2:'Over 35 years making <em>real ice cream</em>',about_p1:'Since 1990, we handcraft our gelato every day following authentic Italian recipes. No shortcuts, no artificial additives. Only the finest ingredients and the same passion for ice cream.',about_p2:'Seafront on the Paseo Marítimo Rey de España, with a terrace and direct Mediterranean views.',gal_tag:'Gallery',gal_h2:'The flavour in pictures',menu_tag:'Our menu',menu_h2:'Everything we offer',hours_tag:'Opening Hours',hours_h2:'When to visit us?',hours_sub:'Open every day of the year.',today:'Today',res_tag:'Bookings & Contact',res_h3:'Celebrate with us',res_desc:'Birthdays, groups, special events. Call us or message us on WhatsApp.',orders_tag:'Orders',orders_h2:'Takeaway & Delivery',tk_h3:'Takeaway · In-store collection',tk_desc:'Order ahead and we have your tub ready when you arrive. No queues, no waiting. The ½L and 1L tubs are perfect for the beach.',tk_cta:'Order on WhatsApp →',del_h3:'Delivery · To your door',del_desc:'We bring the ice cream to your door in Fuengirola and surrounding areas.',zone1_a:'Town centre · Beach',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Order delivery →',map_tag:'Find us',map_h2:'We are here!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'Open in Google Maps →',faq_tag:'FAQ',faq_h2:'Frequently asked questions',foot_tag:'Artisan gelateria on the Fuengirola seafront promenade. Italian tradition since 1990.',foot_nav:'Navigation',foot_contact:'Contact',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga · Italian tradition since 1990'},
+  de:{nav_about:'Über uns',nav_menu:'Speisekarte',nav_hours:'Öffnungszeiten',nav_orders:'Bestellungen',nav_map:'Karte',hero_tag:'🍦 Handgemachtes Eis · Fuengirola · Seit 1990',hero_em:'authentisch italienisch',hero_sub:'Täglich frisch an der Strandpromenade. Über 20 handgemachte Sorten, Terrasse mit Meerblick und Lieferservice.',hero_cta1:'🍦 Speisekarte ansehen',hero_cta2:'Jetzt bestellen',stat1:'Handgemachte Sorten',stat2:'Eröffnungsjahr',stat3:'Google Bewertungen',scroll_label:'Entdecken',about_tag:'Unsere Geschichte',about_h2:'Über 35 Jahre echtes <em>Handeis</em>',about_p1:'Seit 1990 stellen wir unser Gelato täglich nach original italienischen Rezepten her. Keine Abkürzungen, keine künstlichen Zutaten. Nur die besten Zutaten und dieselbe Leidenschaft für Eis.',about_p2:'Direkt an der Strandpromenade Paseo Marítimo Rey de España, mit Terrasse und direktem Meerblick.',gal_tag:'Galerie',gal_h2:'Der Geschmack in Bildern',menu_tag:'Unsere Speisekarte',menu_h2:'Unser gesamtes Angebot',hours_tag:'Öffnungszeiten',hours_h2:'Wann uns besuchen?',hours_sub:'Täglich geöffnet.',today:'Heute',res_tag:'Reservierungen & Kontakt',res_h3:'Feiern Sie mit uns',res_desc:'Geburtstage, Gruppen, besondere Anlässe. Rufen Sie uns an oder schreiben Sie uns per WhatsApp.',orders_tag:'Bestellungen',orders_h2:'Mitnahme & Lieferservice',tk_h3:'Mitnahme · Abholung im Laden',tk_desc:'Bestellen Sie im Voraus und Ihr Becher ist fertig wenn Sie ankommen. Kein Warten, keine Schlangen. Die ½L- und 1L-Becher sind ideal für den Strand.',tk_cta:'Per WhatsApp bestellen →',del_h3:'Lieferservice · Bis zur Tür',del_desc:'Wir liefern das Eis zu Ihnen nach Hause in Fuengirola und Umgebung.',zone1_a:'Zentrum · Strand',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Lieferung bestellen →',map_tag:'Finden Sie uns',map_h2:'Wir sind hier!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'In Google Maps öffnen →',faq_tag:'FAQ',faq_h2:'Häufig gestellte Fragen',foot_tag:'Handgemachte Gelateria an der Strandpromenade Fuengirola. Italienische Tradition seit 1990.',foot_nav:'Navigation',foot_contact:'Kontakt',foot_copy:'© 2025 Heladería 900 Italiana · Fuengirola, Málaga · Italienische Tradition seit 1990'}
+};
+
+let lang='es';
+
+function buildHours(){
+  const hoy=new Date().getDay();
+  const t=I18N[lang];
+  document.getElementById('hor-rows').innerHTML=DAYS.map(d=>`
+    <div class="hor-row${d.n===hoy?' hoy':''}">
+      <span class="hd">${d[lang]}${d.n===hoy?' · '+t.today:''}</span>
+      <span class="ht">${d.t}</span>
+    </div>`).join('');
+}
+
+function buildFAQ(){
+  document.getElementById('faq-list').innerHTML=FAQS[lang].map(f=>`
+    <div class="faq-item">
+      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">${f.q}<span class="faq-arr">▼</span></div>
+      <div class="faq-a">${f.a}</div>
+    </div>`).join('');
+}
+
+function buildCarta(){
+  const d=CARTA[lang];
+  const s=d.sabores;
+  document.getElementById('carta-grid').innerHTML=d.cats.map((cat,i)=>`
+    <div class="cc reveal">
+      <h3>${cat}</h3>
+      ${d.items[i].map(([n,p])=>`<div class="cr"><span>${n}</span><span class="cr-p">${p}</span></div>`).join('')}
+    </div>`).join('')+`
+    <div class="cc reveal reveal-d1"><h3>🍓 ${lang==='es'?'Sabores destacados':lang==='en'?'Featured flavours':'Besondere Sorten'}</h3>
+      <div style="margin-bottom:.75rem">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">${s.clasicos}</div>
+        <div class="sabores-list"><span class="sabor">Pistacho</span><span class="sabor">Stracciatella</span><span class="sabor">Nata</span><span class="sabor">Café</span><span class="sabor">Avellana</span><span class="sabor">Chocolate</span></div>
+      </div>
+      <div style="margin-bottom:.75rem">
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">${s.frutas}</div>
+        <div class="sabores-list"><span class="sabor">Fresa</span><span class="sabor">Mango</span><span class="sabor">Limón</span><span class="sabor">Banana Split</span></div>
+      </div>
+      <div>
+        <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:.4rem">${s.novedades}</div>
+        <div class="sabores-list"><span class="sabor">Cremino Pistacho</span><span class="sabor">Chocolate Dubai</span><span class="sabor">Fresa & Albahaca</span></div>
+      </div>
+    </div>`;
+  observeReveal();
+}
+
+function applyI18N(){
+  const t=I18N[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{el.innerHTML=t[el.dataset.i18n]||el.innerHTML});
+}
+
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().endsWith(l.toUpperCase())));
+  applyI18N();
+  buildHours();
+  buildFAQ();
+  buildCarta();
+}
+
+function observeReveal(){
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+
+buildHours();
+buildFAQ();
+buildCarta();
+observeReveal();
 </script>
 </body>
 </html>
