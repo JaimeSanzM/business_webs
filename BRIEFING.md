@@ -9,6 +9,8 @@
 
 **Nombre:** My Dentist (marca visible: **VyDentist**)
 **Tipo:** Clínica / consultorio dental
+**Dentista:** Dr. Ernesto (mencionado en varias reseñas de Google)
+**Diferenciales reales:** membresía de prevención, imagen 3D + radiografías, se habla inglés
 **Lema:** *Una razón para sonreír*
 **Ubicación:** Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Centro, Santiago de Querétaro, Qro.
 **Coordenadas:** 20.5872464, -100.3849817
@@ -60,7 +62,12 @@ Las tres comparten contenido, datos y features; cambian el lenguaje visual.
 - **Endodoncia** — tratamientos de conducto sin dolor.
 - **Odontopediatría** — primeras visitas sin miedo para niños.
 - **Limpieza y blanqueamiento** — higiene profesional y blanqueamiento.
-- *(Base: odontología general / valoración)*
+- **Membresía de prevención** — plan de suscripción para revisiones/limpiezas constantes (muy valorado en reseñas).
+- *(Base: odontología general / valoración · imagen 3D y radiografía digital)*
+
+### Testimonios (reseñas reales de Google, ya en las 3 webs, ES/EN)
+Shaddai Ozuna · Dul Pedroza · Diana Montero · Armando Santiago · Margaret Lane (EN).
+Todas 5★. Traducidas al inglés en el selector ES/EN.
 
 ---
 
