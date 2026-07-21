@@ -1,103 +1,36 @@
-# Heladería 900 Italiana — Web
+# pics/ — Material de origen (My Dentist Querétaro)
 
-Web oficial de la Heladería 900 Italiana, ubicada en el Paseo Marítimo Rey de España, Fuengirola, Málaga.
+Carpeta para las **fotos y materiales originales** que envíe el cliente
+(sin procesar): fachada, interior, equipo, casos antes/después, logo en alta.
 
-## Stack
+## Cómo usarlas en las webs
 
-- **100% HTML/CSS/JS vanilla** — un único archivo `v1.html`, sin frameworks ni dependencias de build
-- Google Fonts: `Cormorant Garamond` (display) + `Outfit` (body)
-- Sin npm, sin bundler, sin dependencias externas salvo fonts
+Las 3 webs (`v1.html`, `v2.html`, `v3.html`) muestran *placeholders* con degradado
+navy→cian donde irán las fotos. Para que aparezcan las reales, exporta/optimiza
+(preferible **WebP o JPG** ~1600px) y colócalas en `assets/images/` con estos nombres:
 
-## Funcionalidades
-
-| Feature | Descripción |
+| Nombre en `assets/images/` | Qué foto va aquí |
 |---|---|
-| Multiidioma ES/EN/DE | Sistema i18n propio en JS, detección automática de idioma del navegador |
-| Flavor Builder | Elige hasta 3 sabores con preview visual; transfiere al formulario de pedido |
-| Carta con tabs | Cucuruchos, tarrinas, granizados, copas, batidos, horchata |
-| Horario en vivo | Día actual resaltado calculado con `new Date().getDay()` |
-| Badge estado | "Abierto/Cerrado ahora" según hora real (11:00–23:30) |
-| Novedades | 3 creaciones de temporada, traducidas a los 3 idiomas |
-| Formulario takeaway | Recogida en local, sin domicilio |
-| Formulario contacto | Para grupos, eventos y cumpleaños |
-| FAQ SEO/AEO | 6 preguntas por idioma optimizadas para buscadores y agentes IA |
-| WhatsApp flotante | Botón fijo bottom-right |
-| Ticker animado | Carrusel de sabores |
-| Cursor personalizado | Dot + ring con efecto lag |
-| Reveal animations | IntersectionObserver en scroll |
-| Schema.org JSON-LD | Tipo `IceCreamShop` con rating, coordenadas, idiomas, `potentialAction` |
-| Nav hamburger | Menú móvil completo |
+| `hero.jpg` | Imagen principal: paciente sonriendo, gabinete bonito o fachada. |
+| `clinica.jpg` | Interior / sala de espera / unidad dental. |
+| `equipo.jpg` | Doctor(a) o equipo. |
+| `fachada.jpg` | Fachada con rótulo VyDentist (para OpenGraph y Schema). |
 
-## Estructura
+Después, en la web elegida, sustituye el bloque `.ph-label` / `.ph` correspondiente
+por un `<img src="assets/images/hero.jpg" alt="...">` (o úsalo como `background-image`).
 
-```
-heladeria900italiana/
-├── v1.html             ← web completa (todo en un archivo)
-├── BRIEFING.md         ← briefing del proyecto para Claude Code
-├── README.md           ← este archivo
-└── assets/
-    ├── images/         ← fotos reales del local (pendiente del cliente)
-    └── favicon/        ← favicon (pendiente del cliente)
-```
+## Fotos ya disponibles (del cliente)
 
-## Cómo trabajar con esto
+- Fachada con rótulo **VyDentist** + logo del diente y datos de contacto.
+- Unidad/silla dental (gabinete azul).
+- Sala de espera con dispensador y sofá.
+- Doctor trabajando con lupas.
+- Logo del diente "My/Vy Dentist".
 
-Abre `v1.html` directamente en el navegador. No necesita servidor local.
+> Coloca estos archivos aquí en `pics/` cuando los tengas y expórtalos a `assets/images/`.
 
-Para un servidor rápido con live-reload:
+## Marca
 
-```bash
-npx serve .
-# o
-python -m http.server 8000
-```
-
-## Paleta de colores
-
-| Variable | Valor | Uso |
-|---|---|---|
-| `--ink` | `#1A0A00` | Texto principal |
-| `--cream` | `#FBF7F2` | Fondo principal |
-| `--gelato` | `#F5EDE0` | Fondo secundario |
-| `--caramel` | `#C07B2A` | Color de marca / accent |
-| `--caramel-lt` | `#F0D4A0` | Caramel claro |
-| `--pistachio` | `#6B9463` | Verde pistacho |
-| `--rose` | `#C96060` | Rosa / error |
-| `--choco` | `#3A1F0D` | Chocolate oscuro / primario |
-| `--muted` | `#8A6F58` | Texto secundario |
-
-## SEO / AEO
-
-- Schema.org `IceCreamShop` con coordenadas, rating, `potentialAction: OrderAction`
-- FAQ redactada como la gente pregunta a ChatGPT/Perplexity/Google AI Overview
-- Titles dinámicos por idioma optimizados por keyword
-- Keywords: `heladería fuengirola`, `ice cream fuengirola`, `Eis Fuengirola`
-
-## Deploy recomendado
-
-1. Repo en GitHub: `heladeria900italiana`
-2. Conectar a [Netlify](https://netlify.com) (Import from Git)
-3. Cada `git push` → deploy automático
-
-**Dominio sugerido:** `heladeria900italiana.com` (disponible en Namecheap ~11$/año)
-
-## Pendientes del cliente
-
-- [ ] Número de teléfono real (reemplazar `+34 XXX XXX XXX`)
-- [ ] Número de WhatsApp
-- [ ] Fotos reales del local, helados y terraza → `assets/images/`
-- [ ] Horario exacto confirmado (especialmente temporada baja)
-- [ ] Logo / favicon → `assets/favicon/`
-- [ ] Confirmar si tienen reservas para grupos
-
-## Versiones
-
-| Versión | Cambios |
-|---|---|
-| v1 | Web inicial ES: hero, carta, takeaway, reseñas, nosotros, contacto |
-| v2 | Multiidioma ES/EN/DE + FAQ SEO/IA + Schema JSON-LD |
-| v3 (actual) | Flavor Builder, novedades, carta tabs, horario en vivo, badge estado, WhatsApp flotante, cursor personalizado, ticker, reveal animations, sección playa, reservas, menú móvil |
-
----
-
-*Proyecto generado desde conversación en Claude.ai — Mayo 2025*
+- Azul marino `#0B3A5B` + cian/turquesa `#25C4E0`.
+- Lema: **Una razón para sonreír**.
+- Logo/favicon vectorial ya incluidos en `assets/brand/logo.svg` y `assets/favicon/favicon.svg`.

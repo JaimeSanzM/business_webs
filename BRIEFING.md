@@ -1,251 +1,123 @@
-# 🍦 Heladería 900 Italiana — Project Briefing
+# 🦷 My Dentist Querétaro — Project Briefing
 
-> Este documento es un briefing completo del proyecto para que Claude Code tenga todo el contexto necesario. Léelo antes de tocar cualquier archivo.
+> Briefing del proyecto para Claude Code. Léelo antes de tocar cualquier archivo.
+> Este negocio vive en la rama `my_dentist_qro` del repo multi-negocio `business_webs`.
 
 ---
 
-## 🏪 El negocio
+## 🏥 El negocio
 
-**Nombre:** Heladería 900 Italiana  
-**Tipo:** Heladería artesanal italiana  
-**Ubicación:** Paseo Marítimo Rey de España, Fuengirola, Málaga, España  
-**Coordenadas:** 36.5311123, -4.6248252  
-**Instagram:** @heladeria900italiana  
-**Google Maps:** https://maps.google.com/?q=Heladeria+900+Italiana+Fuengirola  
-**Teléfono:** pendiente de confirmar con el cliente (placeholder: +34 XXX XXX XXX)  
-**WhatsApp:** pendiente (mismo número)
+**Nombre:** My Dentist (marca visible: **VyDentist**)
+**Tipo:** Clínica / consultorio dental
+**Lema:** *Una razón para sonreír*
+**Ubicación:** Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Centro, Santiago de Querétaro, Qro.
+**Coordenadas:** 20.5872464, -100.3849817
+**Teléfono:** 442 384 1772  ·  **WhatsApp / cel:** 442 197 5987
+**Horario:** Lunes a Viernes 9:00–20:00 · Sábado 9:00–14:00 · Domingo cerrado
+**Facebook:** https://www.facebook.com/QROmydentist/  (@mydentist)
+**Google Maps:** My Dentist Queretaro
+
+### Identidad visual (de las fotos del local y el logo)
+- Marca: diente estilizado en **azul marino** con un trazo/curva en **cian/turquesa** → "My/Vy Dentist".
+- Interiores de la clínica con paredes turquesa; ambiente limpio y moderno.
+- Por eso la paleta de todas las webs es **azul marino (#0B3A5B) + cian (#25C4E0)**: es literalmente el alma de la marca.
 
 ### Contexto
-- Heladería en primera línea del paseo marítimo de Fuengirola
-- Elaboran helados artesanales cada día siguiendo recetas italianas
-- Más de 20 sabores disponibles, rotan según temporada
-- Tienen terraza con vistas al Mediterráneo
-- Nota media en Google: 4.3★ (~50 reseñas analizadas)
-- Clientela mixta: españoles locales + turistas británicos, alemanes, nórdicos
-- Competencia directa en Fuengirola: Heladería Caramelo, Northern Lights Heladería, Gioelia
+- Clínica en el Centro de Querétaro, cerca de la Alameda (Plaza Lecaroz).
+- Querétaro tiene turismo dental: pacientes de EE. UU./extranjero → **el inglés importa** (i18n ES/EN).
+- Competencia local: muchas clínicas "diseño de sonrisa" (DSD). Diferencial de My Dentist: **trato cercano, humano y sin juicios** + precios claros.
 
 ---
 
-## 🌐 La web
+## 🎨 Dirección de diseño
 
-### Stack
-- **100% HTML/CSS/JS vanilla** — un solo archivo `v1.html`
-- Sin frameworks, sin dependencias externas salvo Google Fonts
-- Google Fonts: `Cormorant Garamond` (display) + `Outfit` (body)
+Referencias que le gustan al cliente: **dentaloth.com.mx** (clínica premium: limpia, sofisticada,
+mucha foto de calidad, tipografía cuidada, CTA de cita muy visible) y paoladentista.com.
+El encargo: *"me gusta el estilo de dentaloth pero que tenga alma propia de My Dentist"*.
 
-### Funcionalidades implementadas
-1. **Multiidioma ES / EN / DE** — sistema i18n propio en JS, detección automática del navegador
-2. **Flavor Builder interactivo** — elige hasta 3 sabores con preview visual, se transfiere al formulario de pedido
-3. **Carta con tabs** — cucuruchos, tarrinas, granizados, copas, batidos
-4. **Horario con día actual resaltado** — calculado con `new Date().getDay()`
-5. **Badge de estado en vivo** — "Abierto/Cerrado ahora" según hora real (abierto 11:00–23:30)
-6. **Sección Novedades** — 3 creaciones de temporada, traducidas a los 3 idiomas
-7. **Formulario takeaway** — recogida en local únicamente, NO domicilio
-8. **Formulario de contacto** — para grupos, eventos, cumpleaños
-9. **FAQ** — 6 preguntas por idioma, optimizadas para SEO y agentes IA
-10. **WhatsApp flotante** — botón fijo bottom-right
-11. **Ticker animado** — carrusel de sabores
-12. **Cursor personalizado** — dot + ring con efecto lag
-13. **Animaciones reveal** — IntersectionObserver en scroll
-14. **Schema.org JSON-LD** — IceCreamShop con rating, coordenadas, idiomas, potentialAction
-15. **Nav hamburger** — menú móvil completo
-16. **Reservas con teléfono** — sección con botones WhatsApp, llamada, Instagram
+→ Traducción a diseño: estética **premium-clínica, confiable y luminosa**, con la **paleta navy+cian**
+de My Dentist y el lema *Una razón para sonreír*. Nada de recrear la heladería: dentista de principio a fin.
 
-### Secciones de la web (en orden)
-```
-lang-bar → nav → hero → ticker → novedades → flavor-builder → 
-carta → horario+reservas → reviews → playa-cta → takeaway → 
-faq → contacto → footer
-```
+Se entregan **3 variantes** (homólogo a las v1/v2/v3 de la heladería):
 
-### Paleta de colores
+1. **v1 · Clínica Premium** — insignia. Fraunces (serif cálido) + Outfit. Hero a dos columnas,
+   tarjetas de servicio con icono, franja de confianza, sección doctor en navy, proceso, testimonios,
+   agenda + mapa + horario en vivo, FAQ, CTA. Es la más cercana a dentaloth.
+2. **v2 · Moderno & Bold** — Poppins, cian dominante, formas redondeadas/blobs, stats grandes,
+   pastillas flotantes. Amable y enérgico, ideal para redes.
+3. **v3 · Editorial Minimal** — Cormorant Garamond + Manrope, mucho blanco, índice de servicios
+   numerado, grandes citas serif, carrusel de testimonios. Sobrio y de autor.
+
+Las tres comparten contenido, datos y features; cambian el lenguaje visual.
+
+---
+
+## 🧩 Servicios (contenido de las webs)
+
+- **Ortodoncia** — brackets tradicionales, estéticos y alineadores invisibles.
+- **Implantes dentales** — titanio, reposición de piezas perdidas.
+- **Diseño de sonrisa** — carillas y coronas de porcelana, planificación digital.
+- **Endodoncia** — tratamientos de conducto sin dolor.
+- **Odontopediatría** — primeras visitas sin miedo para niños.
+- **Limpieza y blanqueamiento** — higiene profesional y blanqueamiento.
+- *(Base: odontología general / valoración)*
+
+---
+
+## 🛠️ Stack y funcionalidades
+
+- **HTML/CSS/JS vanilla**, un archivo por variante (`v1.html`, `v2.html`, `v3.html`).
+- **i18n ES/EN** propio (diccionario JS + `data-i18n`), con detección de navegador y `localStorage`.
+- **Horario en vivo**: `new Date().getDay()/getHours()` → badge Abierto/Cerrado + día resaltado.
+- **Formulario → WhatsApp**: arma el mensaje y abre `wa.me/524421975987`.
+- **WhatsApp flotante** fijo.
+- **Schema.org `Dentist` JSON-LD**: dirección, geo, `openingHoursSpecification`, `aggregateRating`,
+  `availableLanguage`, `ReserveAction`.
+- **SEO/AEO**: `<title>`/description por keyword, FAQ redactada como búsquedas reales
+  ("¿mejor dentista en el Centro de Querétaro?", "Who is the best dentist in Querétaro?").
+- **Mapa** de Google embebido con coordenadas reales.
+- Reveal on scroll (IntersectionObserver), nav sticky, menú móvil.
+
+### Paleta
 ```css
---ink:       #1A0A00   /* texto principal */
---cream:     #FBF7F2   /* fondo principal */
---gelato:    #F5EDE0   /* fondo secundario */
---caramel:   #C07B2A   /* color de marca / accent */
---caramel-lt:#F0D4A0   /* caramel claro */
---pistachio: #6B9463   /* verde pistacho */
---rose:      #C96060   /* rosa / error */
---choco:     #3A1F0D   /* chocolate oscuro / primario */
---muted:     #8A6F58   /* texto secundario */
+--navy:#0B3A5B  /* marca / texto */      --cyan:#25C4E0  /* acento */
+--cyan-dk:#12A6C4                          --ice:#F3FAFC  /* fondo claro */
+WhatsApp: #25D366
 ```
-
-### Tipografía
-- Display: `Cormorant Garamond` (serif, para títulos y precios)
-- Body: `Outfit` (sans-serif, para todo lo demás)
 
 ---
 
-## 💰 Carta de precios (actualizada)
+## 🖼️ Imágenes (pendiente del cliente)
 
-### Cucuruchos
-| Tamaño | Precio |
-|--------|--------|
-| Pequeño · 1 bola | 3,50 € |
-| Pequeño · 2 bolas | 4,50 € |
-| Grande · 1 bola | 4,00 € |
-| Grande · 2 bolas | 5,00 € |
-| Cucurucho de chocolate | 10,70 € |
+Las webs funcionan con placeholders elegantes (degradados navy→cian + iconos SVG) donde irán las fotos.
+Cuando el cliente las envíe, colocar en `assets/images/` con estos nombres para que aparezcan:
 
-### Tarrinas
-| Tamaño | Precio |
-|--------|--------|
-| Pequeña | 3,50 € |
-| Mediana | 4,50 € |
-| Grande | 5,50 € |
-| ½ Litro (solo llevar) | 9,50 € |
-| 1 Litro (solo llevar) | 17,00 € |
+- `hero.jpg` — foto principal (sonrisa/paciente o fachada bonita).
+- `clinica.jpg` — interior/gabinete.
+- `equipo.jpg` — doctor/equipo.
+- `fachada.jpg` — fachada del local (para OpenGraph / Schema).
 
-### Granizados
-| Tamaño | Precio |
-|--------|--------|
-| Pequeño | 3,00 € |
-| Mediano | 3,50 € |
-| Grande | 4,00 € |
-| 1 Litro | 7,50 € |
-
-### Tulipas
-| Formato | Precio |
-|---------|--------|
-| Tulipa 2 bolas | 4,70 € |
-| Tulipa 3 bolas | 6,00 € |
-
-### Batidos
-| Tamaño | Precio |
-|--------|--------|
-| Mediano | 4,50 € |
-| Grande | 5,50 € |
-| 1 Litro (solo llevar) | 10,00 € |
-
-### Horchata
-| Tamaño | Precio |
-|--------|--------|
-| Pequeña | 3,00 € |
-| Mediana | 3,50 € |
-| Grande | 4,20 € |
-| 1 Litro | 8,00 € |
-
----
-
-## 🍦 Sabores disponibles
-
-```
-Clásicos:    Pistacho, Stracciatella, Chocolate, Nata, Café, 
-             Menta choco, Avellana, Napolitana, Yogurt
-Frutas:      Fresa, Mango, Limón, Banana Split
-Especiales:  Gianduja, Turrón, Málaga, Happy Hippo, 
-             Chocolate Dubai, Cremino de Pistacho
-Sin lactosa: selección disponible (consultar en local)
-```
-
-**Novedades de temporada implementadas:**
-- Cremino de Pistacho (capas pistacho + chocolate blanco)
-- Fresa & Albahaca (sabor sorpresa)
-- Chocolate Dubai (el viral, con kataifi)
-
----
-
-## 📅 Horario
-
-| Día | Horario |
-|-----|---------|
-| Lunes – Jueves | 11:00 – 23:00 |
-| Viernes – Sábado | 11:00 – 23:30 |
-| Domingo | 11:00 – 23:00 |
-
-> ⚠️ Horario orientativo — confirmar con el cliente. Puede variar en temporada baja.
-
----
-
-## 🌍 SEO y AEO (Agent Engine Optimization)
-
-### Keywords objetivo
-- ES: `heladería fuengirola`, `helado artesanal fuengirola`, `gelato fuengirola`, `mejor heladería fuengirola`
-- EN: `ice cream fuengirola`, `best ice cream fuengirola`, `artisan gelato fuengirola costa del sol`
-- DE: `Eis Fuengirola`, `handgemachtes Eis Fuengirola`, `beste Eisdiele Fuengirola`
-
-### Schema.org implementado
-- Tipo: `IceCreamShop`
-- Incluye: nombre, descripción, URL, dirección, coordenadas, rating, priceRange, availableLanguage, potentialAction (OrderAction)
-
-### FAQ optimizada para agentes IA
-Las preguntas están redactadas exactamente como la gente pregunta a ChatGPT, Perplexity, Google AI Overview:
-- "¿Cuál es la mejor heladería de Fuengirola?"
-- "What is the best ice cream shop in Fuengirola?"
-- "Was ist die beste Eisdiele in Fuengirola?"
-
----
-
-## 🗂️ Estructura de archivos recomendada
-
-```
-heladeria900italiana/
-├── v1.html             ← web completa (todo en un archivo)
-├── BRIEFING.md         ← este archivo
-├── README.md           ← descripción técnica del repo
-└── assets/
-    ├── images/         ← fotos reales del local (pendiente del cliente)
-    └── favicon/        ← favicon pendiente
-```
+*(Existe una foto de fachada con el rótulo VyDentist y el logo del diente; ideales para hero/equipo.)*
 
 ---
 
 ## 🚀 Deploy
 
-### Opción recomendada: Netlify + GitHub
-1. Repo en GitHub: `heladeria900italiana`
-2. Conectar repo a Netlify (Import from Git)
-3. Cada `git push` → deploy automático
-
-### Dominio
-- `heladeria900italiana.com` — **disponible** (comprobado en Namecheap, ~11$/año)
-- `heladeria900italiana.es` — por comprobar (recomendado también)
-- Registrar en Namecheap o Dondominio (mejor para .es)
-- Apuntar nameservers de Namecheap → Netlify DNS
+1. Elegir variante → renombrarla a `index.html` (o configurar publish del `vN.html`).
+2. Netlify/Vercel import from Git (rama `my_dentist_qro`) → deploy automático.
+3. Dominio sugerido: `mydentistqueretaro.com`.
 
 ---
 
-## ✅ Pendientes / TODO
+## ✅ TODO / pendientes del cliente
 
-### Del cliente (necesitamos que nos den)
-- [ ] Número de teléfono real (reemplazar `+34 XXX XXX XXX`)
-- [ ] Número de WhatsApp (puede ser el mismo)
-- [ ] Fotos reales del local, helados y terraza
-- [ ] Horario exacto confirmado (especialmente temporada baja)
-- [ ] Confirmar si tienen servicio de reservas para grupos
-- [ ] Logo o favicon si tienen
-
-### Técnico (mejoras futuras)
-- [ ] Añadir fotos reales a la sección novedades y about
-- [ ] Favicon personalizado
-- [ ] Google Analytics / Plausible para medir tráfico
-- [ ] Conectar formularios a email real (Formspree, EmailJS o similar)
-- [ ] Añadir hreflang tags para SEO multiidioma
-- [ ] Optimizar imágenes cuando las haya (WebP)
-- [ ] Añadir Open Graph tags para compartir en redes sociales
+- [ ] Fotos reales (hero, clínica, equipo, fachada, antes/después).
+- [ ] Confirmar dirección exacta, horario y años de experiencia.
+- [ ] Rating y nº de reseñas reales (placeholder: 4.8★ / +120).
+- [ ] Logo alta resolución / favicon definitivo.
+- [ ] ¿Redes además de Facebook? (Instagram, TikTok).
+- [ ] ¿Conectar formulario a email además de WhatsApp?
 
 ---
 
-## 🧠 Contexto de negocio para decisiones de diseño
-
-- **El producto es excelente** — las reseñas positivas son consistentes en cremosidad y sabor
-- **El servicio al cliente es el punto débil** — muchas reseñas negativas sobre trato del personal; NO reflejar esto en la web, solo mostrar lo positivo
-- **Clientela turística alta** — el multiidioma EN/DE es crítico, muchos clientes británicos y alemanes
-- **Ubicación es un activo enorme** — primera línea de playa, siempre mencionarlo
-- **Competencia directa:** Heladería Caramelo (tiene web, teléfono destacado, horarios), Northern Lights (tiene delivery a playa, novedades), Gioelia (franquicia italiana, 46 locales, multiidioma)
-- **Ventaja diferencial:** artesanal local auténtico vs franquicia industrial
-
----
-
-## 📋 Historial de versiones
-
-| Versión | Cambios |
-|---------|---------|
-| v1 | Web inicial ES: hero, carta, takeaway, reseñas, nosotros, contacto |
-| v2 | Multiidioma ES/EN/DE + FAQ optimizada para SEO/IA + Schema JSON-LD |
-| v3 (actual) | Flavor Builder interactivo, novedades, carta con tabs, horario en vivo, badge estado, WhatsApp flotante, cursor personalizado, ticker, reveal animations, sección playa, reservas con teléfono, menú móvil completo |
-
----
-
-*Última actualización: Mayo 2025 — generado desde conversación en Claude.ai*
+*Última actualización: 2026 — generado con Claude Code. Homólogo a la Heladería 900 (rama `heladeria900italiana`).*

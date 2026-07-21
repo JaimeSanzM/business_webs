@@ -3,535 +3,513 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heladería 900 Italiana – Fuengirola · Dal 1990</title>
-<meta name="description" content="Heladería artesanal italiana en Fuengirola desde 1990. Gelato auténtico en primera línea de playa.">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<title>My Dentist Querétaro · Odontología de autor — Una razón para sonreír</title>
+<meta name="description" content="Clínica dental de autor en el Centro de Querétaro. Ortodoncia, implantes, diseño de sonrisa y odontología integral con un enfoque cuidado y personal. Una razón para sonreír. English spoken.">
+<meta name="theme-color" content="#0B3A5B">
+<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+<meta property="og:title" content="My Dentist Querétaro — Odontología de autor">
+<meta property="og:description" content="Odontología integral con enfoque personal en el Centro de Querétaro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"My Dentist Querétaro","alternateName":"VyDentist","description":"Clínica dental de autor en Querétaro: ortodoncia, implantes, diseño de sonrisa y odontología integral.","slogan":"Una razón para sonreír","url":"https://mydentistqueretaro.com","telephone":"+52-442-384-1772","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Centro","addressLocality":"Santiago de Querétaro","addressRegion":"Querétaro","postalCode":"76000","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.5872464,"longitude":-100.3849817},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"120"},"availableLanguage":["Spanish","English"]}
+</script>
 <style>
 :root{
-  --parch:#F7F0E2; --parch-dk:#EFE5D0; --crimson:#8B1A1A; --gold:#C9A84C;
-  --brown:#2D1810; --muted:#8A7060; --white:#FFFDF8;
-  --font:'Lato',sans-serif; --serif:'Playfair Display',serif;
-  --r:.5rem; --ease:cubic-bezier(.25,.46,.45,.94);
+  --navy:#0B3A5B; --ink:#122A3A; --cyan:#1EA9C9; --cyan-lt:#25C4E0;
+  --paper:#FBFCFD; --paper-2:#F2F7F9; --line:#DDE7EC; --muted:#6A7E8B;
+  --d:'Cormorant Garamond',serif; --b:'Manrope',sans-serif; --ease:cubic-bezier(.22,.61,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--parch);color:var(--brown);overflow-x:hidden;line-height:1.6}
+body{font-family:var(--b);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--d);font-weight:500;line-height:1.05;color:var(--navy);letter-spacing:.005em}
+.wrap{width:min(1200px,90vw);margin-inline:auto}
+.kick{font-family:var(--b);font-size:.72rem;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan)}
+.rule{height:1px;background:var(--line);border:none}
 
-/* ORNAMENTS */
-.orn{color:var(--gold);letter-spacing:.1em;font-size:.85rem;display:block;text-align:center;margin:.75rem 0}
-.hr-orn{display:flex;align-items:center;gap:1rem;margin:2.5rem 0}
-.hr-orn::before,.hr-orn::after{content:'';flex:1;height:1px;background:rgba(201,168,76,.3)}
-.hr-orn span{color:var(--gold);font-size:.8rem;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--b);font-weight:600;font-size:.86rem;letter-spacing:.02em;padding:.95rem 1.9rem;border-radius:2px;border:1px solid var(--navy);cursor:pointer;transition:.35s var(--ease)}
+.btn svg{width:17px;height:17px}
+.btn-solid{background:var(--navy);color:#fff}
+.btn-solid:hover{background:#0e4a72}
+.btn-line{background:transparent;color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+.btn-wa{background:#0f6b3f;border-color:#0f6b3f;color:#fff}
+.btn-wa:hover{background:#0c5733}
 
-/* NAV */
-nav{position:fixed;top:0;width:100%;z-index:500;padding:.85rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:all .3s}
-nav.scrolled{background:rgba(247,240,226,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,168,76,.2)}
-.logo{font-family:var(--serif);font-size:1.55rem;color:var(--brown);text-decoration:none;font-style:italic}
-.logo span{color:var(--crimson)}
-.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links a{text-decoration:none;font-size:.72rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;transition:color .2s}
-.nav-links a:hover{color:var(--brown)}
-.nav-cta{background:var(--crimson)!important;color:var(--parch)!important;padding:.5rem 1.25rem;border-radius:.25rem;letter-spacing:.08em!important}
-.nav-cta:hover{background:var(--brown)!important}
-.hamburger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:.4rem}
-.hamburger span{display:block;width:22px;height:2px;background:var(--brown);border-radius:1px;transition:all .3s}
-.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mob-menu{display:none;position:fixed;inset:0;background:var(--parch);z-index:400;flex-direction:column;align-items:center;justify-content:center;gap:2rem}
-.mob-menu.open{display:flex}
-.mob-menu a{font-family:var(--serif);font-size:2.5rem;color:var(--brown);text-decoration:none;font-style:italic}
-.mob-menu a:hover{color:var(--crimson)}
-@media(max-width:900px){.nav-links{display:none}.hamburger{display:flex}}
+/* top */
+.top{border-bottom:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.55rem 0;flex-wrap:wrap}
+.top .l{display:flex;gap:1.6rem;flex-wrap:wrap;letter-spacing:.04em}
+.top a:hover{color:var(--navy)}
+.lang{display:flex;gap:.9rem}
+.lang button{background:none;border:none;font-family:var(--b);font-size:.76rem;font-weight:600;letter-spacing:.08em;color:var(--muted);cursor:pointer;padding:0}
+.lang button.active{color:var(--navy);text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--cyan)}
 
-/* HERO */
-#hero{min-height:100vh;display:grid;place-items:center;position:relative;overflow:hidden}
-.hero-photo{position:absolute;inset:0;background:url('assets/images/local.png') center/cover no-repeat}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(45,24,16,.82) 0%,rgba(45,24,16,.65) 60%,rgba(45,24,16,.9) 100%)}
-.hero-inner{position:relative;z-index:1;text-align:center;padding:8rem 2rem 4rem;max-width:860px;margin:0 auto}
-.hero-stamp{display:inline-block;border:2px solid var(--gold);padding:.5rem 1.5rem;border-radius:.25rem;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:2.5rem}
-.hero-h1{font-family:var(--serif);font-size:clamp(3rem,8vw,6rem);font-weight:900;color:var(--parch);line-height:.95;margin-bottom:1rem;letter-spacing:-.01em}
-.hero-h1 em{color:var(--gold);font-style:italic}
-.hero-hr{width:80px;height:2px;background:var(--gold);margin:1.5rem auto;opacity:.6}
-.hero-sub{font-size:1rem;font-weight:300;color:rgba(247,240,226,.7);max-width:480px;margin:0 auto 2.5rem;line-height:1.8;letter-spacing:.02em}
-.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .2s;border:none;font-family:var(--font);letter-spacing:.06em;text-transform:uppercase}
-.btn-gold{background:var(--gold);color:var(--brown);border-radius:.25rem}
-.btn-gold:hover{background:#b8942e;transform:translateY(-1px)}
-.btn-outline{background:transparent;color:var(--parch);border:1.5px solid rgba(247,240,226,.4);border-radius:.25rem}
-.btn-outline:hover{background:var(--parch);color:var(--brown)}
-.hero-year{font-family:var(--serif);font-size:clamp(4rem,10vw,8rem);font-weight:900;color:rgba(201,168,76,.12);position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);white-space:nowrap;letter-spacing:-.02em;pointer-events:none;user-select:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(251,252,253,.9);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+nav.scrolled{border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mk{width:40px;height:40px}
+.brand .nm{font-family:var(--d);font-size:1.5rem;font-weight:600;color:var(--navy);line-height:1}
+.brand .nm b{font-weight:500;color:var(--cyan)}
+.brand .sb{font-family:var(--b);font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
+.links{display:flex;gap:2.2rem;align-items:center}
+.links a{font-size:.82rem;font-weight:500;letter-spacing:.03em;color:var(--ink);position:relative}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:var(--cyan);transition:width .3s var(--ease)}
+.links a:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
+.burger span{width:24px;height:1.5px;background:var(--navy)}
 
-/* NOSOTROS */
-#nosotros{background:var(--white);padding:5.5rem 2.5rem}
-.nos-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1100px;margin:0 auto}
-.nos-photos{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
-.nos-main{grid-column:1/-1;border-radius:var(--r);overflow:hidden;aspect-ratio:16/9;box-shadow:0 12px 40px rgba(45,24,16,.15)}
-.nos-main img,.nos-sm img{width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.08)}
-.nos-sm{border-radius:var(--r);overflow:hidden;aspect-ratio:1;box-shadow:0 6px 20px rgba(45,24,16,.12)}
-.nos-text .stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,.3);padding-bottom:.5rem;margin-bottom:1.25rem;display:inline-block}
-.nos-text h2{font-family:var(--serif);font-size:clamp(2rem,3.5vw,2.8rem);font-weight:700;color:var(--brown);line-height:1.15;margin-bottom:1rem}
-.nos-text h2 em{color:var(--crimson)}
-.nos-text p{color:var(--muted);line-height:1.85;font-size:.92rem;margin-bottom:.85rem}
-.nos-desde{font-family:var(--font);font-size:3.5rem;font-weight:700;color:var(--gold);line-height:1;margin-bottom:.25rem;letter-spacing:-.04em}
-.nos-desde-lbl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-@media(max-width:900px){.nos-wrap,.nos-photos{grid-template-columns:1fr}}
+/* hero */
+.hero{padding:clamp(2.5rem,6vw,5.5rem) 0 clamp(2.5rem,5vw,4.5rem)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:end}
+.hero .idx{font-family:var(--d);font-style:italic;font-size:1.1rem;color:var(--cyan);margin-bottom:1.2rem}
+.hero h1{font-size:clamp(3rem,7.5vw,6.2rem);font-weight:500;margin-bottom:1.6rem}
+.hero h1 em{font-style:italic;color:var(--cyan)}
+.hero .lead{font-size:1.08rem;color:var(--muted);max-width:44ch;margin-bottom:2rem;font-weight:400}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.hero-meta{margin-top:2.4rem;display:flex;gap:2.5rem;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.6rem}
+.hero-meta .m .n{font-family:var(--d);font-size:2.1rem;color:var(--navy);line-height:1}
+.hero-meta .m .l{font-size:.74rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+.hero-fig{position:relative}
+.hero-fig .frame{aspect-ratio:3/4;border:1px solid var(--line);position:relative;overflow:hidden;background:linear-gradient(170deg,var(--paper-2),#e4eef2)}
+.hero-fig .frame .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;color:var(--navy);opacity:.4;text-align:center;padding:1.5rem}
+.hero-fig .frame .ph svg{width:56px;height:56px;stroke:var(--navy);fill:none}
+.hero-fig .frame .ph span{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.hero-fig figcaption{font-family:var(--d);font-style:italic;font-size:1.05rem;color:var(--muted);margin-top:.8rem}
+.hero-fig .stamp{position:absolute;top:-18px;left:-18px;width:88px;height:88px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;text-align:center;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;font-weight:600;z-index:2}
+.hero-fig .stamp b{font-family:var(--d);font-size:1.4rem;display:block;letter-spacing:0}
 
-/* GALERIA */
-#galeria{background:var(--brown);padding:5rem 2.5rem}
-.gal-head{text-align:center;margin-bottom:3rem}
-.gal-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.gal-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--parch);font-style:italic}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;max-width:1100px;margin:0 auto}
-.gal-item{border-radius:var(--r);overflow:hidden;aspect-ratio:3/4;position:relative}
-.gal-item.wide{grid-column:span 2;aspect-ratio:16/9}
-.gal-item img{width:100%;height:100%;object-fit:cover;filter:sepia(.15);transition:filter .4s,transform .4s}
-.gal-item:hover img{filter:sepia(0);transform:scale(1.04)}
-@media(max-width:900px){.gal-grid{grid-template-columns:1fr 1fr}.gal-item.wide{grid-column:span 2}}
-@media(max-width:600px){.gal-grid{grid-template-columns:1fr}.gal-item.wide{grid-column:1}}
+/* marquee */
+.marq{border-block:1px solid var(--line);overflow:hidden;padding:1.1rem 0}
+.marq-track{display:flex;gap:3rem;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
+.marq span{font-family:var(--d);font-style:italic;font-size:1.5rem;color:var(--navy);display:inline-flex;align-items:center;gap:3rem}
+.marq span::after{content:"✦";color:var(--cyan);font-style:normal;font-size:.8rem}
+@keyframes scroll{to{transform:translateX(-50%)}}
 
-/* CARTA */
-#carta{background:var(--parch);padding:5.5rem 2.5rem}
-.menu-board{max-width:960px;margin:0 auto}
-.menu-board-header{text-align:center;margin-bottom:3rem;position:relative}
-.menu-board-header::after{content:'';display:block;width:100px;height:2px;background:var(--gold);margin:1rem auto 0;opacity:.5}
-.menu-title{font-family:var(--serif);font-size:clamp(2.5rem,5vw,4rem);font-weight:900;color:var(--brown);line-height:1;letter-spacing:-.01em}
-.menu-subtitle{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
-.menu-section{margin-bottom:3rem}
-.menu-section-title{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--crimson);text-align:center;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid rgba(201,168,76,.25);font-style:italic}
-.menu-items{display:grid;grid-template-columns:repeat(2,1fr);gap:.35rem}
-.menu-item{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem .5rem;border-bottom:1px dotted rgba(45,24,16,.12)}
-.menu-item:hover{background:rgba(201,168,76,.05)}
-.mi-name{font-size:.9rem;color:var(--brown)}
-.mi-dots{flex:1;border-bottom:1px dotted rgba(45,24,16,.2);margin:0 .5rem;min-width:20px}
-.mi-price{font-family:var(--serif);font-size:.95rem;font-weight:700;color:var(--crimson);white-space:nowrap}
-.sabores-box{background:var(--white);border:1px solid rgba(201,168,76,.25);border-radius:var(--r);padding:1.5rem;text-align:center}
-.sabores-box h4{font-family:var(--serif);font-size:1.1rem;color:var(--brown);margin-bottom:1rem;font-style:italic}
-.sabores-tags{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center}
-.stag{background:var(--parch-dk);color:var(--brown);border-radius:.25rem;font-size:.75rem;padding:.3rem .75rem;border:1px solid rgba(201,168,76,.2)}
-@media(max-width:700px){.menu-items{grid-template-columns:1fr}}
+/* section */
+.sec{padding:clamp(3.5rem,7vw,6.5rem) 0}
+.sec-h{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3.5rem;flex-wrap:wrap}
+.sec-h h2{font-size:clamp(2.2rem,4.5vw,3.6rem)}
+.sec-h .kick{margin-bottom:1rem;display:block}
+.sec-h p{color:var(--muted);max-width:38ch;font-size:1rem}
 
-/* HORARIO */
-#horario{background:var(--parch-dk);padding:5rem 2.5rem}
-.hor-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start}
-.hor-h{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:700;color:var(--brown);margin:.5rem 0 1.5rem;line-height:1.15}
-.hor-table{display:flex;flex-direction:column;gap:.4rem}
-.hor-row{display:flex;justify-content:space-between;padding:.75rem 1rem;border-radius:var(--r);font-size:.875rem;background:var(--white);border:1px solid rgba(201,168,76,.15)}
-.hor-row.hoy{background:var(--crimson);border-color:var(--crimson)}
-.hor-row.hoy .hd,.hor-row.hoy .ht{color:var(--parch)}
-.hd{font-weight:700;color:var(--brown)}
-.ht{color:var(--muted);font-size:.8rem}
-.res-box{background:var(--brown);border-radius:var(--r);padding:2.5rem;color:var(--parch);position:relative;overflow:hidden}
-.res-box::before{content:'1990';position:absolute;font-family:var(--serif);font-size:7rem;font-weight:900;color:rgba(201,168,76,.06);bottom:-1rem;right:-1rem;line-height:1;pointer-events:none}
-.res-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.res-box h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin-bottom:.75rem;line-height:1.2;font-style:italic}
-.res-box p{color:rgba(247,240,226,.6);font-size:.88rem;line-height:1.75;margin-bottom:1.5rem}
-.tel-v{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);text-decoration:none;margin-bottom:1.5rem}
-.cbtns{display:flex;gap:.65rem;flex-wrap:wrap}
-.cbtn{display:flex;align-items:center;gap:.4rem;padding:.55rem 1rem;border-radius:.25rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:opacity .2s;border:none;font-family:var(--font);cursor:pointer;letter-spacing:.04em}
-.cbtn:hover{opacity:.85}
-.cbtn-wa{background:#25D366;color:#fff}
-.cbtn-tel{background:rgba(255,255,255,.1);color:var(--parch);border:1px solid rgba(247,240,226,.2)}
-.cbtn-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366);color:#fff}
-@media(max-width:900px){.hor-layout{grid-template-columns:1fr}}
+/* services index */
+.svc-list{border-top:1px solid var(--line)}
+.svc-row{display:grid;grid-template-columns:auto 1fr auto;gap:2rem;align-items:center;padding:1.7rem 0;border-bottom:1px solid var(--line);cursor:default;transition:padding .35s var(--ease),background .35s}
+.svc-row:hover{padding-inline:1.4rem;background:var(--paper-2)}
+.svc-row .no{font-family:var(--d);font-style:italic;font-size:1.3rem;color:var(--cyan);width:2.5rem}
+.svc-row .mid{display:flex;flex-direction:column}
+.svc-row h3{font-size:1.9rem;font-weight:500;transition:color .3s}
+.svc-row:hover h3{color:var(--cyan)}
+.svc-row .desc{font-size:.92rem;color:var(--muted);max-width:52ch;margin-top:.2rem}
+.svc-row .arw{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.35s var(--ease)}
+.svc-row .arw svg{width:18px;height:18px;stroke:var(--navy);fill:none;transition:transform .35s}
+.svc-row:hover .arw{background:var(--navy);border-color:var(--navy)}
+.svc-row:hover .arw svg{stroke:#fff;transform:translate(2px,-2px)}
 
-/* SERVICIOS */
-#servicios{background:var(--parch);padding:5rem 2.5rem}
-.serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:2.5rem auto 0}
-.serv-card{background:var(--white);border-radius:var(--r);padding:2rem;border:1px solid rgba(201,168,76,.2)}
-.serv-icon{font-size:2rem;margin-bottom:1rem;display:block}
-.serv-card h3{font-family:var(--serif);font-size:1.2rem;color:var(--brown);margin-bottom:.5rem;font-style:italic}
-.serv-card p{font-size:.86rem;color:var(--muted);line-height:1.75;margin-bottom:1.25rem}
-.serv-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--crimson);color:var(--parch);padding:.6rem 1.3rem;border-radius:.25rem;font-size:.78rem;font-weight:700;text-decoration:none;transition:background .2s;letter-spacing:.06em;text-transform:uppercase}
-.serv-btn:hover{background:var(--brown)}
-.del-zones{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem;margin-bottom:1.25rem}
-.dz{background:var(--parch-dk);border-radius:var(--r);padding:.85rem;text-align:center;border:1px solid rgba(201,168,76,.15)}
-.dz-km{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--crimson)}
-.dz-t{font-size:.72rem;color:var(--muted);margin-top:.15rem;font-weight:700}
-.dz-a{font-size:.68rem;color:var(--muted);margin-top:.2rem;line-height:1.4}
-@media(max-width:900px){.serv-grid{grid-template-columns:1fr}.del-zones{grid-template-columns:1fr}}
+/* quote / about */
+.about{background:var(--navy);color:#fff}
+.about .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.about .fig{aspect-ratio:4/5;border:1px solid rgba(255,255,255,.2);position:relative;overflow:hidden;background:linear-gradient(160deg,#0e4a72,#0a3350)}
+.about .fig .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:rgba(255,255,255,.45);text-align:center}
+.about .fig .ph svg{width:54px;height:54px;stroke:rgba(255,255,255,.55);fill:none}
+.about .kick{color:var(--cyan-lt)}
+.about blockquote{font-family:var(--d);font-size:clamp(1.7rem,3.2vw,2.6rem);line-height:1.28;color:#fff;font-weight:400;margin:1.2rem 0 1.6rem}
+.about blockquote em{font-style:italic;color:var(--cyan-lt)}
+.about p{color:rgba(255,255,255,.78);font-size:1rem;margin-bottom:1rem;max-width:52ch}
+.about .sig{font-family:var(--d);font-style:italic;font-size:1.4rem;color:var(--cyan-lt);margin-top:.6rem}
 
-/* MAPA */
-#mapa{background:var(--brown);padding:5rem 2.5rem;text-align:center}
-.mapa-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.mapa-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--parch);font-style:italic;margin-bottom:.5rem}
-.mapa-sub{color:rgba(247,240,226,.45);font-size:.85rem;margin-bottom:2.5rem;letter-spacing:.04em}
-.mapa-frame{border-radius:var(--r);overflow:hidden;max-width:960px;margin:0 auto;border:2px solid rgba(201,168,76,.2)}
-.mapa-link{display:inline-block;margin-top:1.5rem;color:var(--gold);font-size:.82rem;font-weight:700;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
-.mapa-link:hover{opacity:.8}
+/* approach columns */
+.appr{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+.appr .c{padding:2.4rem 2rem;border-right:1px solid var(--line)}
+.appr .c:last-child{border-right:none}
+.appr .c .n{font-family:var(--d);font-style:italic;font-size:1.2rem;color:var(--cyan);margin-bottom:1rem}
+.appr .c h3{font-size:1.6rem;font-weight:500;margin-bottom:.6rem}
+.appr .c p{color:var(--muted);font-size:.94rem}
 
-/* FAQ */
-#faq{background:var(--parch-dk);padding:5rem 2.5rem}
-.faq-wrap{max-width:740px;margin:0 auto}
-.faq-item{border-bottom:1px solid rgba(201,168,76,.25);padding:.65rem 0}
-.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:var(--serif);font-size:.95rem;color:var(--brown);padding:.5rem 0;user-select:none}
-.faq-arr{color:var(--gold);transition:transform .25s;flex-shrink:0;margin-left:.5rem}
-.faq-item.open .faq-arr{transform:rotate(180deg)}
-.faq-a{display:none;padding:.65rem 0 .25rem;font-size:.86rem;color:var(--muted);line-height:1.8}
-.faq-item.open .faq-a{display:block}
+/* testimonial big */
+.tbig{text-align:center;max-width:900px;margin-inline:auto}
+.tbig .stars{color:var(--cyan);letter-spacing:3px;margin-bottom:1.5rem;font-size:1rem}
+.tbig blockquote{font-family:var(--d);font-size:clamp(1.7rem,3.6vw,2.9rem);line-height:1.3;color:var(--navy);font-weight:400;margin-bottom:1.6rem}
+.tbig .who{font-size:.86rem;color:var(--muted);letter-spacing:.04em}
+.tbig .who b{color:var(--navy);font-weight:600}
+.tdots{display:flex;gap:.6rem;justify-content:center;margin-top:2.2rem}
+.tdots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--navy);background:none;cursor:pointer;padding:0;transition:.25s}
+.tdots button.active{background:var(--navy)}
 
-/* FOOTER */
-footer{background:var(--brown);color:var(--parch);padding:4rem 2.5rem 2rem;border-top:2px solid rgba(201,168,76,.2)}
-.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.5rem;max-width:1100px;margin:0 auto 2.5rem}
-.f-logo{font-family:var(--serif);font-size:1.5rem;font-style:italic;margin-bottom:.5rem}
-.f-logo span{color:var(--gold)}
-.f-tag{font-size:.8rem;color:rgba(247,240,226,.35);line-height:1.65;max-width:240px}
-.f-col h4{font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;border-bottom:1px solid rgba(201,168,76,.2);padding-bottom:.5rem}
-.f-col ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
-.f-col ul a{font-size:.82rem;color:rgba(247,240,226,.45);text-decoration:none;transition:color .2s}
-.f-col ul a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(247,240,226,.06);padding-top:1.5rem;text-align:center;font-size:.72rem;color:rgba(247,240,226,.2);max-width:1100px;margin:0 auto;letter-spacing:.04em}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr}}
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem)}
+.contact h2{font-size:clamp(2.2rem,4.5vw,3.4rem);margin-bottom:1.6rem}
+.cinfo dl{margin-top:1.5rem}
+.cinfo .row{display:grid;grid-template-columns:8rem 1fr;gap:1rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.cinfo dt{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-top:.2rem}
+.cinfo dd{color:var(--ink);font-size:.98rem}
+.cinfo dd a:hover{color:var(--cyan)}
+.live{margin-top:.4rem;font-size:.82rem;display:inline-flex;align-items:center;gap:.5rem;color:var(--navy);font-weight:600}
+.live .dot{width:8px;height:8px;border-radius:50%;background:#22a559}.live.closed .dot{background:#c0554e}
+.today{color:var(--cyan)!important;font-weight:600}
+.cmap{margin-top:1.2rem;aspect-ratio:16/7;border:1px solid var(--line);overflow:hidden}
+.cmap iframe{width:100%;height:100%;border:0}
+.cform .field{margin-bottom:1.3rem;position:relative}
+.cform label{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+.cform input,.cform select,.cform textarea{width:100%;font-family:var(--b);font-size:1rem;padding:.6rem 0;border:none;border-bottom:1px solid var(--line);background:none;color:var(--ink);transition:border-color .3s}
+.cform input:focus,.cform select:focus,.cform textarea:focus{outline:none;border-color:var(--cyan)}
+.cform .g{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem}
 
-/* WA FLOAT */
-.wa-float{position:fixed;bottom:2rem;right:2rem;z-index:300;width:54px;height:54px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 4px 20px rgba(37,211,102,.35);text-decoration:none;transition:transform .2s}
-.wa-float:hover{transform:scale(1.1)}
-.wa-float svg{width:26px;height:26px;fill:#fff}
+/* faq */
+.faq{max-width:860px;margin-inline:auto;border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa button{width:100%;text-align:left;background:none;border:none;font-family:var(--d);font-size:1.5rem;font-weight:500;color:var(--navy);padding:1.4rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1.5rem}
+.qa .s{font-family:var(--b);font-size:1.5rem;color:var(--cyan);transition:transform .3s;flex:none}
+.qa.open .s{transform:rotate(45deg)}
+.qa .a{max-height:0;overflow:hidden;transition:max-height .4s var(--ease)}
+.qa .a p{padding:0 0 1.5rem;color:var(--muted);max-width:64ch}
 
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
-/* LANG */
-.lang-btns{display:flex;gap:.35rem;align-items:center}
-.lang-btn{background:none;border:1px solid rgba(45,24,16,.2);border-radius:.25rem;font-size:.68rem;font-weight:700;padding:.28rem .6rem;cursor:pointer;font-family:var(--font);color:var(--muted);letter-spacing:.04em;transition:all .2s}
-.lang-btn:hover,.lang-btn.active{background:var(--brown);color:var(--parch);border-color:var(--brown)}
+/* cta */
+.cband{border:1px solid var(--navy);padding:clamp(2.5rem,6vw,4.5rem);text-align:center}
+.cband h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:1rem}
+.cband h2 em{font-style:italic;color:var(--cyan)}
+.cband p{color:var(--muted);margin-bottom:2rem;max-width:48ch;margin-inline:auto}
+.cband .a{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 
-/* SECTION HEADERS */
-.sec-stamp{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;text-align:center}
-.sec-h2{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--brown);text-align:center;margin-bottom:2.5rem;font-style:italic}
+/* footer */
+footer{border-top:1px solid var(--line);padding:3.5rem 0 1.6rem}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.6rem}
+.fg .nm{font-family:var(--d);font-size:1.5rem;color:var(--navy)}.fg .nm b{color:var(--cyan);font-weight:500}
+.fg p{font-size:.9rem;color:var(--muted);margin:.9rem 0 1.2rem;max-width:32ch}
+.fg h4{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.1rem}
+.fg a{display:block;font-size:.92rem;padding:.28rem 0;color:var(--ink)}
+.fg a:hover{color:var(--cyan)}
+.soc{display:flex;gap:.8rem}
+.soc a{width:36px;height:36px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;transition:.3s}
+.soc a:hover{background:var(--navy);border-color:var(--navy)}.soc a:hover svg{fill:#fff}.soc svg{width:16px;height:16px;fill:var(--navy);transition:fill .3s}
+.fbot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding-top:1.5rem;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:200;width:56px;height:56px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:0 12px 30px -10px rgba(11,58,91,.6);transition:transform .3s}
+.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:28px;height:28px;fill:#fff}
+html.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+.mm{position:fixed;inset:0;z-index:150;background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.2rem;opacity:0;pointer-events:none;transition:opacity .35s}
+.mm.open{opacity:1;pointer-events:auto}.mm a{font-family:var(--d);font-size:2rem;color:var(--navy)}
+.mm .x{position:absolute;top:1.4rem;right:1.7rem;font-size:2.2rem;background:none;border:none;cursor:pointer;color:var(--navy)}
+
+@media(max-width:900px){
+  .hero .wrap,.about .wrap,.contact .wrap{grid-template-columns:1fr}
+  .hero-fig{max-width:400px;order:-1}
+  .appr{grid-template-columns:1fr}.appr .c{border-right:none;border-bottom:1px solid var(--line)}.appr .c:last-child{border-bottom:none}
+  .fg{grid-template-columns:1fr 1fr}
+  .links{display:none}.burger{display:flex}
+  .svc-row{grid-template-columns:auto 1fr;gap:1.2rem}.svc-row .arw{display:none}
+}
+@media(max-width:560px){
+  .fg,.cform .g{grid-template-columns:1fr}
+  .top .l .addr{display:none}
+  .svc-row h3{font-size:1.5rem}
+  .cinfo .row{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
+<script>document.documentElement.classList.add('js')</script>
 
-<a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20hacer%20un%20pedido" class="wa-float" target="_blank" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<div class="mob-menu" id="mob-menu">
-  <a href="#nosotros" onclick="closeMob()" data-i18n="nav_about">Nosotros</a>
-  <a href="#carta" onclick="closeMob()" data-i18n="nav_menu">La Carta</a>
-  <a href="#horario" onclick="closeMob()" data-i18n="nav_hours">Horario</a>
-  <a href="#servicios" onclick="closeMob()" data-i18n="nav_orders">Pedidos</a>
-  <a href="#mapa" onclick="closeMob()" data-i18n="nav_map">Mapa</a>
-  <div class="lang-btns" style="justify-content:center;margin-top:.5rem">
-    <button class="lang-btn active" onclick="setLang('es');closeMob()">🇪🇸 ES</button>
-    <button class="lang-btn" onclick="setLang('en');closeMob()">🇬🇧 EN</button>
-    <button class="lang-btn" onclick="setLang('de');closeMob()">🇩🇪 DE</button>
+<div class="top">
+  <div class="wrap">
+    <div class="l">
+      <a href="tel:+524423841772">T. 442 384 1772</a>
+      <a href="https://wa.me/524421975987" target="_blank" rel="noopener">WhatsApp 442 197 5987</a>
+      <span class="addr" data-i18n="top.addr">Plaza Lecaroz · Centro, Querétaro</span>
+    </div>
+    <div class="lang"><button data-lang="es" class="active">ES</button><button data-lang="en">EN</button></div>
   </div>
 </div>
 
 <nav id="nav">
-  <a href="#hero" class="logo">900 <span>Italiana</span></a>
-  <ul class="nav-links">
-    <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
-    <li><a href="#carta" data-i18n="nav_menu">La Carta</a></li>
-    <li><a href="#horario" data-i18n="nav_hours">Horario</a></li>
-    <li><a href="#servicios" data-i18n="nav_orders">Pedidos</a></li>
-    <li><a href="#mapa" data-i18n="nav_map">Mapa</a></li>
-    <li><a href="tel:+34952468457" class="nav-cta">952 46 84 57</a></li>
-    <li><div class="lang-btns"><button class="lang-btn active" onclick="setLang('es')">🇪🇸 ES</button><button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button><button class="lang-btn" onclick="setLang('de')">🇩🇪 DE</button></div></li>
-  </ul>
-  <button class="hamburger" id="ham" onclick="toggleMob()"><span></span><span></span><span></span></button>
+  <div class="wrap">
+    <a href="#inicio" class="brand">
+      <svg class="mk" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#0B3A5B"/><path fill="#fff" d="M40 12c-6 0-8 4-13 4S22 12 18 12c-7 0-4 12-2 20 2 7 3 16 6 16 4 0 3-12 7-12s3 12 7 12c3 0 4-9 6-16 2-8 5-20-2-20-1 0-3 0-7 0Z" transform="translate(-1,2) scale(0.92)"/><path fill="none" stroke="#25C4E0" stroke-width="4" stroke-linecap="round" d="M24 34c4 5 12 5 16 0"/></svg>
+      <span><span class="nm">My<b>Dentist</b></span><br><span class="sb">Querétaro</span></span>
+    </a>
+    <div class="links">
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#nosotros" data-i18n="nav.about">Filosofía</a>
+      <a href="#enfoque" data-i18n="nav.approach">Enfoque</a>
+      <a href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contacto" class="btn btn-line" style="padding:.55rem 1.2rem" data-i18n="nav.cta">Agendar</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
 </nav>
 
-<section id="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner reveal">
-    <div class="hero-stamp" data-i18n="hero_stamp">✦ Fuengirola · Costa del Sol · España ✦</div>
-    <h1 class="hero-h1">Heladería<br><em>900 Italiana</em></h1>
-    <div class="hero-hr"></div>
-    <p class="hero-sub" data-i18n="hero_sub">Gelato artesanal elaborado cada día siguiendo la tradición italiana. Primera línea del Paseo Marítimo de Fuengirola, desde 1990.</p>
-    <div class="hero-btns">
-      <a href="#carta" class="btn btn-gold" data-i18n="hero_cta1">Ver la carta</a>
-      <a href="#mapa" class="btn btn-outline" data-i18n="hero_cta2">Cómo llegar</a>
+<div class="mm" id="mm">
+  <button class="x" id="x">&times;</button>
+  <a href="#servicios" data-i18n="nav.services">Servicios</a>
+  <a href="#nosotros" data-i18n="nav.about">Filosofía</a>
+  <a href="#enfoque" data-i18n="nav.approach">Enfoque</a>
+  <a href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+  <a href="#contacto" data-i18n="nav.cta">Agendar</a>
+</div>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="idx" data-i18n="hero.idx">Clínica dental · Querétaro · desde 2009</p>
+      <h1 data-i18n-html="hero.title">Una razón<br>para <em>sonreír</em></h1>
+      <p class="lead" data-i18n="hero.lead">Odontología integral con un enfoque cuidado y personal en el corazón de Querétaro. Cada sonrisa se diseña con calma, criterio y detalle.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-solid" data-i18n="hero.book">Agendar valoración</a>
+        <a href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" class="btn btn-line" target="_blank" rel="noopener" data-i18n="hero.wa">WhatsApp</a>
+      </div>
+      <div class="hero-meta">
+        <div class="m"><div class="n">15+</div><div class="l" data-i18n="hero.m1">años</div></div>
+        <div class="m"><div class="n">4.8</div><div class="l" data-i18n="hero.m2">valoración</div></div>
+        <div class="m"><div class="n">6</div><div class="l" data-i18n="hero.m3">especialidades</div></div>
+        <div class="m"><div class="n">ES / EN</div><div class="l" data-i18n="hero.m4">idiomas</div></div>
+      </div>
+    </div>
+    <figure class="hero-fig reveal">
+      <div class="stamp"><span><b>My</b><span data-i18n="hero.stamp">sonríe</span></span></div>
+      <div class="frame"><div class="ph"><svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-3.3 1.5-5.5 1.5C4 3.5 2 2.5 2 6c0 4 1.3 6.5 2.5 11C5.5 20.5 6 22 7.5 22c1.6 0 1.3-5 4.5-5s2.9 5 4.5 5c1.5 0 2-1.5 3-5C20.7 12.5 22 10 22 6c0-3.5-2-2.5-4.5-2.5C15.3 3.5 14.5 2 12 2Z"/></svg><span data-i18n="hero.photo">Retrato / clínica<br>assets/images/hero.jpg</span></div></div>
+      <figcaption data-i18n="hero.cap">— Odontología pensada para durar toda la vida.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<div class="marq">
+  <div class="marq-track">
+    <span data-i18n="marq.1">Ortodoncia</span><span data-i18n="marq.2">Implantes</span><span data-i18n="marq.3">Diseño de sonrisa</span><span data-i18n="marq.4">Endodoncia</span><span data-i18n="marq.5">Odontopediatría</span><span data-i18n="marq.6">Blanqueamiento</span>
+    <span data-i18n="marq.1">Ortodoncia</span><span data-i18n="marq.2">Implantes</span><span data-i18n="marq.3">Diseño de sonrisa</span><span data-i18n="marq.4">Endodoncia</span><span data-i18n="marq.5">Odontopediatría</span><span data-i18n="marq.6">Blanqueamiento</span>
+  </div>
+</div>
+
+<section class="sec" id="servicios">
+  <div class="wrap">
+    <div class="sec-h reveal">
+      <div><span class="kick" data-i18n="svc.kick">Servicios</span><h2 data-i18n="svc.title">Un índice completo<br>para tu sonrisa</h2></div>
+      <p data-i18n="svc.sub">Cada tratamiento se realiza con materiales de primera y una planificación digital precisa. De lo esencial a lo estético.</p>
+    </div>
+    <div class="svc-list">
+      <div class="svc-row reveal"><div class="no">01</div><div class="mid"><h3 data-i18n="svc.1.t">Ortodoncia</h3><p class="desc" data-i18n="svc.1.d">Brackets tradicionales, estéticos y alineadores invisibles para alinear tu mordida a cualquier edad.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      <div class="svc-row reveal"><div class="no">02</div><div class="mid"><h3 data-i18n="svc.2.t">Implantes dentales</h3><p class="desc" data-i18n="svc.2.d">Reposición de piezas perdidas con implantes de titanio que lucen y funcionan como naturales.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      <div class="svc-row reveal"><div class="no">03</div><div class="mid"><h3 data-i18n="svc.3.t">Diseño de sonrisa</h3><p class="desc" data-i18n="svc.3.d">Carillas y coronas de porcelana diseñadas digitalmente para una sonrisa armónica y natural.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      <div class="svc-row reveal"><div class="no">04</div><div class="mid"><h3 data-i18n="svc.4.t">Endodoncia</h3><p class="desc" data-i18n="svc.4.d">Tratamientos de conducto sin dolor para salvar tus dientes y aliviar molestias de raíz.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      <div class="svc-row reveal"><div class="no">05</div><div class="mid"><h3 data-i18n="svc.5.t">Odontopediatría</h3><p class="desc" data-i18n="svc.5.d">Primeras visitas amables y sin miedo para que los más pequeños crezcan con salud bucal.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
+      <div class="svc-row reveal"><div class="no">06</div><div class="mid"><h3 data-i18n="svc.6.t">Limpieza y blanqueamiento</h3><p class="desc" data-i18n="svc.6.d">Higiene profesional y blanqueamiento para una sonrisa más luminosa y saludable.</p></div><a href="#contacto" class="arw" aria-label="Agendar"><svg viewBox="0 0 24 24" stroke-width="1.6"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
     </div>
   </div>
-  <div class="hero-year">1990</div>
 </section>
 
-<section id="nosotros">
-  <div class="nos-wrap">
-    <div class="nos-photos reveal">
-      <div class="nos-main"><img src="assets/images/local.png" alt="Heladería 900 Italiana — fachada Paseo Marítimo Fuengirola" loading="lazy"></div>
-      <div class="nos-sm"><img src="assets/images/gelato.png" alt="Crepe con helado artesanal" loading="lazy"></div>
-      <div class="nos-sm"><img src="assets/images/desde1990.jpg" alt="Heladería 900 Italiana — Desde 1990" loading="lazy"></div>
+<section class="sec about" id="nosotros">
+  <div class="wrap">
+    <div class="fig reveal"><div class="ph"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg><span data-i18n="about.photo">Retrato del doctor<br>assets/images/equipo.jpg</span></div></div>
+    <div class="reveal">
+      <span class="kick" data-i18n="about.kick">Filosofía</span>
+      <blockquote data-i18n-html="about.quote">Creemos que ir al dentista no debería dar miedo. Debería darte <em>una razón para sonreír</em>.</blockquote>
+      <p data-i18n="about.p1">My Dentist es un consultorio dental en el Centro de Querétaro donde la técnica se une al trato humano. Escuchamos, explicamos y planificamos cada tratamiento con transparencia total.</p>
+      <p data-i18n="about.p2">Sin prisas y sin juicios: tu tiempo, tu comodidad y tu confianza guían cada decisión clínica.</p>
+      <p class="sig">My Dentist — Querétaro</p>
     </div>
-    <div class="nos-text reveal">
-      <div class="stamp" data-i18n="about_tag">✦ Nuestra historia</div>
-      <div class="nos-desde">1990</div>
-      <div class="nos-desde-lbl" data-i18n="about_founded">Año de fundación</div>
-      <div class="hr-orn" style="margin:1.25rem 0"><span>✦ ✦ ✦</span></div>
-      <h2 data-i18n="about_h2">Más de 35 años haciendo <em>helado de verdad</em></h2>
-      <p data-i18n="about_p1">Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.</p>
-      <p data-i18n="about_p2">Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.</p>
-      <div style="margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(201,168,76,.2);display:flex;flex-wrap:wrap;gap:.5rem">
-        <span style="font-size:.78rem;color:var(--muted)">🤍 Sin gluten disponible</span> &nbsp;·&nbsp;
-        <span style="font-size:.78rem;color:var(--muted)">🥛 Sin lactosa disponible</span> &nbsp;·&nbsp;
-        <span style="font-size:.78rem;color:var(--muted)">🛵 Delivery a domicilio</span>
+  </div>
+</section>
+
+<section class="sec" id="enfoque">
+  <div class="wrap">
+    <div class="sec-h reveal"><div><span class="kick" data-i18n="appr.kick">Enfoque</span><h2 data-i18n="appr.title">Cómo trabajamos</h2></div></div>
+    <div class="appr">
+      <div class="c reveal"><div class="n">i.</div><h3 data-i18n="appr.1.t">Escuchar</h3><p data-i18n="appr.1.d">Empezamos por entender qué te preocupa y qué esperas de tu sonrisa, sin presiones.</p></div>
+      <div class="c reveal"><div class="n">ii.</div><h3 data-i18n="appr.2.t">Diagnosticar</h3><p data-i18n="appr.2.d">Valoración y diagnóstico digital para un plan preciso, con prioridades y presupuesto claro.</p></div>
+      <div class="c reveal"><div class="n">iii.</div><h3 data-i18n="appr.3.t">Cuidar</h3><p data-i18n="appr.3.d">Realizamos el tratamiento con calma y damos seguimiento a tu evolución en el tiempo.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="opiniones" style="background:var(--paper-2)">
+  <div class="wrap">
+    <div class="tbig">
+      <div class="stars">★★★★★</div>
+      <blockquote id="tQuote" data-i18n="rev.1.q">"Le tenía pánico al dentista y aquí me sentí en confianza desde el primer momento. Me explicaron todo con calma. Ahora sonrío sin pena."</blockquote>
+      <div class="who"><b id="tWho">Mariana G.</b> · <span id="tRole" data-i18n="rev.1.w">Ortodoncia</span></div>
+      <div class="tdots">
+        <button class="active" data-t="0" aria-label="1"></button>
+        <button data-t="1" aria-label="2"></button>
+        <button data-t="2" aria-label="3"></button>
       </div>
     </div>
   </div>
 </section>
 
-<section id="galeria">
-  <div class="gal-head reveal">
-    <div class="gal-stamp" data-i18n="gal_tag">✦ Galería</div>
-    <h2 class="gal-h2" data-i18n="gal_h2">El sabor en imágenes</h2>
-  </div>
-  <div class="gal-grid reveal">
-    <div class="gal-item wide"><img src="assets/images/local.png" alt="Fachada heladería" loading="lazy"></div>
-    <div class="gal-item"><img src="assets/images/desde1990.jpg" alt="Desde 1990" loading="lazy"></div>
-    <div class="gal-item"><img src="assets/images/gelato.png" alt="Helado artesanal" loading="lazy"></div>
-    <div class="gal-item wide"><img src="assets/images/lifestyle.png" alt="Disfrutando de un helado — Heladería 900 Italiana" loading="lazy"></div>
-    <div class="gal-item"><img src="assets/images/sundae.png" alt="Copa especial de la casa" loading="lazy"></div>
-    <div class="gal-item"><img src="assets/images/terraza.jpg" alt="Terraza con vistas al Mediterráneo" loading="lazy"></div>
-  </div>
-</section>
-
-<section id="carta">
-  <div class="menu-board">
-    <div class="menu-board-header reveal">
-      <div class="menu-subtitle" data-i18n="menu_subtitle">✦ Menú ✦</div>
-      <h2 class="menu-title" data-i18n="menu_title">La Carta</h2>
+<section class="sec contact" id="contacto">
+  <div class="wrap">
+    <div class="cinfo reveal">
+      <span class="kick" data-i18n="ct.kick">Contacto</span>
+      <h2 data-i18n="ct.title">Agenda tu cita</h2>
+      <p style="color:var(--muted)" data-i18n="ct.sub">La valoración inicial es sin costo. Escríbenos y encontramos juntos el mejor momento.</p>
+      <dl>
+        <div class="row"><dt data-i18n="ct.addr.t">Dirección</dt><dd data-i18n="ct.addr.d">Av. Constituyentes Pte. 7, Local 8B,<br>Plaza Lecaroz, Centro, Querétaro, Qro.</dd></div>
+        <div class="row"><dt data-i18n="ct.phone.t">Teléfono</dt><dd><a href="tel:+524423841772">442 384 1772</a> · <a href="https://wa.me/524421975987" target="_blank" rel="noopener">442 197 5987</a></dd></div>
+        <div class="row"><dt data-i18n="ct.hours.t">Horario</dt><dd>
+          <span data-day="1"><span data-i18n="ct.wk">Lunes a viernes</span> · 9:00–20:00</span><br>
+          <span data-day="6"><span data-i18n="ct.sat">Sábado</span> · 9:00–14:00</span><br>
+          <span data-i18n="ct.sun">Domingo · cerrado</span>
+          <span class="live" id="live"><span class="dot"></span><span id="liveTxt">—</span></span>
+        </dd></div>
+      </dl>
+      <div class="cmap"><iframe title="Mapa My Dentist Querétaro" loading="lazy" src="https://www.google.com/maps?q=20.5872464,-100.3849817&z=15&output=embed"></iframe></div>
     </div>
-    <div id="carta-board"></div>
-  </div>
-</section>
-
-<section id="horario">
-  <div class="hor-layout">
-    <div>
-      <div class="sec-stamp reveal" data-i18n="hours_tag">✦ Horario</div>
-      <h2 class="hor-h reveal" data-i18n="hours_h2">¿Cuándo visitarnos?</h2>
-      <div class="hor-table" id="hor-rows"></div>
-    </div>
-    <div class="res-box reveal">
-      <div class="res-stamp" data-i18n="res_tag">✦ Reservas & Contacto</div>
-      <h3 data-i18n="res_h3">Celebra con nosotros</h3>
-      <p data-i18n="res_desc">Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.</p>
-      <a href="tel:+34952468457" class="tel-v">+34 952 46 84 57</a>
-      <div class="cbtns">
-        <a href="https://wa.me/34952468457" class="cbtn cbtn-wa" target="_blank">💬 WhatsApp</a>
-        <a href="tel:+34952468457" class="cbtn cbtn-tel">📞 Llamar</a>
-        <a href="https://instagram.com/heladeria900italiana" class="cbtn cbtn-ig" target="_blank">📸 Instagram</a>
+    <form class="cform reveal" id="bookForm">
+      <div class="g">
+        <div class="field"><label data-i18n="form.name">Nombre</label><input name="nombre" required placeholder="Tu nombre"></div>
+        <div class="field"><label data-i18n="form.phone">Teléfono</label><input name="tel" type="tel" required placeholder="442 000 0000"></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="servicios">
-  <div class="sec-stamp reveal" data-i18n="orders_tag">✦ Pedidos</div>
-  <h2 class="sec-h2 reveal" data-i18n="orders_h2">Takeaway & Delivery</h2>
-  <div class="serv-grid">
-    <div class="serv-card reveal">
-      <span class="serv-icon">🏪</span>
-      <h3 data-i18n="tk_h3">Takeaway · Recogida en local</h3>
-      <p data-i18n="tk_desc">Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas. Las tarrinas de ½L y 1L son perfectas para la playa.</p>
-      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20para%20recoger" class="serv-btn" target="_blank" data-i18n="tk_cta">Pedir por WhatsApp</a>
-    </div>
-    <div class="serv-card reveal reveal-d1">
-      <span class="serv-icon">🛵</span>
-      <h3 data-i18n="del_h3">Delivery · A domicilio</h3>
-      <p data-i18n="del_desc">Llevamos el helado hasta tu puerta en Fuengirola y alrededores.</p>
-      <div class="del-zones">
-        <div class="dz"><div class="dz-km">≤ 2 km</div><div class="dz-t">~20 min</div><div class="dz-a" data-i18n="zone1_a">Centro · Playa</div></div>
-        <div class="dz"><div class="dz-km">2–5 km</div><div class="dz-t">~35 min</div><div class="dz-a" data-i18n="zone2_a">Boliches · Carvajal</div></div>
-        <div class="dz"><div class="dz-km">5–10 km</div><div class="dz-t">~50 min</div><div class="dz-a" data-i18n="zone3_a">Mijas · Benalmádena</div></div>
+      <div class="field"><label data-i18n="form.service">Tratamiento de interés</label>
+        <select name="servicio">
+          <option data-i18n="form.s0">Consulta general / valoración</option>
+          <option data-i18n="form.s1">Ortodoncia</option>
+          <option data-i18n="form.s2">Implante dental</option>
+          <option data-i18n="form.s3">Diseño de sonrisa</option>
+          <option data-i18n="form.s4">Endodoncia</option>
+          <option data-i18n="form.s5">Odontopediatría</option>
+          <option data-i18n="form.s6">Limpieza / blanqueamiento</option>
+        </select>
       </div>
-      <a href="https://wa.me/34952468457?text=Hola%2C%20quiero%20un%20pedido%20a%20domicilio" class="serv-btn" target="_blank" data-i18n="del_cta">Pedir a domicilio</a>
+      <div class="field"><label data-i18n="form.msg">Mensaje (opcional)</label><textarea name="msg" rows="3" placeholder="Cuéntanos brevemente qué necesitas"></textarea></div>
+      <button type="submit" class="btn btn-wa" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg><span data-i18n="form.send">Enviar por WhatsApp</span></button>
+    </form>
+  </div>
+</section>
+
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div class="sec-h reveal"><div><span class="kick" data-i18n="faq.kick">Dudas</span><h2 data-i18n="faq.title">Preguntas frecuentes</h2></div></div>
+    <div class="faq">
+      <div class="qa reveal"><button><span data-i18n="faq.1.q">¿Cuál es el mejor dentista en el Centro de Querétaro?</span><span class="s">+</span></button><div class="a"><p data-i18n="faq.1.a">My Dentist es una clínica dental en el Centro de Querétaro (Plaza Lecaroz, Av. Constituyentes) con más de 15 años de experiencia y valoración de 4.8★. Ofrecemos ortodoncia, implantes, diseño de sonrisa y odontología general, con diagnóstico sin costo y atención en español e inglés.</p></div></div>
+      <div class="qa reveal"><button><span data-i18n="faq.2.q">¿La primera valoración tiene costo?</span><span class="s">+</span></button><div class="a"><p data-i18n="faq.2.a">No. La valoración inicial es sin costo: revisamos tu boca, te damos diagnóstico y un presupuesto claro antes de iniciar cualquier tratamiento.</p></div></div>
+      <div class="qa reveal"><button><span data-i18n="faq.3.q">¿Ofrecen planes de pago?</span><span class="s">+</span></button><div class="a"><p data-i18n="faq.3.a">Sí. Manejamos presupuestos transparentes y opciones de pago para tratamientos como ortodoncia e implantes. Pregúntanos al agendar.</p></div></div>
+      <div class="qa reveal"><button><span data-i18n="faq.4.q">¿Atienden a niños?</span><span class="s">+</span></button><div class="a"><p data-i18n="faq.4.a">Claro. Contamos con odontopediatría y un trato pensado para que los niños vivan una experiencia positiva desde su primera visita.</p></div></div>
+      <div class="qa reveal"><button><span data-i18n="faq.5.q">Do you speak English?</span><span class="s">+</span></button><div class="a"><p data-i18n="faq.5.a">Yes — we speak English and welcome patients from abroad. Querétaro is a great place for quality, affordable dental care. Message us on WhatsApp to plan your visit.</p></div></div>
     </div>
   </div>
 </section>
 
-<section id="mapa">
-  <div class="mapa-stamp reveal" data-i18n="map_tag">✦ Encuéntranos</div>
-  <h2 class="mapa-h2 reveal" data-i18n="map_h2">¡Estamos aquí!</h2>
-  <p class="mapa-sub reveal" data-i18n="map_sub">Paseo Marítimo Rey de España · Fuengirola, Málaga</p>
-  <div class="mapa-frame reveal">
-    <iframe src="https://maps.google.com/maps?q=36.5311123,-4.6248252&hl=es&z=17&output=embed" loading="lazy" style="width:100%;height:440px;border:0" title="Heladería 900 Italiana Fuengirola" allowfullscreen></iframe>
-  </div>
-  <a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="mapa-link" data-i18n="map_link">✦ Abrir en Google Maps ✦</a>
-</section>
-
-<section id="faq">
-  <div class="sec-stamp reveal" data-i18n="faq_tag">✦ FAQ</div>
-  <h2 class="sec-h2 reveal" data-i18n="faq_h2">Preguntas frecuentes</h2>
-  <div class="faq-wrap" id="faq-list"></div>
+<section class="sec">
+  <div class="wrap"><div class="cband reveal">
+    <h2 data-i18n-html="cta.title">Tu sonrisa merece<br>una <em>razón</em></h2>
+    <p data-i18n="cta.sub">Agenda hoy tu valoración sin costo en el Centro de Querétaro.</p>
+    <div class="a">
+      <a href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" class="btn btn-solid" target="_blank" rel="noopener" data-i18n="cta.wa">Escríbenos por WhatsApp</a>
+      <a href="tel:+524423841772" class="btn btn-line" data-i18n="cta.call">Llamar ahora</a>
+    </div>
+  </div></div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div>
-      <div class="f-logo">900 <span>Italiana</span></div>
-      <p class="f-tag" data-i18n="foot_tag">Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.</p>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <div class="brand"><svg class="mk" viewBox="0 0 64 64" style="width:38px;height:38px"><rect width="64" height="64" rx="12" fill="#0B3A5B"/><path fill="#fff" d="M40 12c-6 0-8 4-13 4S22 12 18 12c-7 0-4 12-2 20 2 7 3 16 6 16 4 0 3-12 7-12s3 12 7 12c3 0 4-9 6-16 2-8 5-20-2-20-1 0-3 0-7 0Z" transform="translate(-1,2) scale(0.92)"/><path fill="none" stroke="#25C4E0" stroke-width="4" stroke-linecap="round" d="M24 34c4 5 12 5 16 0"/></svg><span class="nm" style="margin-left:.6rem">My<b>Dentist</b></span></div>
+        <p data-i18n="foot.desc">Odontología de autor en el Centro de Querétaro. Una razón para sonreír.</p>
+        <div class="soc">
+          <a href="https://www.facebook.com/QROmydentist/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://wa.me/524421975987" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20Z"/></svg></a>
+          <a href="https://www.google.com/maps/place/My+Dentist+Queretaro" target="_blank" rel="noopener" aria-label="Maps"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg></a>
+        </div>
+      </div>
+      <div><h4 data-i18n="foot.svc">Servicios</h4>
+        <a href="#servicios" data-i18n="svc.1.t">Ortodoncia</a><a href="#servicios" data-i18n="svc.2.t">Implantes</a><a href="#servicios" data-i18n="svc.3.t">Diseño de sonrisa</a><a href="#servicios" data-i18n="svc.5.t">Odontopediatría</a></div>
+      <div><h4 data-i18n="foot.links">Navegación</h4>
+        <a href="#nosotros" data-i18n="nav.about">Filosofía</a><a href="#enfoque" data-i18n="nav.approach">Enfoque</a><a href="#opiniones" data-i18n="nav.reviews">Opiniones</a><a href="#faq" data-i18n="nav.faq">FAQ</a></div>
+      <div><h4 data-i18n="foot.contact">Contacto</h4>
+        <a href="tel:+524423841772">442 384 1772</a><a href="https://wa.me/524421975987" target="_blank" rel="noopener">442 197 5987 · WhatsApp</a><a href="#contacto" data-i18n="foot.hours">Lun–Vie 9–20 · Sáb 9–14</a></div>
     </div>
-    <div class="f-col"><h4 data-i18n="foot_nav">✦ Navegación</h4><ul>
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#carta">La Carta</a></li>
-      <li><a href="#horario">Horario</a></li>
-      <li><a href="#servicios">Pedidos</a></li>
-      <li><a href="#mapa">Mapa</a></li>
-    </ul></div>
-    <div class="f-col"><h4 data-i18n="foot_contact">✦ Contacto</h4><ul>
-      <li><a href="tel:+34952468457">+34 952 46 84 57</a></li>
-      <li><a href="https://wa.me/34952468457" target="_blank">WhatsApp</a></li>
-      <li><a href="https://instagram.com/heladeria900italiana" target="_blank">@heladeria900italiana</a></li>
-      <li><a href="https://www.google.com/maps/place/Helader%C3%ADa+900+Italiana/@36.5312254,-4.6252034,20z/data=!4m12!1m5!3m4!2zMzbCsDMxJzUyLjAiTiA0wrAzNycyOS40Ilc!8m2!3d36.5311123!4d-4.6248252!3m5!1s0xd72e20d09f2818f:0xa9322c36aa24e5db!8m2!3d36.5311123!4d-4.6248252!16s%2Fg%2F12qfw4fkk?entry=ttu&g_ep=EgoyMDI2MDUyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">Google Maps →</a></li>
-    </ul></div>
+    <div class="fbot"><span>© <span id="year"></span> My Dentist Querétaro</span><span data-i18n="foot.made">Una razón para sonreír</span></div>
   </div>
-  <div class="footer-bottom" data-i18n="foot_copy">© 2025 · Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990</div>
 </footer>
 
+<a class="wa-float" href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg></a>
+
 <script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
-function toggleMob(){document.getElementById('mob-menu').classList.toggle('open');document.getElementById('ham').classList.toggle('open')}
-function closeMob(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('ham').classList.remove('open')}
-
-const DAYS=[
-  {es:'Lunes',en:'Monday',de:'Montag',t:'11:00 – 23:00',n:1},
-  {es:'Martes',en:'Tuesday',de:'Dienstag',t:'11:00 – 23:00',n:2},
-  {es:'Miércoles',en:'Wednesday',de:'Mittwoch',t:'11:00 – 23:00',n:3},
-  {es:'Jueves',en:'Thursday',de:'Donnerstag',t:'11:00 – 23:00',n:4},
-  {es:'Viernes',en:'Friday',de:'Freitag',t:'11:00 – 23:30',n:5},
-  {es:'Sábado',en:'Saturday',de:'Samstag',t:'11:00 – 23:30',n:6},
-  {es:'Domingo',en:'Sunday',de:'Sonntag',t:'11:00 – 23:00',n:0},
-];
-
-const FAQS={
-  es:[
-    {q:'¿Cuál es la mejor heladería de Fuengirola?',a:'Heladería 900 Italiana es considerada por muchos la mejor de Fuengirola por sus helados artesanales elaborados cada día y su privilegiada ubicación en primera línea del paseo marítimo.'},
-    {q:'¿Los helados son artesanales?',a:'Sí. Fabricamos todo en local cada día siguiendo recetas de la tradición italiana, sin aditivos artificiales. Desde 1990.'},
-    {q:'¿Tenéis sabores sin lactosa?',a:'Sí, contamos con una selección de sabores sin lactosa. Pregunta en el local para conocer la disponibilidad del día.'},
-    {q:'¿Hacéis delivery a domicilio?',a:'Sí. Zona 1 (≤2km) ~20 min, Zona 2 (2-5km) ~35 min, Zona 3 (5-10km) ~50 min. Contacta por WhatsApp para confirmar.'},
-    {q:'¿Puedo pedir tarrinas para llevar?',a:'Sí. Las tarrinas de ½L y 1L son ideales para la playa. Pide por WhatsApp y las tenemos listas cuando llegues.'},
-    {q:'¿Dónde estáis exactamente?',a:'Paseo Marítimo Rey de España, primera línea de playa. Terraza con vistas directas al Mediterráneo.'},
-  ],
-  en:[
-    {q:'What is the best ice cream shop in Fuengirola?',a:'Heladería 900 Italiana is widely considered the best gelateria in Fuengirola — handmade gelato prepared fresh every day at a prime seafront location.'},
-    {q:'Is the ice cream handmade?',a:'Yes. We make everything in-house every day following authentic Italian recipes, with no artificial additives. Since 1990.'},
-    {q:'Do you have lactose-free options?',a:"Yes, we have a selection of lactose-free flavours. Ask in store for today's availability."},
-    {q:'Do you offer home delivery?',a:'Yes. Zone 1 (≤2km) ~20 min, Zone 2 (2-5km) ~35 min, Zone 3 (5-10km) ~50 min. Contact us on WhatsApp to confirm.'},
-    {q:'Can I pre-order tubs to take away?',a:'Yes! The ½L and 1L tubs are ideal for the beach. Order on WhatsApp and we have them ready when you arrive.'},
-    {q:'Where exactly are you?',a:'On the Paseo Marítimo Rey de España, right on the beachfront. Terrace with direct Mediterranean sea views.'},
-  ],
-  de:[
-    {q:'Was ist die beste Eisdiele in Fuengirola?',a:'Heladería 900 Italiana gilt als die beste Gelateria in Fuengirola — täglich frisch zubereitetes Handeis direkt an der Strandpromenade.'},
-    {q:'Ist das Eis handgemacht?',a:'Ja. Wir stellen alles täglich nach original italienischen Rezepten her — ohne künstliche Zusätze. Seit 1990.'},
-    {q:'Gibt es laktosefreie Optionen?',a:'Ja, wir haben laktosefreie Sorten. Fragen Sie bitte im Laden nach der tagesaktuellen Verfügbarkeit.'},
-    {q:'Bieten Sie Heimlieferung an?',a:'Ja. Zone 1 (≤2km) ~20 Min., Zone 2 (2-5km) ~35 Min., Zone 3 (5-10km) ~50 Min. Kontaktieren Sie uns per WhatsApp.'},
-    {q:'Kann ich Eisbecher vorbestellen?',a:'Ja! Die ½L- und 1L-Becher sind ideal für den Strand. Bestellen Sie per WhatsApp und wir bereiten Ihren Becher vor.'},
-    {q:'Wo genau befinden Sie sich?',a:'Am Paseo Marítimo Rey de España, direkt am Strand. Terrasse mit direktem Meerblick.'},
-  ]
-};
-
-const CARTA={
-  es:{
-    secs:[
-      {label:'✦ Cucuruchos ✦',items:[['Pequeño · 1 bola','3,50 €'],['Pequeño · 2 bolas','4,50 €'],['Grande · 1 bola','4,00 €'],['Grande · 2 bolas','5,00 €'],['Cucurucho de chocolate','10,70 €']]},
-      {label:'✦ Tarrinas ✦',items:[['Tarrina pequeña','3,50 €'],['Tarrina mediana','4,50 €'],['Tarrina grande','5,50 €'],['½ Litro (solo llevar)','9,50 €'],['1 Litro (solo llevar)','17,00 €']]},
-      {label:'✦ Granizados · Copas · Batidos ✦',items:[['Granizado pequeño','3,00 €'],['Granizado grande','4,00 €'],['Tulipa 2 bolas','4,70 €'],['Tulipa 3 bolas','6,00 €'],['Batido mediano','4,50 €'],['Batido grande','5,50 €'],['Horchata pequeña','3,00 €'],['Horchata grande','4,20 €']]},
-    ],
-    sabores_h:'Más de 20 sabores artesanales',
-    sabores_note:'Sin lactosa disponible · Consultar en local'
-  },
-  en:{
-    secs:[
-      {label:'✦ Cones ✦',items:[['Small · 1 scoop','3.50 €'],['Small · 2 scoops','4.50 €'],['Large · 1 scoop','4.00 €'],['Large · 2 scoops','5.00 €'],['Chocolate cone','10.70 €']]},
-      {label:'✦ Tubs ✦',items:[['Small tub','3.50 €'],['Medium tub','4.50 €'],['Large tub','5.50 €'],['½ Litre (takeaway)','9.50 €'],['1 Litre (takeaway)','17.00 €']]},
-      {label:'✦ Granitas · Cups · Shakes ✦',items:[['Small granita','3.00 €'],['Large granita','4.00 €'],['Waffle cup 2 scoops','4.70 €'],['Waffle cup 3 scoops','6.00 €'],['Medium shake','4.50 €'],['Large shake','5.50 €'],['Small horchata','3.00 €'],['Large horchata','4.20 €']]},
-    ],
-    sabores_h:'Over 20 artisan flavours',
-    sabores_note:'Lactose-free available · Ask in store'
-  },
-  de:{
-    secs:[
-      {label:'✦ Waffeln ✦',items:[['Klein · 1 Kugel','3,50 €'],['Klein · 2 Kugeln','4,50 €'],['Groß · 1 Kugel','4,00 €'],['Groß · 2 Kugeln','5,00 €'],['Schokowaffel','10,70 €']]},
-      {label:'✦ Becher ✦',items:[['Kleiner Becher','3,50 €'],['Mittlerer Becher','4,50 €'],['Großer Becher','5,50 €'],['½ Liter (Mitnahme)','9,50 €'],['1 Liter (Mitnahme)','17,00 €']]},
-      {label:'✦ Granitas · Becher · Shakes ✦',items:[['Kleine Granita','3,00 €'],['Große Granita','4,00 €'],['Tulpe 2 Kugeln','4,70 €'],['Tulpe 3 Kugeln','6,00 €'],['Shake mittel','4,50 €'],['Shake groß','5,50 €'],['Kleine Horchata','3,00 €'],['Große Horchata','4,20 €']]},
-    ],
-    sabores_h:'Über 20 handgemachte Sorten',
-    sabores_note:'Laktosefrei verfügbar · Im Laden anfragen'
-  }
-};
-
-const I18N={
-  es:{nav_about:'Nosotros',nav_menu:'La Carta',nav_hours:'Horario',nav_orders:'Pedidos',nav_map:'Mapa',hero_stamp:'✦ Fuengirola · Costa del Sol · España ✦',hero_sub:'Gelato artesanal elaborado cada día siguiendo la tradición italiana. Primera línea del Paseo Marítimo de Fuengirola, desde 1990.',hero_cta1:'Ver la carta',hero_cta2:'Cómo llegar',about_tag:'✦ Nuestra historia',about_founded:'Año de fundación',about_h2:'Más de 35 años haciendo <em>helado de verdad</em>',about_p1:'Desde 1990, elaboramos nuestro gelato artesanal siguiendo recetas de la tradición italiana. Sin atajos, sin aditivos artificiales. Solo los mejores ingredientes y el mismo amor por el helado de siempre.',about_p2:'Primera línea del Paseo Marítimo Rey de España, con terraza y vistas directas al Mediterráneo.',gal_tag:'✦ Galería',gal_h2:'El sabor en imágenes',menu_subtitle:'✦ Menú ✦',menu_title:'La Carta',hours_tag:'✦ Horario',hours_h2:'¿Cuándo visitarnos?',today:'Hoy',res_tag:'✦ Reservas & Contacto',res_h3:'Celebra con nosotros',res_desc:'Cumpleaños, grupos, eventos especiales. Llámanos o escríbenos y lo organizamos juntos.',orders_tag:'✦ Pedidos',orders_h2:'Takeaway & Delivery',tk_h3:'Takeaway · Recogida en local',tk_desc:'Pide con antelación y tenemos tu tarrina lista cuando llegues. Sin esperas. Las tarrinas de ½L y 1L son perfectas para la playa.',tk_cta:'Pedir por WhatsApp',del_h3:'Delivery · A domicilio',del_desc:'Llevamos el helado hasta tu puerta en Fuengirola y alrededores.',zone1_a:'Centro · Playa',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Pedir a domicilio',map_tag:'✦ Encuéntranos',map_h2:'¡Estamos aquí!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'✦ Abrir en Google Maps ✦',faq_tag:'✦ FAQ',faq_h2:'Preguntas frecuentes',foot_tag:'Heladería artesanal en el Paseo Marítimo de Fuengirola. Tradición italiana desde 1990.',foot_nav:'✦ Navegación',foot_contact:'✦ Contacto',foot_copy:'© 2025 · Heladería 900 Italiana · Fuengirola, Málaga · Tradición italiana desde 1990'},
-  en:{nav_about:'About',nav_menu:'Menu',nav_hours:'Hours',nav_orders:'Orders',nav_map:'Map',hero_stamp:'✦ Fuengirola · Costa del Sol · Spain ✦',hero_sub:'Artisan gelato made fresh every day following Italian tradition. Right on the Fuengirola seafront promenade, since 1990.',hero_cta1:'See the menu',hero_cta2:'How to find us',about_tag:'✦ Our story',about_founded:'Year founded',about_h2:'Over 35 years making <em>real ice cream</em>',about_p1:'Since 1990, we handcraft our gelato every day following authentic Italian recipes. No shortcuts, no artificial additives. Only the finest ingredients and the same passion for ice cream.',about_p2:'Seafront on the Paseo Marítimo Rey de España, with a terrace and direct Mediterranean views.',gal_tag:'✦ Gallery',gal_h2:'The flavour in pictures',menu_subtitle:'✦ Menu ✦',menu_title:'The Menu',hours_tag:'✦ Opening Hours',hours_h2:'When to visit us?',today:'Today',res_tag:'✦ Bookings & Contact',res_h3:'Celebrate with us',res_desc:'Birthdays, groups, special events. Call us or message us and we\'ll sort it out.',orders_tag:'✦ Orders',orders_h2:'Takeaway & Delivery',tk_h3:'Takeaway · In-store collection',tk_desc:'Order ahead and we have your tub ready when you arrive. No waiting. The ½L and 1L tubs are perfect for the beach.',tk_cta:'Order on WhatsApp',del_h3:'Delivery · To your door',del_desc:'We bring the ice cream to your door in Fuengirola and surrounding areas.',zone1_a:'Town centre · Beach',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Order delivery',map_tag:'✦ Find us',map_h2:'We are here!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'✦ Open in Google Maps ✦',faq_tag:'✦ FAQ',faq_h2:'Frequently asked questions',foot_tag:'Artisan gelateria on the Fuengirola seafront promenade. Italian tradition since 1990.',foot_nav:'✦ Navigation',foot_contact:'✦ Contact',foot_copy:'© 2025 · Heladería 900 Italiana · Fuengirola, Málaga · Italian tradition since 1990'},
-  de:{nav_about:'Über uns',nav_menu:'Speisekarte',nav_hours:'Öffnungszeiten',nav_orders:'Bestellungen',nav_map:'Karte',hero_stamp:'✦ Fuengirola · Costa del Sol · Spanien ✦',hero_sub:'Täglich frisch nach italienischer Tradition zubereitetes Gelato. Direkt an der Strandpromenade von Fuengirola, seit 1990.',hero_cta1:'Speisekarte',hero_cta2:'Anfahrt',about_tag:'✦ Unsere Geschichte',about_founded:'Gründungsjahr',about_h2:'Über 35 Jahre echtes <em>Handeis</em>',about_p1:'Seit 1990 stellen wir unser Gelato täglich nach original italienischen Rezepten her. Keine Abkürzungen, keine künstlichen Zutaten. Nur die besten Zutaten und dieselbe Leidenschaft für Eis.',about_p2:'Direkt an der Strandpromenade Paseo Marítimo Rey de España, mit Terrasse und direktem Meerblick.',gal_tag:'✦ Galerie',gal_h2:'Der Geschmack in Bildern',menu_subtitle:'✦ Menü ✦',menu_title:'Die Karte',hours_tag:'✦ Öffnungszeiten',hours_h2:'Wann uns besuchen?',today:'Heute',res_tag:'✦ Reservierungen & Kontakt',res_h3:'Feiern Sie mit uns',res_desc:'Geburtstage, Gruppen, besondere Anlässe. Rufen Sie uns an oder schreiben Sie uns.',orders_tag:'✦ Bestellungen',orders_h2:'Mitnahme & Lieferservice',tk_h3:'Mitnahme · Abholung im Laden',tk_desc:'Bestellen Sie im Voraus und Ihr Becher ist fertig wenn Sie ankommen. Kein Warten. Die ½L- und 1L-Becher sind ideal für den Strand.',tk_cta:'Per WhatsApp bestellen',del_h3:'Lieferservice · Bis zur Tür',del_desc:'Wir liefern das Eis zu Ihnen nach Hause in Fuengirola und Umgebung.',zone1_a:'Zentrum · Strand',zone2_a:'Boliches · Carvajal',zone3_a:'Mijas · Benalmádena',del_cta:'Lieferung bestellen',map_tag:'✦ Finden Sie uns',map_h2:'Wir sind hier!',map_sub:'Paseo Marítimo Rey de España · Fuengirola, Málaga',map_link:'✦ In Google Maps öffnen ✦',faq_tag:'✦ FAQ',faq_h2:'Häufig gestellte Fragen',foot_tag:'Handgemachte Gelateria an der Strandpromenade Fuengirola. Italienische Tradition seit 1990.',foot_nav:'✦ Navigation',foot_contact:'✦ Kontakt',foot_copy:'© 2025 · Heladería 900 Italiana · Fuengirola, Málaga · Italienische Tradition seit 1990'}
-};
-
-let lang='es';
-
-function buildHours(){
-  const hoy=new Date().getDay();
-  const t=I18N[lang];
-  document.getElementById('hor-rows').innerHTML=DAYS.map(d=>`
-    <div class="hor-row${d.n===hoy?' hoy':''}">
-      <span class="hd">${d[lang]}${d.n===hoy?' · '+t.today:''}</span>
-      <span class="ht">${d.t}</span>
-    </div>`).join('');
-}
-
-function buildFAQ(){
-  document.getElementById('faq-list').innerHTML=FAQS[lang].map(f=>`
-    <div class="faq-item">
-      <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">${f.q}<span class="faq-arr">▼</span></div>
-      <div class="faq-a">${f.a}</div>
-    </div>`).join('');
-}
-
-function buildCarta(){
-  const d=CARTA[lang];
-  document.getElementById('carta-board').innerHTML=d.secs.map(s=>`
-    <div class="hr-orn reveal"><span>${s.label}</span></div>
-    <div class="menu-section reveal">
-      <div class="menu-items">
-        ${s.items.map(([n,p])=>`<div class="menu-item"><span class="mi-name">${n}</span><span class="mi-dots"></span><span class="mi-price">${p}</span></div>`).join('')}
-      </div>
-    </div>`).join('')+`
-    <div class="hr-orn reveal"><span>✦ ${lang==='es'?'Sabores':lang==='en'?'Flavours':'Sorten'} ✦</span></div>
-    <div class="sabores-box reveal">
-      <h4>${d.sabores_h}</h4>
-      <div class="sabores-tags">
-        <span class="stag">Pistacho</span><span class="stag">Stracciatella</span><span class="stag">Chocolate</span>
-        <span class="stag">Nata</span><span class="stag">Café</span><span class="stag">Avellana</span>
-        <span class="stag">Menta Choco</span><span class="stag">Napolitana</span><span class="stag">Yogurt</span>
-        <span class="stag">Fresa</span><span class="stag">Mango</span><span class="stag">Limón</span>
-        <span class="stag">Banana Split</span><span class="stag">Gianduja</span><span class="stag">Turrón</span>
-        <span class="stag">Málaga</span><span class="stag">Happy Hippo</span>
-        <span class="stag" style="background:var(--crimson);color:var(--parch);border-color:var(--crimson)">★ Cremino Pistacho</span>
-        <span class="stag" style="background:var(--crimson);color:var(--parch);border-color:var(--crimson)">★ Chocolate Dubai</span>
-      </div>
-      <p style="font-size:.75rem;color:var(--muted);margin-top:1rem">${d.sabores_note}</p>
-    </div>`;
-  observeReveal();
-}
-
-function applyI18N(){
-  const t=I18N[lang];
-  document.querySelectorAll('[data-i18n]').forEach(el=>{el.innerHTML=t[el.dataset.i18n]||el.innerHTML});
-}
-
-function setLang(l){
-  lang=l;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent.trim().endsWith(l.toUpperCase())));
-  applyI18N();
-  buildHours();
-  buildFAQ();
-  buildCarta();
-}
-
-function observeReveal(){
-  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.1});
-  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
-}
-
-buildHours();
-buildFAQ();
-buildCarta();
-observeReveal();
+const I18N={en:{
+ "top.addr":"Plaza Lecaroz · Downtown Querétaro",
+ "nav.services":"Services","nav.about":"Philosophy","nav.approach":"Approach","nav.reviews":"Reviews","nav.faq":"FAQ","nav.cta":"Book",
+ "hero.idx":"Dental clinic · Querétaro · since 2009","hero.title":"A reason<br>to <em>smile</em>","hero.lead":"Comprehensive dentistry with a careful, personal approach in the heart of Querétaro. Every smile is designed with calm, judgment and detail.","hero.book":"Book a check-up","hero.wa":"WhatsApp","hero.m1":"years","hero.m2":"rating","hero.m3":"specialties","hero.m4":"languages","hero.stamp":"smile","hero.photo":"Portrait / clinic<br>assets/images/hero.jpg","hero.cap":"— Dentistry made to last a lifetime.",
+ "marq.1":"Orthodontics","marq.2":"Implants","marq.3":"Smile design","marq.4":"Endodontics","marq.5":"Pediatric","marq.6":"Whitening",
+ "svc.kick":"Services","svc.title":"A complete index<br>for your smile","svc.sub":"Each treatment is done with premium materials and precise digital planning. From the essential to the esthetic.",
+ "svc.1.t":"Orthodontics","svc.1.d":"Traditional, esthetic and invisible aligners to align your bite at any age.",
+ "svc.2.t":"Dental implants","svc.2.d":"Replacement of missing teeth with titanium implants that look and work natural.",
+ "svc.3.t":"Smile design","svc.3.d":"Digitally designed porcelain veneers and crowns for a harmonious, natural smile.",
+ "svc.4.t":"Endodontics","svc.4.d":"Painless root canal treatments to save your teeth and relieve deep discomfort.",
+ "svc.5.t":"Pediatric dentistry","svc.5.d":"Friendly, fear-free first visits so children grow up with healthy teeth.",
+ "svc.6.t":"Cleaning & whitening","svc.6.d":"Professional hygiene and whitening for a brighter, healthier smile.",
+ "about.kick":"Philosophy","about.quote":"We believe going to the dentist shouldn't be scary. It should give you <em>a reason to smile</em>.","about.photo":"Doctor portrait<br>assets/images/equipo.jpg",
+ "about.p1":"My Dentist is a dental office in downtown Querétaro where technique meets human care. We listen, explain and plan every treatment with total transparency.",
+ "about.p2":"No rush, no judgment: your time, comfort and trust guide every clinical decision.",
+ "appr.kick":"Approach","appr.title":"How we work",
+ "appr.1.t":"Listen","appr.1.d":"We start by understanding your concerns and what you expect from your smile — no pressure.",
+ "appr.2.t":"Diagnose","appr.2.d":"Assessment and digital diagnosis for a precise plan with priorities and a clear budget.",
+ "appr.3.t":"Care","appr.3.d":"We carry out the treatment calmly and follow up on your progress over time.",
+ "rev.1.q":"\"I was terrified of the dentist and here I felt at ease from the very first moment. They explained everything calmly. Now I smile with no shame.\"","rev.1.w":"Orthodontics",
+ "ct.kick":"Contact","ct.title":"Book your appointment","ct.sub":"The initial assessment is free. Write to us and we'll find the best time together.",
+ "ct.addr.t":"Address","ct.addr.d":"Av. Constituyentes Pte. 7, Local 8B,<br>Plaza Lecaroz, Downtown, Querétaro.","ct.phone.t":"Phone","ct.hours.t":"Hours","ct.wk":"Monday to Friday","ct.sat":"Saturday","ct.sun":"Sunday · closed",
+ "form.name":"Name","form.phone":"Phone","form.service":"Treatment of interest","form.msg":"Message (optional)","form.send":"Send via WhatsApp",
+ "form.s0":"General consultation / check-up","form.s1":"Orthodontics","form.s2":"Dental implant","form.s3":"Smile design","form.s4":"Endodontics","form.s5":"Pediatric dentistry","form.s6":"Cleaning / whitening",
+ "faq.kick":"Questions","faq.title":"Frequently asked questions",
+ "faq.1.q":"Who is the best dentist in downtown Querétaro?","faq.1.a":"My Dentist is a dental clinic in downtown Querétaro (Plaza Lecaroz, Av. Constituyentes) with 15+ years of experience and a 4.8★ rating. We offer orthodontics, implants, smile design and general dentistry, with a free diagnosis and care in Spanish and English.",
+ "faq.2.q":"Is the first assessment free?","faq.2.a":"Yes. The initial assessment is free: we check your mouth, give you a diagnosis and a clear quote before starting any treatment.",
+ "faq.3.q":"Do you offer payment plans?","faq.3.a":"Yes. We offer transparent quotes and payment options for treatments like orthodontics and implants. Ask us when you book.",
+ "faq.4.q":"Do you treat children?","faq.4.a":"Of course. We offer pediatric dentistry and a gentle approach so children have a positive experience from their first visit.",
+ "faq.5.q":"Do you speak English?","faq.5.a":"Yes — we speak English and welcome patients from abroad. Querétaro is a great place for quality, affordable dental care. Message us on WhatsApp to plan your visit.",
+ "cta.title":"Your smile deserves<br>a <em>reason</em>","cta.sub":"Book your free assessment today in downtown Querétaro.","cta.wa":"Message us on WhatsApp","cta.call":"Call now",
+ "foot.desc":"Signature dentistry in downtown Querétaro. A reason to smile.","foot.svc":"Services","foot.links":"Navigation","foot.contact":"Contact","foot.hours":"Mon–Fri 9–20 · Sat 9–14","foot.made":"A reason to smile"
+}};
+const REV={es:[
+ {q:'"Le tenía pánico al dentista y aquí me sentí en confianza desde el primer momento. Me explicaron todo con calma. Ahora sonrío sin pena."',w:'Mariana G.',r:'Ortodoncia'},
+ {q:'"Excelente atención y muy honestos con el presupuesto. Me pusieron un implante y quedó perfecto. 100% recomendado en Querétaro."',w:'Jorge R.',r:'Implante dental'},
+ {q:'"Llevo a mis hijos y les encanta. El trato con los niños es increíble, ya no lloran para ir al dentista. Gracias My Dentist."',w:'Ana L.',r:'Odontopediatría'}
+],en:[
+ {q:'"I was terrified of the dentist and here I felt at ease from the very first moment. They explained everything calmly. Now I smile with no shame."',w:'Mariana G.',r:'Orthodontics'},
+ {q:'"Great care and very honest with the quote. They placed an implant and it turned out perfect. 100% recommended in Querétaro."',w:'Jorge R.',r:'Dental implant'},
+ {q:'"I bring my kids and they love it. The way they treat children is amazing, they no longer cry to go to the dentist. Thank you My Dentist."',w:'Ana L.',r:'Pediatric dentistry'}
+]};
+const els=document.querySelectorAll('[data-i18n]'),hEls=document.querySelectorAll('[data-i18n-html]');
+const ES={};els.forEach(e=>ES[e.getAttribute('data-i18n')]=e.innerHTML);
+const ESH={};hEls.forEach(e=>ESH[e.getAttribute('data-i18n-html')]=e.innerHTML);
+let curLang='es',curT=0;
+function setLang(l){curLang=l;document.documentElement.lang=l;
+  els.forEach(e=>{const k=e.getAttribute('data-i18n');const d=l==='es'?ES[k]:(I18N.en[k]??ES[k]);if(d!=null)e.innerHTML=d;});
+  hEls.forEach(e=>{const k=e.getAttribute('data-i18n-html');const d=l==='es'?ESH[k]:(I18N.en[k]??ESH[k]);if(d!=null)e.innerHTML=d;});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  localStorage.setItem('md_lang',l);renderT();updateHours(l);}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+function renderT(){const r=REV[curLang][curT];document.getElementById('tQuote').textContent=r.q;document.getElementById('tWho').textContent=r.w;document.getElementById('tRole').textContent=r.r;
+  document.querySelectorAll('.tdots button').forEach(b=>b.classList.toggle('active',+b.dataset.t===curT));}
+document.querySelectorAll('.tdots button').forEach(b=>b.addEventListener('click',()=>{curT=+b.dataset.t;renderT();}));
+setInterval(()=>{curT=(curT+1)%3;renderT();},6000);
+const SCHED={1:[9,20],2:[9,20],3:[9,20],4:[9,20],5:[9,20],6:[9,14],0:null};
+function updateHours(lang){const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60,t=SCHED[d];const open=t&&h>=t[0]&&h<t[1];
+  const L=lang||curLang;const to=L==='es'?'Abierto ahora':'Open now',tc=L==='es'?'Cerrado ahora':'Closed now';
+  const live=document.getElementById('live'),lt=document.getElementById('liveTxt');
+  if(live){live.classList.toggle('closed',!open);lt.textContent=open?to:tc;}
+  document.querySelectorAll('[data-day]').forEach(el=>el.classList.toggle('today',+el.dataset.day===d||(d>=1&&d<=5&&+el.dataset.day===1)));}
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const b=document.getElementById('burger'),mm=document.getElementById('mm'),x=document.getElementById('x');
+b.addEventListener('click',()=>mm.classList.add('open'));x.addEventListener('click',()=>mm.classList.remove('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+document.querySelectorAll('.qa').forEach(it=>{const q=it.querySelector('button'),a=it.querySelector('.a');
+  q.addEventListener('click',()=>{const o=it.classList.contains('open');document.querySelectorAll('.qa').forEach(z=>{z.classList.remove('open');z.querySelector('.a').style.maxHeight=null;});if(!o){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+document.getElementById('bookForm').addEventListener('submit',e=>{e.preventDefault();const f=e.target;
+  const intro=curLang==='es'?'Hola My Dentist, quiero agendar una cita.':'Hi My Dentist, I would like to book an appointment.';
+  const msg=`${intro}%0A%0A👤 ${f.nombre.value}%0A📞 ${f.tel.value}%0A🦷 ${f.servicio.value}%0A📝 ${f.msg.value||'-'}`;
+  window.open(`https://wa.me/524421975987?text=${msg}`,'_blank');});
+document.getElementById('year').textContent=new Date().getFullYear();
+setLang(localStorage.getItem('md_lang')||((navigator.language||'es').startsWith('en')?'en':'es'));
+setInterval(()=>updateHours(),60000);
 </script>
 </body>
 </html>
