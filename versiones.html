@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dentist Querétaro — Elige el estilo de tu web</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B3A5B">
+<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B3A5B;--navy2:#0A2E48;--cyan:#25C4E0;--cyan-dk:#12A6C4;--ice:#F3FAFC;--ice2:#E7F4F9;--ink:#12293A;--muted:#5B7386;--line:rgba(11,58,91,.12);--d:'Fraunces',serif;--b:'Outfit',sans-serif;--ease:cubic-bezier(.22,.61,.36,1)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--b);background:linear-gradient(180deg,#fff, var(--ice));color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1140px,92vw);margin-inline:auto}
+h1,h2,h3{font-family:var(--d);font-weight:500;color:var(--navy);line-height:1.08;letter-spacing:-.01em}
+
+.top{background:var(--navy2);color:rgba(255,255,255,.85);font-size:.82rem}
+.top .wrap{display:flex;justify-content:center;gap:.5rem;padding:.5rem 0;text-align:center}
+.top b{color:var(--cyan)}
+
+header{padding:clamp(2.4rem,5vw,4rem) 0 1rem;text-align:center}
+.brand{display:inline-flex;align-items:center;gap:.7rem;margin-bottom:1.6rem}
+.brand .mk{width:52px;height:52px}
+.brand .nm{font-family:var(--d);font-weight:600;font-size:1.7rem;color:var(--navy)}
+.brand .nm b{color:var(--cyan-dk)}
+header .kick{font-size:.72rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan-dk);display:block;margin-bottom:.8rem}
+header h1{font-size:clamp(2rem,4.6vw,3.4rem);margin-bottom:1rem}
+header h1 em{font-style:italic;color:var(--cyan-dk)}
+header p{color:var(--muted);max-width:52ch;margin:0 auto;font-size:1.05rem}
+
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;padding:2.6rem 0 1.5rem}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s;box-shadow:0 18px 40px -30px rgba(11,58,91,.5)}
+.card:hover{transform:translateY(-8px);box-shadow:0 30px 60px -30px rgba(11,58,91,.5)}
+.thumb{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--ice2);border-bottom:1px solid var(--line)}
+.thumb img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s var(--ease)}
+.card:hover .thumb img{transform:scale(1.04)}
+.tag{position:absolute;top:.8rem;left:.8rem;background:var(--navy);color:#fff;font-size:.72rem;font-weight:600;letter-spacing:.08em;padding:.3rem .7rem;border-radius:100px}
+.card.c2 .tag{background:var(--cyan);color:var(--navy2)}
+.card.c3 .tag{background:#12293A}
+.body{padding:1.4rem 1.4rem 1.6rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.body h3{font-size:1.5rem}
+.body .font{font-size:.76rem;letter-spacing:.03em;color:var(--cyan-dk);font-weight:600;text-transform:uppercase}
+.body p{color:var(--muted);font-size:.92rem;flex:1}
+.btns{display:flex;gap:.6rem;margin-top:.8rem}
+.btn{flex:1;text-align:center;display:inline-flex;align-items:center;justify-content:center;gap:.4rem;font-weight:600;font-size:.9rem;padding:.75rem 1rem;border-radius:100px;transition:.25s var(--ease)}
+.btn-main{background:var(--navy);color:#fff}
+.btn-main:hover{background:#0e4a72;transform:translateY(-2px)}
+.btn-alt{border:1.5px solid var(--line);color:var(--navy)}
+.btn-alt:hover{border-color:var(--cyan);transform:translateY(-2px)}
+.btn svg{width:15px;height:15px}
+
+.note{text-align:center;color:var(--muted);font-size:.95rem;padding:1rem 0 2rem;max-width:60ch;margin:0 auto}
+.cta{text-align:center;padding:0 0 3.5rem}
+.cta a{display:inline-flex;align-items:center;gap:.5rem;background:#25D366;color:#fff;font-weight:600;padding:.9rem 1.7rem;border-radius:100px;box-shadow:0 14px 30px -12px rgba(37,211,102,.6);transition:.25s}
+.cta a:hover{transform:translateY(-3px)}
+.cta a svg{width:19px;height:19px;fill:#fff}
+footer{border-top:1px solid var(--line);padding:1.6rem 0;text-align:center;color:var(--muted);font-size:.82rem}
+footer b{color:var(--cyan-dk)}
+
+@media(max-width:820px){.grid{grid-template-columns:1fr;max-width:440px;margin-inline:auto}}
+</style>
+</head>
+<body>
+<div class="top"><div class="wrap"><span>Propuesta de sitio web · <b>My Dentist Querétaro</b> · elige tu estilo favorito 👇</span></div></div>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="mk" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0B3A5B"/><path fill="#fff" d="M40 12c-6 0-8 4-13 4S22 12 18 12c-7 0-4 12-2 20 2 7 3 16 6 16 4 0 3-12 7-12s3 12 7 12c3 0 4-9 6-16 2-8 5-20-2-20-1 0-3 0-7 0Z" transform="translate(-1,2) scale(0.92)"/><path fill="none" stroke="#25C4E0" stroke-width="4" stroke-linecap="round" d="M24 34c4 5 12 5 16 0"/></svg>
+      <span class="nm">My<b>Dentist</b></span>
+    </div>
+    <span class="kick">Tres propuestas · un mismo contenido</span>
+    <h1>Elige el estilo de <em>tu</em> nueva web</h1>
+    <p>Preparamos 3 diseños con la misma información (servicios, reseñas, horario, contacto y WhatsApp). Ábrelos, compáralos y dinos cuál te gusta más. Cada uno funciona en español e inglés.</p>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="grid">
+    <div class="card c1">
+      <div class="thumb"><span class="tag">Opción 1</span><img src="assets/preview/v1.png" alt="Vista previa versión 1 — Clínica Premium"></div>
+      <div class="body">
+        <span class="font">Estilo clásico premium</span>
+        <h3>Clínica Premium</h3>
+        <p>Elegante y cálida, con tipografía serif. La más cercana a una clínica de alta gama; transmite confianza y prestigio.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="v1.html" target="_blank" rel="noopener">Ver opción 1 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="card c2">
+      <div class="thumb"><span class="tag">Opción 2</span><img src="assets/preview/v2.png" alt="Vista previa versión 2 — Moderno & Bold"></div>
+      <div class="body">
+        <span class="font">Estilo moderno y vivo</span>
+        <h3>Moderno &amp; Bold</h3>
+        <p>Colorido, redondeado y cercano. Ideal para redes sociales y para transmitir un trato amable y actual.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="v2.html" target="_blank" rel="noopener">Ver opción 2 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="card c3">
+      <div class="thumb"><span class="tag">Opción 3</span><img src="assets/preview/v3.png" alt="Vista previa versión 3 — Editorial Minimal"></div>
+      <div class="body">
+        <span class="font">Estilo minimalista</span>
+        <h3>Editorial Minimal</h3>
+        <p>Sobrio, con mucho espacio en blanco y aire de revista. Refinado y muy limpio, para una imagen de autor.</p>
+        <div class="btns">
+          <a class="btn btn-main" href="v3.html" target="_blank" rel="noopener">Ver opción 3 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">💡 Consejo: ábrelas también desde el celular para ver cómo se adaptan. Dentro de cada web, arriba a la derecha, puedes cambiar entre <b>ES / EN</b>.</p>
+
+  <div class="cta">
+    <a href="https://wa.me/524421975987?text=Hola,%20ya%20vi%20las%20propuestas%20de%20la%20web%20de%20My%20Dentist" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg>
+      Me decido / tengo dudas
+    </a>
+  </div>
+</div>
+
+<footer>My Dentist Querétaro · <b>Una razón para sonreír</b></footer>
+</body>
+</html>
