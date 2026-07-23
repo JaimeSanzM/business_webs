@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Dentist Querétaro — Clínica Dental · Una razón para sonreír</title>
+<meta name="description" content="Clínica dental en Querétaro. Ortodoncia, implantes, diseño de sonrisa, endodoncia y odontología general. Atención cálida y tecnología moderna. Agenda tu cita en Plaza Lecaroz, Centro. Dentist in Querétaro, English spoken.">
+<meta name="theme-color" content="#0B3A5B">
+<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+<meta property="og:title" content="My Dentist Querétaro — Una razón para sonreír">
+<meta property="og:description" content="Clínica dental en el Centro de Querétaro. Ortodoncia, implantes, diseño de sonrisa y más.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Dentist","name":"My Dentist Querétaro","alternateName":"VyDentist","description":"Clínica dental en Querétaro: ortodoncia, implantes, diseño de sonrisa, endodoncia, odontopediatría y odontología general.","slogan":"Una razón para sonreír","url":"https://mydentistqueretaro.com","telephone":"+52-442-384-1772","image":"https://mydentistqueretaro.com/assets/images/fachada.jpg","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Centro","addressLocality":"Santiago de Querétaro","addressRegion":"Querétaro","postalCode":"76000","addressCountry":"MX"},"geo":{"@type":"GeoCoordinates","latitude":20.5872464,"longitude":-100.3849817},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"120"},"availableLanguage":["Spanish","English"],"medicalSpecialty":["Orthodontic","CosmeticDentistry","Endodontic","PediatricDentistry"],"potentialAction":{"@type":"ReserveAction","target":"https://wa.me/524421975987"}}
+</script>
+<style>
+:root{
+  --navy:#0B3A5B; --navy-2:#0E2C42; --cyan:#25C4E0; --cyan-dk:#12A6C4;
+  --ice:#F3FAFC; --ice-2:#E7F4F9; --mist:#D7ECF3; --white:#fff;
+  --ink:#12293A; --muted:#5B7386; --line:rgba(11,58,91,.10);
+  --gold:#E8B04B;
+  --font-d:'Fraunces',serif; --font-b:'Outfit',sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1); --r:18px; --rlg:28px;
+  --shadow:0 24px 60px -28px rgba(11,58,91,.30);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);background:var(--white);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--font-d);font-weight:500;line-height:1.08;letter-spacing:-.01em;color:var(--navy)}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+section{position:relative}
+.eyebrow{font-family:var(--font-b);font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan-dk);display:inline-flex;align-items:center;gap:.55rem}
+.eyebrow::before{content:"";width:26px;height:1.5px;background:var(--cyan)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--font-b);font-weight:600;font-size:.95rem;padding:.9rem 1.6rem;border-radius:100px;border:1.5px solid transparent;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .25s,color .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 14px 30px -12px rgba(11,58,91,.55)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 22px 40px -14px rgba(11,58,91,.6)}
+.btn-cyan{background:var(--cyan);color:var(--navy-2)}
+.btn-cyan:hover{transform:translateY(-3px);background:#37d3ef;box-shadow:0 18px 34px -14px rgba(37,196,224,.65)}
+.btn-ghost{background:transparent;color:var(--navy);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--navy);transform:translateY(-3px)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-wa:hover{transform:translateY(-3px);box-shadow:0 18px 34px -14px rgba(37,211,102,.6)}
+
+/* top bar */
+.topbar{background:var(--navy-2);color:rgba(255,255,255,.85);font-size:.8rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem 0;flex-wrap:wrap}
+.topbar a{display:inline-flex;align-items:center;gap:.4rem;color:rgba(255,255,255,.85);transition:color .2s}
+.topbar a:hover{color:var(--cyan)}
+.topbar-info{display:flex;gap:1.4rem;flex-wrap:wrap;align-items:center}
+.topbar svg{width:14px;height:14px;stroke:var(--cyan)}
+.lang{display:flex;gap:.25rem;align-items:center}
+.lang button{background:none;border:1px solid rgba(255,255,255,.22);color:rgba(255,255,255,.7);font-family:var(--font-b);font-size:.7rem;font-weight:600;padding:.15rem .55rem;border-radius:100px;cursor:pointer;letter-spacing:.05em;transition:.2s}
+.lang button.active,.lang button:hover{background:var(--cyan);color:var(--navy-2);border-color:var(--cyan)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border-bottom:1px solid transparent;transition:box-shadow .3s,border-color .3s}
+nav.scrolled{box-shadow:0 6px 30px -18px rgba(11,58,91,.4);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:.75rem 0;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem}
+.brand .mark{width:44px;height:44px;flex:none}
+.brand-name{font-family:var(--font-d);font-weight:600;font-size:1.4rem;color:var(--navy);line-height:1}
+.brand-name b{color:var(--cyan-dk);font-weight:600}
+.brand-sub{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:1.9rem}
+.nav-links a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;padding:.2rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--cyan);transition:width .28s var(--ease)}
+.nav-links a:hover{color:var(--navy)}.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.7rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.4rem}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* hero */
+.hero{background:
+  radial-gradient(120% 90% at 85% -10%, var(--ice-2) 0%, transparent 55%),
+  linear-gradient(180deg,#fff 0%, var(--ice) 100%);
+  padding:clamp(2.5rem,6vw,5rem) 0 clamp(3rem,7vw,6rem);overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);padding:.4rem .85rem;border-radius:100px;font-size:.78rem;font-weight:500;color:var(--muted);box-shadow:0 8px 24px -18px rgba(11,58,91,.5);margin-bottom:1.4rem}
+.hero-badge .dot{width:8px;height:8px;border-radius:50%;background:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.18)}
+.hero h1{font-size:clamp(2.6rem,5.6vw,4.4rem);margin-bottom:1.2rem}
+.hero h1 em{font-style:italic;color:var(--cyan-dk)}
+.hero p.lead{font-size:1.12rem;color:var(--muted);max-width:33ch;margin-bottom:1.9rem}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:2rem}
+.hero-trust{display:flex;gap:1.8rem;flex-wrap:wrap}
+.hero-trust .t{display:flex;flex-direction:column}
+.hero-trust .n{font-family:var(--font-d);font-size:1.9rem;color:var(--navy);line-height:1}
+.hero-trust .l{font-size:.78rem;color:var(--muted);letter-spacing:.02em}
+
+/* hero visual */
+.hero-visual{position:relative;aspect-ratio:4/4.4}
+.hv-inner{position:absolute;inset:0;border-radius:var(--rlg);overflow:hidden;
+  background:linear-gradient(160deg,var(--navy) 0%, #0e4f76 60%, var(--cyan-dk) 130%);
+  box-shadow:var(--shadow)}
+.hero-visual .ph-label{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:rgba(255,255,255,.5);text-align:center;padding:2rem}
+.hero-visual .ph-label svg{width:64px;height:64px;stroke:rgba(255,255,255,.55);fill:none}
+.hero-visual .ph-label span{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase}
+.hv-inner::after{content:"";position:absolute;inset:0;background:
+  radial-gradient(60% 40% at 20% 15%, rgba(255,255,255,.16), transparent 60%),
+  repeating-linear-gradient(120deg, rgba(255,255,255,.05) 0 2px, transparent 2px 26px)}
+.smile-arc{position:absolute;bottom:-10%;left:50%;transform:translateX(-50%);width:150%;opacity:.9;z-index:2}
+.float-card{position:absolute;z-index:3;background:#fff;border-radius:16px;padding:.85rem 1rem;box-shadow:0 18px 40px -20px rgba(11,58,91,.55);display:flex;align-items:center;gap:.7rem}
+.float-rating{top:8%;right:-4%;}
+.float-rating .stars{color:var(--gold);font-size:.85rem;letter-spacing:1px}
+.float-rating b{font-family:var(--font-d);font-size:1.3rem;color:var(--navy);display:block;line-height:1}
+.float-rating small{color:var(--muted);font-size:.72rem}
+.float-open{bottom:6%;left:-5%;font-size:.82rem}
+.float-open .dot{width:9px;height:9px;border-radius:50%;background:#25D366}
+.float-open b{color:var(--navy);font-weight:600}
+
+/* trust strip */
+.trust-strip{background:var(--navy);color:#fff;padding:1.1rem 0}
+.trust-strip .wrap{display:flex;justify-content:space-around;gap:1rem;flex-wrap:wrap;text-align:center}
+.trust-strip .item{display:flex;align-items:center;gap:.6rem;font-size:.9rem;color:rgba(255,255,255,.9)}
+.trust-strip svg{width:22px;height:22px;stroke:var(--cyan);fill:none}
+
+/* generic section */
+.sec{padding:clamp(3.5rem,7vw,6rem) 0}
+.sec-head{max-width:640px;margin-bottom:3rem}
+.sec-head.center{margin-inline:auto;text-align:center}
+.sec-head h2{font-size:clamp(2rem,4vw,3.1rem);margin:.8rem 0 1rem}
+.sec-head p{color:var(--muted);font-size:1.05rem}
+
+/* services */
+.services{background:var(--ice)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:1.8rem 1.6rem;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--cyan),var(--navy));transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.svc:hover::before{transform:scaleX(1)}
+.svc-ic{width:54px;height:54px;border-radius:14px;background:var(--ice-2);display:grid;place-items:center;margin-bottom:1.1rem}
+.svc-ic svg{width:28px;height:28px;stroke:var(--cyan-dk);fill:none;stroke-width:1.7}
+.svc h3{font-size:1.22rem;margin-bottom:.5rem}
+.svc p{font-size:.92rem;color:var(--muted);margin-bottom:.9rem}
+.svc a{font-size:.85rem;font-weight:600;color:var(--cyan-dk);display:inline-flex;align-items:center;gap:.35rem}
+.svc a svg{width:15px;height:15px;stroke:currentColor;fill:none;transition:transform .25s}
+.svc:hover a svg{transform:translateX(4px)}
+
+/* why / features split */
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.why-visual{border-radius:var(--rlg);aspect-ratio:5/5;background:linear-gradient(150deg,var(--ice-2),var(--mist));position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.why-visual .ph-label{position:absolute;inset:0;display:flex;flex-direction:column;gap:.5rem;align-items:center;justify-content:center;color:var(--navy);opacity:.35;text-align:center}
+.why-visual .ph-label svg{width:56px;height:56px;stroke:var(--navy);fill:none}
+.feat{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border-bottom:none}
+.feat-ic{width:46px;height:46px;flex:none;border-radius:12px;background:var(--navy);display:grid;place-items:center}
+.feat-ic svg{width:22px;height:22px;stroke:var(--cyan);fill:none}
+.feat h3{font-family:var(--font-b);font-weight:600;font-size:1.05rem;color:var(--navy);margin-bottom:.2rem}
+.feat p{font-size:.92rem;color:var(--muted)}
+
+/* doctor / about */
+.about{background:var(--navy);color:#fff;overflow:hidden}
+.about .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,4vw,4rem);align-items:center}
+.about h2{color:#fff}
+.about .eyebrow{color:var(--cyan)}
+.about p{color:rgba(255,255,255,.8);margin-bottom:1rem}
+.about-photo{border-radius:var(--rlg);aspect-ratio:4/4.6;background:linear-gradient(160deg,#0e4f76,var(--navy-2));position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.about-photo .ph-label{position:absolute;inset:0;display:flex;flex-direction:column;gap:.5rem;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-align:center}
+.about-photo .ph-label svg{width:56px;height:56px;stroke:rgba(255,255,255,.5);fill:none}
+.about-sign{font-family:var(--font-d);font-style:italic;font-size:1.5rem;color:var(--cyan);margin-top:.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
+.chips span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:.4rem .9rem;border-radius:100px;font-size:.82rem;color:rgba(255,255,255,.9)}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.step{position:relative;padding-top:1rem}
+.step .num{font-family:var(--font-d);font-size:2.6rem;color:var(--mist);line-height:1;margin-bottom:.4rem}
+.step h3{font-family:var(--font-b);font-weight:600;font-size:1.08rem;margin-bottom:.4rem}
+.step p{font-size:.9rem;color:var(--muted)}
+
+/* testimonials */
+.testi{background:var(--ice)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.tcard{background:#fff;border-radius:var(--r);padding:1.6rem;border:1px solid var(--line);display:flex;flex-direction:column;gap:.9rem}
+.tcard .stars{color:var(--gold);letter-spacing:2px;font-size:.9rem}
+.tcard p{font-size:.96rem;color:var(--ink)}
+.tcard .who{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+.tcard .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(140deg,var(--cyan),var(--navy));display:grid;place-items:center;color:#fff;font-weight:600;font-family:var(--font-d)}
+.tcard .who b{display:block;font-size:.9rem;color:var(--navy)}
+.tcard .who small{color:var(--muted);font-size:.78rem}
+
+/* appointment + info */
+.book .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.5rem)}
+.book-info h2{margin-bottom:1rem}
+.info-row{display:flex;gap:.9rem;padding:1rem 0;border-bottom:1px solid var(--line)}
+.info-row:last-child{border-bottom:none}
+.info-ic{width:44px;height:44px;flex:none;border-radius:12px;background:var(--ice-2);display:grid;place-items:center}
+.info-ic svg{width:22px;height:22px;stroke:var(--cyan-dk);fill:none}
+.info-row b{color:var(--navy);font-weight:600}
+.info-row p{color:var(--muted);font-size:.92rem}
+.hours-live{margin-top:.6rem;font-size:.86rem;display:inline-flex;align-items:center;gap:.5rem;padding:.35rem .8rem;border-radius:100px;background:var(--ice-2);color:var(--navy);font-weight:500}
+.hours-live .dot{width:9px;height:9px;border-radius:50%;background:#25D366}
+.hours-live.closed .dot{background:#e05353}
+.hours-list{margin-top:1rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.hours-list .h{display:flex;justify-content:space-between;padding:.55rem 1rem;font-size:.88rem}
+.hours-list .h:nth-child(odd){background:var(--ice)}
+.hours-list .h.today{background:var(--navy);color:#fff}
+.hours-list .h.today span{color:var(--cyan)}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--rlg);padding:2rem;box-shadow:var(--shadow)}
+.form-card h3{font-family:var(--font-b);font-weight:600;font-size:1.25rem;margin-bottom:1.2rem}
+.field{margin-bottom:.9rem}
+.field label{display:block;font-size:.82rem;font-weight:500;color:var(--navy);margin-bottom:.35rem}
+.field input,.field select,.field textarea{width:100%;font-family:var(--font-b);font-size:.95rem;padding:.75rem .9rem;border:1.5px solid var(--line);border-radius:12px;background:var(--ice);color:var(--ink);transition:border-color .2s,background .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--cyan);background:#fff}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.8rem;text-align:center}
+
+/* map */
+.map-embed{margin-top:1.2rem;border-radius:16px;overflow:hidden;border:1px solid var(--line);aspect-ratio:16/8;background:var(--ice-2)}
+.map-embed iframe{width:100%;height:100%;border:0}
+
+/* faq */
+.faq-list{max-width:820px;margin-inline:auto}
+.faq-item{border:1px solid var(--line);border-radius:14px;margin-bottom:.8rem;overflow:hidden;background:#fff}
+.faq-q{width:100%;text-align:left;background:none;border:none;font-family:var(--font-b);font-weight:600;font-size:1.02rem;color:var(--navy);padding:1.1rem 1.3rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q .ic{width:24px;height:24px;flex:none;position:relative;transition:transform .3s}
+.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--cyan-dk);border-radius:2px}
+.faq-q .ic::before{top:11px;left:4px;width:16px;height:2px}
+.faq-q .ic::after{top:4px;left:11px;width:2px;height:16px;transition:transform .3s}
+.faq-item.open .faq-q .ic::after{transform:rotate(90deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.faq-a p{padding:0 1.3rem 1.2rem;color:var(--muted);font-size:.95rem}
+
+/* cta band */
+.cta-band{background:linear-gradient(120deg,var(--navy),var(--cyan-dk));color:#fff;border-radius:var(--rlg);padding:clamp(2.2rem,5vw,3.5rem);text-align:center;box-shadow:var(--shadow)}
+.cta-band h2{color:#fff;font-size:clamp(1.8rem,3.6vw,2.7rem);margin-bottom:.8rem}
+.cta-band p{color:rgba(255,255,255,.85);margin-bottom:1.6rem;max-width:52ch;margin-inline:auto}
+.cta-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+.cta-band .btn-ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+.cta-band .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* footer */
+footer{background:var(--navy-2);color:rgba(255,255,255,.7);padding:3.5rem 0 1.5rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-grid h4{font-family:var(--font-b);font-weight:600;color:#fff;font-size:.95rem;margin-bottom:1rem;letter-spacing:.02em}
+.foot-grid a{display:block;font-size:.9rem;padding:.28rem 0;color:rgba(255,255,255,.68);transition:color .2s}
+.foot-grid a:hover{color:var(--cyan)}
+.foot-brand .brand-name{color:#fff}
+.foot-brand p{font-size:.9rem;margin:.9rem 0 1rem;max-width:30ch}
+.foot-social{display:flex;gap:.6rem}
+.foot-social a{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.08);display:grid;place-items:center;transition:.25s}
+.foot-social a:hover{background:var(--cyan);transform:translateY(-3px)}
+.foot-social svg{width:18px;height:18px;fill:#fff}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;padding-top:1.4rem;font-size:.8rem;color:rgba(255,255,255,.5)}
+
+/* whatsapp float */
+.wa-float{position:fixed;bottom:22px;right:22px;z-index:200;width:60px;height:60px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(37,211,102,.6);animation:pulse 2.6s infinite}
+.wa-float svg{width:32px;height:32px;fill:#fff}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+/* reveal */
+html.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+html.js .reveal.in{opacity:1;transform:none}
+
+/* mobile menu */
+.mobile-menu{position:fixed;inset:0;z-index:150;background:var(--navy);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.4rem;opacity:0;pointer-events:none;transition:opacity .35s}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu a{font-family:var(--font-d);font-size:2rem;color:#fff}
+.mobile-menu .close{position:absolute;top:1.5rem;right:1.7rem;font-size:2.4rem;color:#fff;background:none;border:none;cursor:pointer}
+
+@media(max-width:900px){
+  .hero .wrap,.why .wrap,.about .wrap,.book .wrap{grid-template-columns:1fr}
+  .hero-visual{width:100%;max-width:440px;margin-inline:auto;order:-1}
+  .svc-grid,.testi-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+  .burger{display:flex}
+  .nav-cta .btn:not(.burger){display:none}
+}
+@media(max-width:560px){
+  .svc-grid,.testi-grid,.steps,.form-row,.foot-grid{grid-template-columns:1fr}
+  .topbar-info .addr{display:none}
+  .hero-trust{gap:1.2rem}
+  .float-rating{right:2%}.float-open{left:2%}
+}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="topbar-info">
+      <a href="tel:+524423841772"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg> 442 384 1772</a>
+      <a class="addr" href="#contacto"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg> <span data-i18n="top.addr">Plaza Lecaroz · Centro, Querétaro</span></a>
+    </div>
+    <div class="lang">
+      <span style="font-size:.72rem;color:rgba(255,255,255,.45);margin-right:.2rem" data-i18n="top.tag">Una razón para sonreír</span>
+      <button data-lang="es" class="active">ES</button>
+      <button data-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#inicio" class="brand" aria-label="My Dentist Querétaro">
+      <svg class="mark" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0B3A5B"/><path fill="#fff" d="M40 12c-6 0-8 4-13 4S22 12 18 12c-7 0-4 12-2 20 2 7 3 16 6 16 4 0 3-12 7-12s3 12 7 12c3 0 4-9 6-16 2-8 5-20-2-20-1 0-3 0-7 0Z" transform="translate(-1,2) scale(0.92)"/><path fill="none" stroke="#25C4E0" stroke-width="4" stroke-linecap="round" d="M24 34c4 5 12 5 16 0"/></svg>
+      <span>
+        <span class="brand-name">My<b>Dentist</b></span><br>
+        <span class="brand-sub">Querétaro</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="#servicios" data-i18n="nav.services">Servicios</a>
+      <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+      <a href="#proceso" data-i18n="nav.process">Tu visita</a>
+      <a href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contacto" class="btn btn-primary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span data-i18n="nav.cta">Agendar cita</span></a>
+      <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close" id="closeMenu" aria-label="Cerrar">&times;</button>
+  <a href="#servicios" data-i18n="nav.services">Servicios</a>
+  <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+  <a href="#proceso" data-i18n="nav.process">Tu visita</a>
+  <a href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+  <a href="#faq" data-i18n="nav.faq">FAQ</a>
+  <a href="#contacto" class="btn btn-cyan" data-i18n="nav.cta">Agendar cita</a>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-copy reveal">
+      <span class="hero-badge"><span class="dot"></span><span data-i18n="hero.badge">Aceptamos pacientes nuevos hoy</span></span>
+      <h1 data-i18n-html="hero.title">Una razón para <em>sonreír</em> con confianza</h1>
+      <p class="lead" data-i18n="hero.lead">Odontología integral en el corazón de Querétaro. Tecnología moderna, trato cálido y sonrisas que duran toda la vida.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" class="btn btn-wa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg><span data-i18n="hero.wa">WhatsApp directo</span></a>
+        <a href="#contacto" class="btn btn-ghost"><span data-i18n="hero.book">Agendar valoración</span></a>
+      </div>
+      <div class="hero-trust">
+        <div class="t"><span class="n">15+</span><span class="l" data-i18n="hero.s1">Años cuidando sonrisas</span></div>
+        <div class="t"><span class="n">4.8★</span><span class="l" data-i18n="hero.s2">Valoración de pacientes</span></div>
+        <div class="t"><span class="n">100%</span><span class="l" data-i18n="hero.s3">Diagnóstico sin costo</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal">
+      <div class="hv-inner">
+        <div class="ph-label">
+          <svg viewBox="0 0 24 24"><path d="M12 2c-2.5 0-3.3 1.5-5.5 1.5C4 3.5 2 2.5 2 6c0 4 1.3 6.5 2.5 11C5.5 20.5 6 22 7.5 22c1.6 0 1.3-5 4.5-5s2.9 5 4.5 5c1.5 0 2-1.5 3-5C20.7 12.5 22 10 22 6c0-3.5-2-2.5-4.5-2.5C15.3 3.5 14.5 2 12 2Z"/></svg>
+          <span data-i18n="hero.photo">Foto de la clínica<br>assets/images/hero.jpg</span>
+        </div>
+        <svg class="smile-arc" viewBox="0 0 500 120" preserveAspectRatio="none"><path d="M0 40 Q250 140 500 40 L500 120 L0 120 Z" fill="rgba(255,255,255,.06)"/><path d="M40 55 Q250 130 460 55" stroke="rgba(37,196,224,.6)" stroke-width="3" fill="none"/></svg>
+      </div>
+      <div class="float-card float-rating">
+        <div><span class="stars">★★★★★</span><b>4.8</b><small data-i18n="hero.reviews">+120 opiniones</small></div>
+      </div>
+      <div class="float-card float-open"><span class="dot"></span><b id="heroOpen" data-i18n="hero.open">Abierto ahora</b></div>
+    </div>
+  </div>
+</header>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="item"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg><span data-i18n="strip.1">Odontólogos certificados</span></div>
+    <div class="item"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 2 4 6v6c0 5 3.4 8.5 8 10 4.6-1.5 8-5 8-10V6l-8-4Z"/></svg><span data-i18n="strip.2">Materiales de primera</span></div>
+    <div class="item"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="strip.3">Diagnóstico digital</span></div>
+    <div class="item"><svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span data-i18n="strip.4">Citas el mismo día</span></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="sec services" id="servicios">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="svc.eyebrow">Nuestros tratamientos</span>
+      <h2 data-i18n="svc.title">Todo lo que tu sonrisa necesita, en un solo lugar</h2>
+      <p data-i18n="svc.sub">Desde una limpieza de rutina hasta un rediseño completo de sonrisa, cuidamos cada detalle con calidez y precisión.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 3v18M6 8c0-2 2-3 6-3s6 1 6 3M6 8c0 5 2 8 6 8s6-3 6-8"/></svg></div>
+        <h3 data-i18n="svc.ortho.t">Ortodoncia</h3>
+        <p data-i18n="svc.ortho.d">Brackets tradicionales, estéticos y alineadores invisibles para alinear tu mordida a cualquier edad.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 2v6M9 5h6M8 22c-1-4-2-7-2-10a6 6 0 0 1 12 0c0 3-1 6-2 10"/></svg></div>
+        <h3 data-i18n="svc.implant.t">Implantes dentales</h3>
+        <p data-i18n="svc.implant.d">Recupera dientes perdidos con implantes de titanio que lucen y funcionan como naturales.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 2C9 2 8 4 6 4S3 3 3 6c0 4 1.5 6 2.5 10C6.5 19 7 21 8.5 21s1-5 3.5-5 2 5 3.5 5S17 19 18 16c1-4 3-6 3-10 0-3-2-2-3-2S15 2 12 2Z"/><path d="M9 12h6" stroke-width="1.3"/></svg></div>
+        <h3 data-i18n="svc.smile.t">Diseño de sonrisa</h3>
+        <p data-i18n="svc.smile.d">Carillas y coronas de porcelana diseñadas digitalmente para una sonrisa armónica y natural.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 2c-3 0-4 2-6 2S3 3 3 6c0 4 1.5 6 2.5 10C6.5 19 7 21 8.5 21S9 16 12 16s2 5 3.5 5S17 19 18 16c1-4 3-6 3-10 0-3-2-2-3-2s-3-2-6-2Z"/><path d="M12 8v8" stroke-width="1.3"/></svg></div>
+        <h3 data-i18n="svc.endo.t">Endodoncia</h3>
+        <p data-i18n="svc.endo.d">Tratamientos de conducto sin dolor para salvar tus dientes y aliviar molestias de raíz.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="1.5" fill="currentColor" stroke="none"/><path d="M12 2c-3 0-4 2-6 2S3 3 3 6c0 4 1.5 6 2.5 10C6.5 19 7 21 8.5 21s1-5 3.5-5 2 5 3.5 5S17 19 18 16c1-4 3-6 3-10 0-3-2-2-3-2s-3-2-6-2Z"/></svg></div>
+        <h3 data-i18n="svc.kids.t">Odontopediatría</h3>
+        <p data-i18n="svc.kids.d">Primeras visitas amables y divertidas para que los peques crezcan sin miedo al dentista.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="svc reveal">
+        <div class="svc-ic"><svg viewBox="0 0 24 24"><path d="M12 3c-3 0-4 2-6 2S3 4 3 7c0 4 1.5 6 2.5 9C6.5 19 7 21 8.5 21s1-5 3.5-5 2 5 3.5 5S17 19 18 16c1-3 3-5 3-9 0-3-2-2-3-2s-3-2-6-2Z"/><path d="M15 6l2-2 2 2-2 2Z" stroke-width="1.3"/></svg></div>
+        <h3 data-i18n="svc.white.t">Limpieza y blanqueamiento</h3>
+        <p data-i18n="svc.white.d">Higiene profesional y blanqueamiento para una sonrisa más brillante y saludable.</p>
+        <a href="#contacto"><span data-i18n="svc.more">Más información</span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="sec why" id="por-que">
+  <div class="wrap">
+    <div class="why-visual reveal">
+      <div class="ph-label">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M15 9h.01M9 13h.01M15 13h.01"/></svg>
+        <span data-i18n="why.photo">Interior de la clínica<br>assets/images/clinica.jpg</span>
+      </div>
+    </div>
+    <div class="why-copy reveal">
+      <span class="eyebrow" data-i18n="why.eyebrow">Por qué My Dentist</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.7rem 0 1.4rem" data-i18n="why.title">Una experiencia dental diferente</h2>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 21s-7-4.5-9.5-9A5 5 0 0 1 12 6a5 5 0 0 1 9.5 6C19 16.5 12 21 12 21Z"/></svg></div>
+        <div><h3 data-i18n="why.1.t">Trato humano y sin juicios</h3><p data-i18n="why.1.d">Te escuchamos, explicamos cada paso y respetamos tu ritmo. Aquí nadie te regaña.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <div><h3 data-i18n="why.2.t">Tecnología y diagnóstico digital</h3><p data-i18n="why.2.d">Radiografía digital, imagen 3D y planificación por computadora para tratamientos precisos y predecibles.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M12 1v6m0 0 3-3m-3 3L9 4M4 12H1m6 0-3 3m3-3-3-3m19 3h-3m-6 9v-6m0 0 3 3m-3-3-3 3"/></svg></div>
+        <div><h3 data-i18n="why.3.t">Higiene y esterilización estricta</h3><p data-i18n="why.3.d">Protocolos de bioseguridad rigurosos en cada consulta. Tu salud es lo primero.</p></div>
+      </div>
+      <div class="feat">
+        <div class="feat-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V4s-1 1-4 1-5-2-8-2-4 1-4 1Z"/></svg></div>
+        <div><h3 data-i18n="why.4.t">Planes y facilidades de pago</h3><p data-i18n="why.4.d">Presupuestos claros por adelantado y opciones de pago para que cuidarte sea posible.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / DOCTOR -->
+<section class="sec about" id="nosotros">
+  <div class="wrap">
+    <div class="about-photo reveal">
+      <div class="ph-label">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        <span data-i18n="about.photo">Foto del equipo / doctor<br>assets/images/equipo.jpg</span>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="eyebrow" data-i18n="about.eyebrow">Quiénes somos</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.8rem);margin:.7rem 0 1.2rem" data-i18n="about.title">Un equipo que cuida tu sonrisa como propia</h2>
+      <p data-i18n="about.p1">En My Dentist, el Dr. Ernesto y su equipo creen que ir al dentista no tiene que dar miedo. Somos un consultorio dental en el Centro de Querétaro donde combinamos experiencia clínica, tecnología actual y, sobre todo, un trato cercano.</p>
+      <p data-i18n="about.p2">Cada paciente recibe un plan de tratamiento personalizado, explicado con claridad y sin sorpresas. Y con nuestra membresía de prevención, mantener tu boca sana es más fácil y constante. Nuestra meta es simple: darte una razón para sonreír.</p>
+      <div class="chips">
+        <span data-i18n="about.c1">✔ Ortodoncia</span>
+        <span data-i18n="about.c2">✔ Implantología</span>
+        <span data-i18n="about.c3">✔ Estética dental</span>
+        <span data-i18n="about.c4">✔ Odontopediatría</span>
+        <span data-i18n="about.c6">✔ Membresía de prevención</span>
+        <span data-i18n="about.c5">✔ English spoken</span>
+      </div>
+      <p class="about-sign">My Dentist — Una razón para sonreír</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="proceso">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="proc.eyebrow">Tu primera visita</span>
+      <h2 data-i18n="proc.title">Cuidarte es más sencillo de lo que crees</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3 data-i18n="proc.1.t">Agenda</h3><p data-i18n="proc.1.d">Escríbenos por WhatsApp o llena el formulario. Elegimos juntos día y hora.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3 data-i18n="proc.2.t">Valoración</h3><p data-i18n="proc.2.d">Revisamos tu boca, tomamos diagnóstico digital y escuchamos tus objetivos.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3 data-i18n="proc.3.t">Plan a tu medida</h3><p data-i18n="proc.3.d">Te presentamos un plan claro con prioridades, tiempos y presupuesto.</p></div>
+      <div class="step reveal"><div class="num">04</div><h3 data-i18n="proc.4.t">Tu nueva sonrisa</h3><p data-i18n="proc.4.d">Realizamos el tratamiento con calma y damos seguimiento a tu evolución.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="sec testi" id="opiniones">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="rev.eyebrow">Lo que dicen nuestros pacientes</span>
+      <h2 data-i18n="rev.title">Sonrisas reales, historias reales</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p data-i18n="rev.1.q">"Soy paciente del Dr. Ernesto desde hace muchos años y siempre ha contado con toda mi confianza. Me gusta cómo explica los procedimientos, da diferentes opciones y la experiencia que tiene. Su equipo es siempre amable. Recomiendo la membresía para ser constante en la prevención."</p><div class="who"><div class="av">S</div><div><b>Shaddai Ozuna</b><small data-i18n="rev.1.w">Paciente desde hace años</small></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p data-i18n="rev.2.q">"Excelente atención desde el primer momento. El consultorio está muy limpio y organizado, y el dentista fue muy amable, paciente y profesional. Me explicó todo el procedimiento con claridad y me hizo sentir muy tranquila."</p><div class="who"><div class="av">D</div><div><b>Dul Pedroza</b><small data-i18n="rev.2.w">Primera consulta</small></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p data-i18n="rev.3.q">"Tiene unos años que me atiendo en My Dentist con el Doctor Ernesto. Genera un ambiente de confianza para dudas y comentarios. Cambié de dentista y estoy muy contenta. Me gusta el beneficio de la membresía. Trabajo recomendado."</p><div class="who"><div class="av">D</div><div><b>Diana Montero</b><small data-i18n="rev.3.w">Paciente · Membresía</small></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p data-i18n="rev.4.q">"La atención es excelente; desde la recepción te da confianza y cada milímetro está cuidado meticulosamente. 10/10, recomendado. Te dan indicaciones que de verdad ayudan y los diagnósticos son muy certeros."</p><div class="who"><div class="av">A</div><div><b>Armando Santiago</b><small data-i18n="rev.4.w">Paciente</small></div></div></div>
+      <div class="tcard reveal"><div class="stars">★★★★★</div><p data-i18n="rev.5.q">"Vine dos veces, una para limpieza y otra para empastes. Hablan inglés y los dentistas son muy amables. Tienen imagen 3D de los dientes y radiografías."</p><div class="who"><div class="av">M</div><div><b>Margaret Lane</b><small data-i18n="rev.5.w">Limpieza y empastes</small></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK / CONTACT -->
+<section class="sec book" id="contacto">
+  <div class="wrap">
+    <div class="book-info reveal">
+      <span class="eyebrow" data-i18n="ct.eyebrow">Agenda tu cita</span>
+      <h2 data-i18n="ct.title">Estamos a un mensaje de tu nueva sonrisa</h2>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><b data-i18n="ct.addr.t">Dirección</b><p data-i18n="ct.addr.d">Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Centro, Querétaro, Qro.</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.4 2.1L8.1 9.5a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg></div>
+        <div><b data-i18n="ct.phone.t">Teléfono y WhatsApp</b><p>442 384 1772 · 442 197 5987</p></div>
+      </div>
+      <div class="info-row">
+        <div class="info-ic"><svg viewBox="0 0 24 24" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><b data-i18n="ct.hours.t">Horario</b>
+          <div class="hours-list">
+            <div class="h" data-day="1"><span data-i18n="ct.d.mon">Lunes</span><span>9:00 – 20:00</span></div>
+            <div class="h" data-day="2"><span data-i18n="ct.d.tue">Martes</span><span>9:00 – 20:00</span></div>
+            <div class="h" data-day="3"><span data-i18n="ct.d.wed">Miércoles</span><span>9:00 – 20:00</span></div>
+            <div class="h" data-day="4"><span data-i18n="ct.d.thu">Jueves</span><span>9:00 – 20:00</span></div>
+            <div class="h" data-day="5"><span data-i18n="ct.d.fri">Viernes</span><span>9:00 – 20:00</span></div>
+            <div class="h" data-day="6"><span data-i18n="ct.d.sat">Sábado</span><span>9:00 – 14:00</span></div>
+            <div class="h" data-day="0"><span data-i18n="ct.d.sun">Domingo</span><span data-i18n="ct.closed">Cerrado</span></div>
+          </div>
+          <span class="hours-live" id="hoursLive"><span class="dot"></span><span id="hoursLiveTxt">—</span></span>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe title="Mapa My Dentist Querétaro" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=20.5872464,-100.3849817&z=15&output=embed"></iframe>
+      </div>
+    </div>
+    <div class="form-card reveal">
+      <h3 data-i18n="form.title">Solicita tu cita o valoración</h3>
+      <form id="bookForm">
+        <div class="form-row">
+          <div class="field"><label data-i18n="form.name">Nombre</label><input type="text" name="nombre" required placeholder="Tu nombre"></div>
+          <div class="field"><label data-i18n="form.phone">Teléfono</label><input type="tel" name="tel" required placeholder="442 000 0000"></div>
+        </div>
+        <div class="field"><label data-i18n="form.service">Tratamiento de interés</label>
+          <select name="servicio">
+            <option data-i18n="form.s0">Consulta general / valoración</option>
+            <option data-i18n="form.s1">Ortodoncia</option>
+            <option data-i18n="form.s2">Implante dental</option>
+            <option data-i18n="form.s3">Diseño de sonrisa</option>
+            <option data-i18n="form.s4">Endodoncia</option>
+            <option data-i18n="form.s5">Odontopediatría</option>
+            <option data-i18n="form.s6">Limpieza / blanqueamiento</option>
+          </select>
+        </div>
+        <div class="field"><label data-i18n="form.msg">Mensaje (opcional)</label><textarea name="msg" rows="3" placeholder="Cuéntanos brevemente qué necesitas"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg><span data-i18n="form.send">Enviar por WhatsApp</span></button>
+        <p class="form-note" data-i18n="form.note">Al enviar se abrirá WhatsApp con tu mensaje listo. Respondemos en minutos en horario de atención.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--ice)">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" data-i18n="faq.eyebrow">Preguntas frecuentes</span>
+      <h2 data-i18n="faq.title">Resolvemos tus dudas</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.1.q">¿Cuál es el mejor dentista en el Centro de Querétaro?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.1.a">My Dentist es una clínica dental en el Centro de Querétaro (Plaza Lecaroz, Av. Constituyentes) con más de 15 años de experiencia, valoración de 4.8★ y servicios integrales: ortodoncia, implantes, diseño de sonrisa y odontología general. Ofrecemos diagnóstico sin costo y atención en español e inglés.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.2.q">¿Cuánto cuesta una consulta dental?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.2.a">La valoración inicial en My Dentist no tiene costo: revisamos tu boca, te damos un diagnóstico y un presupuesto claro antes de iniciar cualquier tratamiento. Así decides con toda la información.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.3.q">¿Ofrecen planes de pago o facilidades?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.3.a">Sí. Manejamos presupuestos transparentes y opciones de pago para tratamientos como ortodoncia e implantes. Pregúntanos por las facilidades disponibles al agendar.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.4.q">¿Atienden a niños?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.4.a">Claro. Contamos con odontopediatría y un trato pensado para que los niños vivan una experiencia positiva y sin miedo desde su primera visita.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.5.q">Do you speak English? / ¿Atienden pacientes que hablan inglés?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.5.a">Yes — we speak English and welcome patients from abroad. Querétaro is a great place for quality, affordable dental care. Message us on WhatsApp to plan your visit.</p></div></div>
+      <div class="faq-item reveal"><button class="faq-q"><span data-i18n="faq.6.q">¿Cómo agendo una cita?</span><span class="ic"></span></button><div class="faq-a"><p data-i18n="faq.6.a">Lo más rápido es escribirnos por WhatsApp al 442 197 5987 o llamar al 442 384 1772. También puedes llenar el formulario de esta página y te contactamos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta-band reveal">
+      <h2 data-i18n="cta.title">Tu sonrisa merece el mejor cuidado</h2>
+      <p data-i18n="cta.sub">Agenda hoy tu valoración sin costo y descubre por qué en My Dentist tienes una razón para sonreír.</p>
+      <div class="cta-actions">
+        <a href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" class="btn btn-cyan" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg><span data-i18n="cta.wa">Escríbenos por WhatsApp</span></a>
+        <a href="tel:+524423841772" class="btn btn-ghost"><span data-i18n="cta.call">Llamar ahora</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#12557f"/><path fill="#fff" d="M40 12c-6 0-8 4-13 4S22 12 18 12c-7 0-4 12-2 20 2 7 3 16 6 16 4 0 3-12 7-12s3 12 7 12c3 0 4-9 6-16 2-8 5-20-2-20-1 0-3 0-7 0Z" transform="translate(-1,2) scale(0.92)"/><path fill="none" stroke="#25C4E0" stroke-width="4" stroke-linecap="round" d="M24 34c4 5 12 5 16 0"/></svg>
+          <span class="brand-name">My<b style="color:#25C4E0">Dentist</b></span>
+        </div>
+        <p data-i18n="foot.desc">Clínica dental en el Centro de Querétaro. Una razón para sonreír.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/QROmydentist/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12Z"/></svg></a>
+          <a href="https://wa.me/524421975987" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.8-.2-.3A8 8 0 1 1 12 20Z"/></svg></a>
+          <a href="https://www.google.com/maps/place/My+Dentist+Queretaro" target="_blank" rel="noopener" aria-label="Google Maps"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5Z"/></svg></a>
+        </div>
+      </div>
+      <div><h4 data-i18n="foot.svc">Servicios</h4>
+        <a href="#servicios" data-i18n="svc.ortho.t">Ortodoncia</a>
+        <a href="#servicios" data-i18n="svc.implant.t">Implantes</a>
+        <a href="#servicios" data-i18n="svc.smile.t">Diseño de sonrisa</a>
+        <a href="#servicios" data-i18n="svc.endo.t">Endodoncia</a>
+        <a href="#servicios" data-i18n="svc.kids.t">Odontopediatría</a>
+      </div>
+      <div><h4 data-i18n="foot.links">Enlaces</h4>
+        <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+        <a href="#proceso" data-i18n="nav.process">Tu visita</a>
+        <a href="#opiniones" data-i18n="nav.reviews">Opiniones</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </div>
+      <div><h4 data-i18n="foot.contact">Contacto</h4>
+        <a href="tel:+524423841772">442 384 1772</a>
+        <a href="https://wa.me/524421975987" target="_blank" rel="noopener">442 197 5987 · WhatsApp</a>
+        <a href="#contacto" data-i18n="top.addr">Plaza Lecaroz · Centro, Querétaro</a>
+        <a href="#contacto" data-i18n="foot.hours">Lun–Vie 9–20 · Sáb 9–14</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> My Dentist Querétaro. <span data-i18n="foot.rights">Todos los derechos reservados.</span></span>
+      <span data-i18n="foot.made">Una razón para sonreír 🦷</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wa-float" href="https://wa.me/524421975987?text=Hola%20My%20Dentist,%20quiero%20agendar%20una%20cita" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1a11 11 0 0 1-5.3-4.6c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6a.8.8 0 0 1 .6-.3h.4c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.1-.2.3-.1.5a7 7 0 0 0 3.2 2.8c.2.1.4.1.5-.1l.6-.7c.2-.2.3-.2.5-.1l1.6.8c.2.1.4.2.4.3.1.1.1.4 0 .8Z"/></svg>
+</a>
+
+<script>
+/* ---------- i18n ---------- */
+const I18N={
+ en:{
+  "top.addr":"Plaza Lecaroz · Downtown Querétaro","top.tag":"A reason to smile",
+  "nav.services":"Services","nav.about":"About","nav.process":"Your visit","nav.reviews":"Reviews","nav.faq":"FAQ","nav.contact":"Contact","nav.cta":"Book now",
+  "hero.badge":"Accepting new patients today","hero.title":"A reason to <em>smile</em> with confidence","hero.lead":"Comprehensive dentistry in the heart of Querétaro. Modern technology, warm care and smiles that last a lifetime.","hero.wa":"WhatsApp us","hero.book":"Book a check-up","hero.s1":"Years caring for smiles","hero.s2":"Patient rating","hero.s3":"Free first diagnosis","hero.photo":"Clinic photo<br>assets/images/hero.jpg","hero.reviews":"+120 reviews","hero.open":"Open now",
+  "strip.1":"Certified dentists","strip.2":"Premium materials","strip.3":"Digital diagnosis","strip.4":"Same-day appointments",
+  "svc.eyebrow":"Our treatments","svc.title":"Everything your smile needs, in one place","svc.sub":"From a routine cleaning to a full smile makeover, we care for every detail with warmth and precision.","svc.more":"Learn more",
+  "svc.ortho.t":"Orthodontics","svc.ortho.d":"Traditional, esthetic and invisible aligners to align your bite at any age.",
+  "svc.implant.t":"Dental implants","svc.implant.d":"Replace missing teeth with titanium implants that look and work like natural ones.",
+  "svc.smile.t":"Smile design","svc.smile.d":"Digitally designed porcelain veneers and crowns for a harmonious, natural smile.",
+  "svc.endo.t":"Endodontics","svc.endo.d":"Painless root canal treatments to save your teeth and relieve deep discomfort.",
+  "svc.kids.t":"Pediatric dentistry","svc.kids.d":"Friendly, fun first visits so kids grow up without fear of the dentist.",
+  "svc.white.t":"Cleaning & whitening","svc.white.d":"Professional hygiene and whitening for a brighter, healthier smile.",
+  "why.eyebrow":"Why My Dentist","why.title":"A different dental experience","why.photo":"Clinic interior<br>assets/images/clinica.jpg",
+  "why.1.t":"Human, judgment-free care","why.1.d":"We listen, explain every step and respect your pace. No lectures here.",
+  "why.2.t":"Technology & digital diagnosis","why.2.d":"Digital X-ray, 3D imaging and computer planning for precise, predictable treatments.",
+  "why.3.t":"Strict hygiene & sterilization","why.3.d":"Rigorous biosafety protocols at every visit. Your health comes first.",
+  "why.4.t":"Payment plans & options","why.4.d":"Clear upfront quotes and payment options so caring for yourself is possible.",
+  "about.eyebrow":"Who we are","about.title":"A team that cares for your smile as its own","about.photo":"Team / doctor photo<br>assets/images/equipo.jpg",
+  "about.p1":"At My Dentist, Dr. Ernesto and his team believe going to the dentist shouldn't be scary. We're a dental office in downtown Querétaro combining clinical experience, current technology and, above all, close, caring service.",
+  "about.p2":"Every patient gets a personalized treatment plan, clearly explained with no surprises. And with our prevention membership, keeping your mouth healthy is easier and more consistent. Our goal is simple: to give you a reason to smile.",
+  "about.c1":"✔ Orthodontics","about.c2":"✔ Implantology","about.c3":"✔ Cosmetic dentistry","about.c4":"✔ Pediatric","about.c5":"✔ English spoken","about.c6":"✔ Prevention membership",
+  "proc.eyebrow":"Your first visit","proc.title":"Taking care of yourself is easier than you think",
+  "proc.1.t":"Book","proc.1.d":"Message us on WhatsApp or fill the form. We pick a day and time together.",
+  "proc.2.t":"Assessment","proc.2.d":"We check your mouth, take a digital diagnosis and listen to your goals.",
+  "proc.3.t":"Custom plan","proc.3.d":"We present a clear plan with priorities, timing and budget.",
+  "proc.4.t":"Your new smile","proc.4.d":"We carry out the treatment calmly and follow up on your progress.",
+  "rev.eyebrow":"What our patients say","rev.title":"Real smiles, real stories",
+  "rev.1.q":"\"I've been Dr. Ernesto's patient for many years and he's always had my full trust. I like how he explains every procedure, offers different options and how experienced he is. His team is always kind. I recommend the membership to stay consistent with prevention.\"","rev.1.w":"Long-time patient",
+  "rev.2.q":"\"Excellent care from the very first moment. The office is very clean and organized, and the dentist was kind, patient and professional. He explained the whole procedure clearly and made me feel at ease.\"","rev.2.w":"First visit",
+  "rev.3.q":"\"I've been coming to My Dentist with Doctor Ernesto for a few years. He creates an atmosphere of trust for questions and comments. I switched dentists and I'm very happy. I love the membership benefit. Highly recommended.\"","rev.3.w":"Patient · Membership",
+  "rev.4.q":"\"The care is excellent; from reception it gives you confidence and every millimeter is meticulously looked after. 10/10, recommended. They give guidance that really helps and the diagnoses are spot-on.\"","rev.4.w":"Patient",
+  "rev.5.q":"\"I went here twice, once for cleaning and once for fillings. They speak English and the dentists are nice. They have 3D imaging of teeth and x-rays.\"","rev.5.w":"Cleaning & fillings",
+  "ct.eyebrow":"Book your appointment","ct.title":"We're one message away from your new smile","ct.addr.t":"Address","ct.addr.d":"Av. Constituyentes Pte. 7, Local 8B, Plaza Lecaroz, Downtown, Querétaro.","ct.phone.t":"Phone & WhatsApp","ct.hours.t":"Hours",
+  "ct.d.mon":"Monday","ct.d.tue":"Tuesday","ct.d.wed":"Wednesday","ct.d.thu":"Thursday","ct.d.fri":"Friday","ct.d.sat":"Saturday","ct.d.sun":"Sunday","ct.closed":"Closed",
+  "form.title":"Request your appointment or check-up","form.name":"Name","form.phone":"Phone","form.service":"Treatment of interest","form.msg":"Message (optional)","form.send":"Send via WhatsApp","form.note":"On send, WhatsApp opens with your message ready. We reply within minutes during business hours.",
+  "form.s0":"General consultation / check-up","form.s1":"Orthodontics","form.s2":"Dental implant","form.s3":"Smile design","form.s4":"Endodontics","form.s5":"Pediatric dentistry","form.s6":"Cleaning / whitening",
+  "faq.eyebrow":"Frequently asked questions","faq.title":"We answer your questions",
+  "faq.1.q":"Who is the best dentist in downtown Querétaro?","faq.1.a":"My Dentist is a dental clinic in downtown Querétaro (Plaza Lecaroz, Av. Constituyentes) with 15+ years of experience, a 4.8★ rating and full services: orthodontics, implants, smile design and general dentistry. We offer a free diagnosis and care in Spanish and English.",
+  "faq.2.q":"How much does a dental consultation cost?","faq.2.a":"The initial assessment at My Dentist is free: we check your mouth, give you a diagnosis and a clear quote before starting any treatment, so you decide fully informed.",
+  "faq.3.q":"Do you offer payment plans?","faq.3.a":"Yes. We offer transparent quotes and payment options for treatments like orthodontics and implants. Ask us about available options when you book.",
+  "faq.4.q":"Do you treat children?","faq.4.a":"Of course. We offer pediatric dentistry and a gentle approach so children have a positive, fear-free experience from their first visit.",
+  "faq.5.q":"Do you speak English?","faq.5.a":"Yes — we speak English and welcome patients from abroad. Querétaro is a great place for quality, affordable dental care. Message us on WhatsApp to plan your visit.",
+  "faq.6.q":"How do I book an appointment?","faq.6.a":"The fastest way is to message us on WhatsApp at 442 197 5987 or call 442 384 1772. You can also fill the form on this page and we'll contact you.",
+  "cta.title":"Your smile deserves the best care","cta.sub":"Book your free assessment today and discover why at My Dentist you have a reason to smile.","cta.wa":"Message us on WhatsApp","cta.call":"Call now",
+  "foot.desc":"Dental clinic in downtown Querétaro. A reason to smile.","foot.svc":"Services","foot.links":"Links","foot.contact":"Contact","foot.hours":"Mon–Fri 9–20 · Sat 9–14","foot.rights":"All rights reserved.","foot.made":"A reason to smile 🦷"
+ }
+};
+const els=document.querySelectorAll('[data-i18n]');
+const htmlEls=document.querySelectorAll('[data-i18n-html]');
+const ES={};els.forEach(e=>ES[e.getAttribute('data-i18n')]=e.innerHTML);
+const ESH={};htmlEls.forEach(e=>ESH[e.getAttribute('data-i18n-html')]=e.innerHTML);
+function setLang(l){
+  document.documentElement.lang=l;
+  els.forEach(e=>{const k=e.getAttribute('data-i18n');const d=(l==='es')?ES[k]:(I18N.en[k]??ES[k]);if(d!=null)e.innerHTML=d;});
+  htmlEls.forEach(e=>{const k=e.getAttribute('data-i18n-html');const d=(l==='es')?ESH[k]:(I18N.en[k]??ESH[k]);if(d!=null)e.innerHTML=d;});
+  document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
+  localStorage.setItem('md_lang',l);updateHours(l);
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* ---------- hours ---------- */
+const SCHED={1:[9,20],2:[9,20],3:[9,20],4:[9,20],5:[9,20],6:[9,14],0:null};
+function updateHours(lang){
+  const now=new Date();const d=now.getDay();const h=now.getHours()+now.getMinutes()/60;
+  const t=SCHED[d];let open=t&&h>=t[0]&&h<t[1];
+  const L=(lang||localStorage.getItem('md_lang')||'es');
+  const txtOpen=L==='es'?'Abierto ahora':'Open now';
+  const txtClosed=L==='es'?'Cerrado ahora':'Closed now';
+  const live=document.getElementById('hoursLive');const liveTxt=document.getElementById('hoursLiveTxt');const heroOpen=document.getElementById('heroOpen');
+  if(live){live.classList.toggle('closed',!open);liveTxt.textContent=open?txtOpen:txtClosed;}
+  if(heroOpen)heroOpen.textContent=open?txtOpen:txtClosed;
+  document.querySelectorAll('.hours-list .h').forEach(el=>el.classList.toggle('today',+el.dataset.day===d));
+}
+
+/* ---------- nav / scroll ---------- */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>20));
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu'),cm=document.getElementById('closeMenu');
+burger.addEventListener('click',()=>mm.classList.add('open'));
+cm.addEventListener('click',()=>mm.classList.remove('open'));
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.classList.remove('open')));
+
+/* ---------- faq ---------- */
+document.querySelectorAll('.faq-item').forEach(it=>{
+  const q=it.querySelector('.faq-q'),a=it.querySelector('.faq-a');
+  q.addEventListener('click',()=>{const open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(o=>{o.classList.remove('open');o.querySelector('.faq-a').style.maxHeight=null;});
+    if(!open){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}});
+});
+
+/* ---------- reveal ---------- */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
+
+/* ---------- form -> whatsapp ---------- */
+document.getElementById('bookForm').addEventListener('submit',e=>{
+  e.preventDefault();const f=e.target;
+  const L=localStorage.getItem('md_lang')||'es';
+  const intro=L==='es'?'Hola My Dentist, quiero agendar una cita.':'Hi My Dentist, I would like to book an appointment.';
+  const msg=`${intro}%0A%0A👤 ${f.nombre.value}%0A📞 ${f.tel.value}%0A🦷 ${f.servicio.value}%0A📝 ${f.msg.value||'-'}`;
+  window.open(`https://wa.me/524421975987?text=${msg}`,'_blank');
+});
+
+/* ---------- init ---------- */
+document.getElementById('year').textContent=new Date().getFullYear();
+const saved=localStorage.getItem('md_lang')||((navigator.language||'es').startsWith('en')?'en':'es');
+setLang(saved);setInterval(()=>updateHours(),60000);
+</script>
+</body>
+</html>
