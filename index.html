@@ -645,6 +645,7 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
     <div class="foot-bottom">
       <span>© <span id="year"></span> My Dentist Querétaro. <span data-i18n="foot.rights">Todos los derechos reservados.</span></span>
+      <span id="monthYear" style="letter-spacing:.04em"></span>
       <span data-i18n="foot.made">Una razón para sonreír 🦷</span>
     </div>
   </div>
@@ -709,8 +710,10 @@ const els=document.querySelectorAll('[data-i18n]');
 const htmlEls=document.querySelectorAll('[data-i18n-html]');
 const ES={};els.forEach(e=>ES[e.getAttribute('data-i18n')]=e.innerHTML);
 const ESH={};htmlEls.forEach(e=>ESH[e.getAttribute('data-i18n-html')]=e.innerHTML);
+const MES={es:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],en:["January","February","March","April","May","June","July","August","September","October","November","December"]};
+function setMonthYear(l){var d=new Date(),el=document.getElementById('monthYear');if(el)el.textContent=MES[l][d.getMonth()]+', '+d.getFullYear();}
 function setLang(l){
-  document.documentElement.lang=l;
+  document.documentElement.lang=l;setMonthYear(l);
   els.forEach(e=>{const k=e.getAttribute('data-i18n');const d=(l==='es')?ES[k]:(I18N.en[k]??ES[k]);if(d!=null)e.innerHTML=d;});
   htmlEls.forEach(e=>{const k=e.getAttribute('data-i18n-html');const d=(l==='es')?ESH[k]:(I18N.en[k]??ESH[k]);if(d!=null)e.innerHTML=d;});
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));

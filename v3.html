@@ -23,7 +23,11 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--b);background:var(--paper);color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400}
+body{font-family:var(--b);background:
+  radial-gradient(75% 45% at 100% 0%, rgba(37,196,224,.13), transparent 60%),
+  radial-gradient(65% 45% at 0% 22%, rgba(30,169,201,.07), transparent 55%),
+  linear-gradient(180deg,#FBFCFD 0%, #ECF6F9 100%);
+  background-attachment:fixed;color:var(--ink);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-weight:400}
 a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 h1,h2,h3{font-family:var(--d);font-weight:500;line-height:1.05;color:var(--navy);letter-spacing:.005em}
 .wrap{width:min(1200px,90vw);margin-inline:auto}
@@ -84,7 +88,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:
 .hero-fig .stamp b{font-family:var(--d);font-size:1.4rem;display:block;letter-spacing:0}
 
 /* marquee */
-.marq{border-block:1px solid var(--line);overflow:hidden;padding:1.1rem 0}
+.marq{border-block:1px solid var(--line);overflow:hidden;padding:1.1rem 0;background:linear-gradient(90deg,#E4F3F8,#E8F6F0)}
 .marq-track{display:flex;gap:3rem;white-space:nowrap;animation:scroll 26s linear infinite;width:max-content}
 .marq span{font-family:var(--d);font-style:italic;font-size:1.5rem;color:var(--navy);display:inline-flex;align-items:center;gap:3rem}
 .marq span::after{content:"✦";color:var(--cyan);font-style:normal;font-size:.8rem}
@@ -124,7 +128,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:
 .about .sig{font-family:var(--d);font-style:italic;font-size:1.4rem;color:var(--cyan-lt);margin-top:.6rem}
 
 /* approach columns */
-.appr{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line)}
+#enfoque{background:linear-gradient(180deg,#E7F5F0,#F4FAF8)}
+.appr{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 24px 50px -34px rgba(11,58,91,.35)}
 .appr .c{padding:2.4rem 2rem;border-right:1px solid var(--line)}
 .appr .c:last-child{border-right:none}
 .appr .c .n{font-family:var(--d);font-style:italic;font-size:1.2rem;color:var(--cyan);margin-bottom:1rem}
@@ -170,11 +175,17 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;padding:
 .qa .a p{padding:0 0 1.5rem;color:var(--muted);max-width:64ch}
 
 /* cta */
-.cband{border:1px solid var(--navy);padding:clamp(2.5rem,6vw,4.5rem);text-align:center}
-.cband h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:1rem}
-.cband h2 em{font-style:italic;color:var(--cyan)}
-.cband p{color:var(--muted);margin-bottom:2rem;max-width:48ch;margin-inline:auto}
+.cband{border:none;border-radius:8px;background:linear-gradient(120deg,var(--navy) 0%,#12557f 55%,var(--cyan) 130%);padding:clamp(2.7rem,6vw,4.8rem);text-align:center;position:relative;overflow:hidden;box-shadow:0 30px 60px -30px rgba(11,58,91,.55)}
+.cband::after{content:"";position:absolute;inset:0;background:radial-gradient(50% 60% at 15% 10%,rgba(255,255,255,.12),transparent 60%)}
+.cband>*{position:relative;z-index:1}
+.cband h2{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:1rem;color:#fff}
+.cband h2 em{font-style:italic;color:#BEEAF3}
+.cband p{color:rgba(255,255,255,.85);margin-bottom:2rem;max-width:48ch;margin-inline:auto}
 .cband .a{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.cband .btn-solid{background:#fff;color:var(--navy);border-color:#fff}
+.cband .btn-solid:hover{background:#EAF7FB}
+.cband .btn-line{color:#fff;border-color:rgba(255,255,255,.55)}
+.cband .btn-line:hover{background:rgba(255,255,255,.12);color:#fff}
 
 /* footer */
 footer{border-top:1px solid var(--line);padding:3.5rem 0 1.6rem}
@@ -328,7 +339,7 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<section class="sec" id="opiniones" style="background:var(--paper-2)">
+<section class="sec" id="opiniones" style="background:linear-gradient(180deg,#E4F3F8,#EEF6F5)">
   <div class="wrap">
     <div class="tbig">
       <div class="stars">★★★★★</div>
@@ -428,7 +439,7 @@ html.js .reveal.in{opacity:1;transform:none}
       <div><h4 data-i18n="foot.contact">Contacto</h4>
         <a href="tel:+524423841772">442 384 1772</a><a href="https://wa.me/524421975987" target="_blank" rel="noopener">442 197 5987 · WhatsApp</a><a href="#contacto" data-i18n="foot.hours">Lun–Vie 9–20 · Sáb 9–14</a></div>
     </div>
-    <div class="fbot"><span>© <span id="year"></span> My Dentist Querétaro</span><span data-i18n="foot.made">Una razón para sonreír</span></div>
+    <div class="fbot"><span>© <span id="year"></span> My Dentist Querétaro</span><span id="monthYear" style="letter-spacing:.06em"></span><span data-i18n="foot.made">Una razón para sonreír</span></div>
   </div>
 </footer>
 
@@ -485,7 +496,9 @@ const els=document.querySelectorAll('[data-i18n]'),hEls=document.querySelectorAl
 const ES={};els.forEach(e=>ES[e.getAttribute('data-i18n')]=e.innerHTML);
 const ESH={};hEls.forEach(e=>ESH[e.getAttribute('data-i18n-html')]=e.innerHTML);
 let curLang='es',curT=0;
-function setLang(l){curLang=l;document.documentElement.lang=l;
+const MES={es:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],en:["January","February","March","April","May","June","July","August","September","October","November","December"]};
+function setMonthYear(l){var d=new Date(),el=document.getElementById('monthYear');if(el)el.textContent=MES[l][d.getMonth()]+', '+d.getFullYear();}
+function setLang(l){curLang=l;document.documentElement.lang=l;setMonthYear(l);
   els.forEach(e=>{const k=e.getAttribute('data-i18n');const d=l==='es'?ES[k]:(I18N.en[k]??ES[k]);if(d!=null)e.innerHTML=d;});
   hEls.forEach(e=>{const k=e.getAttribute('data-i18n-html');const d=l==='es'?ESH[k]:(I18N.en[k]??ESH[k]);if(d!=null)e.innerHTML=d;});
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
