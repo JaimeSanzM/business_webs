@@ -9,3 +9,6 @@ Thumbs.db
 # Favicon pendiente
 assets/favicon/*.png
 assets/favicon/*.ico
+
+# Local Netlify folder
+.netlify
