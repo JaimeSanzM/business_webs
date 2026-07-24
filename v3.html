@@ -344,7 +344,7 @@ html.js .reveal.in{opacity:1;transform:none}
     <div class="tbig">
       <div class="stars">★★★★★</div>
       <blockquote id="tQuote" data-i18n="rev.1.q">"Soy paciente del Dr. Ernesto desde hace muchos años y siempre ha contado con toda mi confianza. Me gusta cómo explica los procedimientos, da diferentes opciones y la experiencia que tiene. Su equipo es siempre amable. Recomiendo la membresía para ser constante en la prevención."</blockquote>
-      <div class="who"><b id="tWho">Shaddai</b> · <span id="tRole" data-i18n="rev.1.w">Paciente desde hace años</span></div>
+      <div class="who"><b id="tWho">Shaddai</b> · <span id="tRole" data-i18n="rev.1.w">Paciente desde hace años</span> · <span id="tDate" style="color:var(--muted)"></span></div>
       <div class="tdots">
         <button class="active" data-t="0" aria-label="1"></button>
         <button data-t="1" aria-label="2"></button>
@@ -498,13 +498,15 @@ const ESH={};hEls.forEach(e=>ESH[e.getAttribute('data-i18n-html')]=e.innerHTML);
 let curLang='es',curT=0;
 const MES={es:["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"],en:["January","February","March","April","May","June","July","August","September","October","November","December"]};
 function setMonthYear(l){var d=new Date(),el=document.getElementById('monthYear');if(el)el.textContent=MES[l][d.getMonth()]+', '+d.getFullYear();}
+const TDATES=['2026-06-20','2026-05-18','2026-06-24','2026-07-22','2026-07-16'];
+function timeAgo(iso,l){var then=new Date(iso+'T12:00:00'),days=Math.floor((Date.now()-then)/86400000),es=(l!=='en');if(days<1)return es?'Hoy':'Today';function f(n,s1,sN,e1,eN){return es?(n===1?'Hace '+s1:'Hace '+n+' '+sN):(n===1?e1+' ago':n+' '+eN+' ago');}if(days<7)return f(days,'un día','días','a day','days');if(days<30){var w=Math.max(1,Math.min(4,Math.round(days/7)));return f(w,'una semana','semanas','a week','weeks');}if(days<365){var m=Math.max(1,Math.min(11,Math.round(days/30)));return f(m,'un mes','meses','a month','months');}var y=Math.floor(days/365);return f(y,'un año','años','a year','years');}
 function setLang(l){curLang=l;document.documentElement.lang=l;setMonthYear(l);
   els.forEach(e=>{const k=e.getAttribute('data-i18n');const d=l==='es'?ES[k]:(I18N.en[k]??ES[k]);if(d!=null)e.innerHTML=d;});
   hEls.forEach(e=>{const k=e.getAttribute('data-i18n-html');const d=l==='es'?ESH[k]:(I18N.en[k]??ESH[k]);if(d!=null)e.innerHTML=d;});
   document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('active',b.dataset.lang===l));
   localStorage.setItem('md_lang',l);renderT();updateHours(l);}
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-function renderT(){const r=REV[curLang][curT];document.getElementById('tQuote').textContent=r.q;document.getElementById('tWho').textContent=r.w;document.getElementById('tRole').textContent=r.r;
+function renderT(){const r=REV[curLang][curT];document.getElementById('tQuote').textContent=r.q;document.getElementById('tWho').textContent=r.w;document.getElementById('tRole').textContent=r.r;var td=document.getElementById('tDate');if(td)td.textContent=timeAgo(TDATES[curT],curLang);
   document.querySelectorAll('.tdots button').forEach(b=>b.classList.toggle('active',+b.dataset.t===curT));}
 document.querySelectorAll('.tdots button').forEach(b=>b.addEventListener('click',()=>{curT=+b.dataset.t;renderT();}));
 setInterval(()=>{curT=(curT+1)%5;renderT();},6500);
