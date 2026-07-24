@@ -66,7 +66,7 @@ Las tres comparten contenido, datos y features; cambian el lenguaje visual.
 - *(Base: odontología general / valoración · imagen 3D y radiografía digital)*
 
 ### Testimonios (reseñas reales de Google, ya en las 3 webs, ES/EN)
-Shaddai Ozuna · Dul Pedroza · Diana Montero · Armando Santiago · Margaret Lane (EN).
+Shaddai · Dul · Diana · Armando · Margaret (EN).
 Todas 5★. Traducidas al inglés en el selector ES/EN.
 
 ---
